@@ -14,6 +14,11 @@ config/name="TreasureHunters"
 run/main_scene="res://Scenes/Interface/Menu_GameStart.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalDictionaries="*res://Scripts/Global_Dictionaries.gd"
+Global="*res://Scripts/Global.gd"
+
 [display]
 
 window/size/width=1280

@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/GameplayInterface.gd" type="Script" id=3]
+[ext_resource path="res://Textures/Items/Coins/skull/rotating_skull_coin_01.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="GameplayInterface" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelTimeLbl" type="Label" parent="Timer"]
+margin_left = 1179.45
+margin_top = 57.9828
+margin_right = 1263.45
+margin_bottom = 114.983
+custom_fonts/font = SubResource( 1 )
+text = "000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelTimeTimer" type="Timer" parent="Timer"]
+
+[node name="Continue" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueLabel" type="Label" parent="Continue"]
+margin_left = 1135.86
+margin_top = 664.68
+margin_right = 1251.86
+margin_bottom = 699.68
+custom_fonts/font = SubResource( 2 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selector" parent="Continue" instance=ExtResource( 1 )]
+margin_left = 1119.84
+margin_top = 661.045
+margin_right = 1265.84
+margin_bottom = 704.045
+expand = true
+
+[node name="Coin" type="Control" parent="."]
+margin_left = -9.34388
+margin_top = -4.67194
+margin_right = 30.6561
+margin_bottom = 35.3281
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinImage" type="TextureRect" parent="Coin"]
+margin_left = 15.7145
+margin_top = 12.3471
+margin_right = 55.7145
+margin_bottom = 52.3471
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin_x_Label" type="Label" parent="Coin"]
+margin_left = 58.209
+margin_top = 8.19095
+margin_right = 81.209
+margin_bottom = 49.1909
+custom_fonts/font = SubResource( 3 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coin_Count_Label" type="Label" parent="Coin"]
+margin_left = 80.4742
+margin_top = -4.12247
+margin_right = 188.474
+margin_bottom = 71.8775
+custom_fonts/font = SubResource( 4 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]

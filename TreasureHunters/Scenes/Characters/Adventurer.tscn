@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Textures/Characters/Inda/Idle/Idle__000.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Advenurer.gd" type="Script" id=2]
@@ -227,6 +227,46 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "Inda_-1_Pull"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 46 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Sprite:visible")
@@ -1120,8 +1160,7 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-flip_h = true
+texture = ExtResource( 35 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -1136,6 +1175,7 @@ anims/Inda_-1_Fall = SubResource( 2 )
 anims/Inda_-1_Idle = SubResource( 3 )
 anims/Inda_-1_Interact = SubResource( 22 )
 anims/Inda_-1_Jump = SubResource( 4 )
+anims/Inda_-1_Pull = SubResource( 24 )
 anims/Inda_-1_Push = SubResource( 18 )
 anims/Inda_-1_Run = SubResource( 5 )
 anims/Inda_-1_Spawn = SubResource( 6 )

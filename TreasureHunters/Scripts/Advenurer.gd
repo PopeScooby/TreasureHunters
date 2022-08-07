@@ -49,6 +49,8 @@ func exec_state_move():
 		exec_state_open_chest()
 	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
 		exec_state_despawn_player()
+	elif Global.Player["Player_Flags"]["Can_Push"] == true:
+		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
 		exec_state_move_right()
 	elif Input.is_action_pressed("move_left"):
@@ -131,6 +133,45 @@ func exec_state_open_chest():
 		Global.Player["Animation"] = "Interact"
 	elif  GlobalDictionaries.player_info["Dir_Curr"] == -1:
 		Global.Player["Animation"] = "Interact"
+
+func exec_state_push():
+	
+	if Input.is_action_pressed("move_right"):
+		exec_state_push_right()
+	elif Input.is_action_pressed("move_left"):
+		exec_state_push_left()
+	else:
+		exec_state_push_idle()
+
+func exec_state_push_right():
+	GlobalDictionaries.player_info["Dir_Curr"] = 1
+	motion.x = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
+	if Global.Player["Player_Flags"]["Crate_R"]:
+#		$AnimationPlayer.play("Inda_1_Pull")
+		Global.Player["Animation"] = "Push"
+	else:
+#		$AnimationPlayer.play("Inda_1_Push")
+		Global.Player["Animation"] = "Push"
+
+func exec_state_push_left():
+	GlobalDictionaries.player_info["Dir_Curr"] = -1
+	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
+	if Global.Player["Player_Flags"]["Crate_R"]:
+#		$AnimationPlayer.play("Inda_-1_Push")
+		Global.Player["Animation"] = "Push"
+	else:
+#		$AnimationPlayer.play("Inda_-1_Pull")
+		Global.Player["Animation"] = "Push"
+
+func exec_state_push_idle():
+	GlobalDictionaries.player_info["Dir_Curr"] = -1
+	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
+	if Global.Player["Player_Flags"]["Crate_R"]:
+		Global.Player["Animation"] = "Idle"
+	else:
+		Global.Player["Animation"] = "Idle"
+
+
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

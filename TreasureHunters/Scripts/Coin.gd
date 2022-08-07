@@ -3,7 +3,7 @@ extends Area2D
 
 func _ready():
 	
-	add_to_group("Coins")
+	self.add_to_group("Coins")
 
 
 func _on_Coin_body_entered(body):

@@ -4,8 +4,7 @@ var STATE = "Closed"
 
 func _ready():
 	
-	var Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	var Level = Player["Levels"][str(Player["Level_Current"])]
+	self.add_to_group("Chests")
 	
 #	if Level["Treasure"] == false:
 #		STATE = "Opened"
@@ -27,30 +26,30 @@ func _on_chest_opened():
 	register_chest()
 
 func register_chest():
-	GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Coins"] += 10
-	GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Coins_Collected"] += 10
+	
+	Global.Player["Coins"] += 10
+	Global.Player["Coins_Collected"] += 10
 	var chest_idx = int(self.name.right(4)) - 1
-	GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Levels"][str(GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Level_Current"])]["Coins_Collected"] += 10
-	GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Levels"][str(GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Level_Current"])]["Chests"][chest_idx] = false
+	Global.Level["Coins_Collected"] += 10
+	Global.Level["Chests"][chest_idx] = false
 
 func _on_Area2D_body_entered(body):
-
-	var Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
 	
-	if body.name == "Adventurer":
+	var chest_name = self.name
+	var chest_idx = int(chest_name.replace("Chest","")) - 1
+	
+	if body.name == "Adventurer" and Global.Level["Chests"][chest_idx] == true:
 		if body.position.x > self.position.x:
-			Player["Player_Flags"]["Crate_R"] = true
+			Global.Player["Player_Flags"]["Crate_R"] = true
 		else:
-			Player["Player_Flags"]["Crate_R"] = false
-		Player["Player_Info"]["Object_Interact"] = self.name
-		Player["Player_Flags"]["Can_OpenChest"] = true
+			Global.Player["Player_Flags"]["Crate_R"] = false
+		Global.Player["Player_Info"]["Object_Interact"] = chest_name
+		Global.Player["Player_Flags"]["Can_OpenChest"] = true
 
 func _on_Area2D_body_exited(body):
 
-	var Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	
 	if body.name == "Adventurer":
-		Player["Player_Flags"]["Can_OpenChest"] = false
+		Global.Player["Player_Flags"]["Can_OpenChest"] = false
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Chest_Open":

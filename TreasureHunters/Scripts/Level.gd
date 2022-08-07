@@ -8,7 +8,6 @@ export var cam_right = 0
 export var cam_top = 0
 export var cam_bottom = 0
 
-var level
 var level_num
 
 func _ready():
@@ -72,39 +71,39 @@ func level_setup():
 #
 #	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
 	level_num = int(self.name.replace("Level_", ""))
-	level = Global.Player["Levels"][str(level_num)]
+	Global.Level = Global.Player["Levels"][str(level_num)]
 	
 #	level_setup_timer()
-	level_setup_coins(level)
-#	level_setup_chests(level)
+	level_setup_coins()
+	level_setup_chests()
 
-func level_setup_timer():
-	Global.Player["Level_Timer"] = level["Timer"]
-	$GameplayInterface/Timer/LevelTimeTimer.start()
+#func level_setup_timer():
+#	Global.Player["Level_Timer"] = Global.Level["Timer"]
+#	$GameplayInterface/Timer/LevelTimeTimer.start()
 
-func level_setup_coins(Level):
+func level_setup_coins():
 	
 	var level_coins_count = get_tree().get_nodes_in_group("Coins").size()
-	var dict_coins_count = Level["Coins"].size()
+	var dict_coins_count = Global.Level["Coins"].size()
 	var Coin_Curr = 1
 	
 	if level_coins_count != dict_coins_count:
-		Level["Coins"] = []
+		Global.Level["Coins"] = []
 		while Coin_Curr <= level_coins_count:
-			Level["Coins"].append(true)
+			Global.Level["Coins"].append(true)
 			Coin_Curr += 1
 	
-	var Coins = Level["Coins"]
+	var Coins = Global.Level["Coins"]
 	Coin_Curr = 1
 	
 	while Coin_Curr <= level_coins_count:
 		get_node("Treasure/Coin" + str(Coin_Curr)).visible = Coins[Coin_Curr - 1]
 		Coin_Curr += 1
 
-func level_setup_chests(Level):
+func level_setup_chests():
 	
-	var Chests = Level["Chests"]
-	var Chest_Max = Level["Chests"].size()
+	var Chests = Global.Level["Chests"]
+	var Chest_Max = Global.Level["Chests"].size()
 	var Chest_Curr = 1
 	
 	while Chest_Curr <= Chest_Max:

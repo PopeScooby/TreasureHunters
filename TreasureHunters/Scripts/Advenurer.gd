@@ -19,6 +19,12 @@ func check_state():
 	pass
 	if Global.STATE_LEVEL == "Spawn_Player":
 		Global.STATE_PLAYER = "Spawn_Player"
+	elif Global.STATE_PLAYER == "OnCrate":
+		Global.Player["Player_Flags"]["Can_Push"] = true
+		Global.STATE_PLAYER = "Move_Normal"
+	elif Global.STATE_PLAYER == "OffCrate":
+		Global.Player["Player_Flags"]["Can_Push"] = false
+		Global.STATE_PLAYER = "Move_Normal"
 #	elif Global.STATE_PLAYER == "Play_Scene":
 #		self.check_state_play_scene()
 
@@ -39,14 +45,9 @@ func exec_state_move():
 
 	motion.y += GlobalDictionaries.player_info["Gravity"]
 
-#	if Input.is_action_just_pressed("interact") and player["Player_Flags"]["Can_OpenChest"] == true:
-#		player["Player_Flags"]["Can_OpenChest"] = false
-#		exec_state_open_chest()
-#	el
-	if Input.is_action_just_pressed("action_interact"):
-		var test = ""
-	
-	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
+	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_OpenChest"] == true:
+		exec_state_open_chest()
+	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
 		exec_state_despawn_player()
 	elif Input.is_action_pressed("move_right"):
 		exec_state_move_right()
@@ -117,6 +118,19 @@ func exec_state_despawn_player():
 	Global.Player["Animation"] = "Exit"
 #	var amin_name = player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_Exit"
 #	$AnimationPlayer.play(amin_name)
+#
+func exec_state_open_chest():
+	
+	Global.Player["Player_Flags"]["Can_OpenChest"] = false
+	
+	Global.STATE_PLAYER = "Chest_Opening"
+	if GlobalDictionaries.player_info["Dir_Curr"] == 0:
+		GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+
+	if GlobalDictionaries.player_info["Dir_Curr"] == 1:
+		Global.Player["Animation"] = "Interact"
+	elif  GlobalDictionaries.player_info["Dir_Curr"] == -1:
+		Global.Player["Animation"] = "Interact"
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
@@ -145,6 +159,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.STATE_PLAYER = "Move_Normal"
 	if anim_name.find("_Exit") != -1:
 		Global.STATE_LEVEL = "Despawn_Portal_Exit"
+	if anim_name.find("_Interact") != -1:
+		Global.STATE_PLAYER = "Move_Normal"
 #	elif anim_name.find("Scene") != -1:
 #		Global.STATE_LEVEL = "Scene_Complete"
 
@@ -170,17 +186,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 #
-#
-#func exec_state_open_chest():
-#	Global.STATE_PLAYER = "Chest_Opening"
-#	if GlobalDictionaries.player_info["Dir_Curr"] == 0:
-#		GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-#
-#	if GlobalDictionaries.player_info["Dir_Curr"] == 1:
-#		player["Animation"] = "Interact"
-#	elif  GlobalDictionaries.player_info["Dir_Curr"] == -1:
-#		player["Animation"] = "Interact"
-#
+
 #
 #
 #func exec_state_scene_level1():

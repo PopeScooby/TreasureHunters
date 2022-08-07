@@ -1,6 +1,6 @@
 extends Node2D
 
-var STATES = ["Spawn_Protal","Portal_Spawning","Spawn_Player","Player_Spawning","Despawn_Portal","Gameplay",
+var STATES = ["Spawn_Protal","Portal_Spawning","Spawn_Player","Player_Spawning","Despawn_Portal","Gameplay","Despawn_Portal_Exit",
 			  "Scene_Level1","Scene_Complete"]
 
 export var cam_left = 0
@@ -8,11 +8,19 @@ export var cam_right = 0
 export var cam_top = 0
 export var cam_bottom = 0
 
-var player
 var level
 var level_num
 
 func _ready():
+
+	if Global.isDebug == true:
+		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
+		Global.Player = GlobalDictionaries.players["1"]
+		Global.Player["Level_Current"] = 0
+		GlobalDictionaries.player_info = Global.Player["Player_Info"]
+		GlobalDictionaries.game["PlayerKey"] = "1"
+	if GlobalDictionaries.game["PlayerKey"] == "0":
+		GlobalDictionaries.game["PlayerKey"] = "1"
 
 	$Adventurer/Camera2D.limit_left = cam_left
 	$Adventurer/Camera2D.limit_right = cam_right
@@ -51,36 +59,45 @@ func exec_state_scene_complete():
 func exec_state_complete():
 	if Global.STATE_PLAYER == "Scene_Level1_Playing":
 		$GameplayInterface/Continue.visible = false
-		player["Scene_Seen"]["Level1_Enter"] = true
+		Global.Player["Scene_Seen"]["Level1_Enter"] = true
 		$GameplayInterface/Timer/LevelTimeTimer.start()
 		Global.STATE_LEVEL = "Spawn_Portal_Exit"
 	elif Global.STATE_PLAYER == "Scene_Level1_2_Playing":
 		$GameplayInterface/Continue.visible = false
-		player["Scene_Seen"]["Level1_2"] = true
+		Global.Player["Scene_Seen"]["Level1_2"] = true
 		$GameplayInterface/Timer/LevelTimeTimer.start()
 		Global.STATE_LEVEL = "Spawn_Portal_Exit"
 
 func level_setup():
-	
-	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
+#
+#	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
 	level_num = int(self.name.replace("Level_", ""))
-	level = player["Levels"][str(level_num)]
+	level = Global.Player["Levels"][str(level_num)]
 	
-	level_setup_timer()
+#	level_setup_timer()
 	level_setup_coins(level)
-	level_setup_chests(level)
+#	level_setup_chests(level)
 
 func level_setup_timer():
-	player["Level_Timer"] = level["Timer"]
+	Global.Player["Level_Timer"] = level["Timer"]
 	$GameplayInterface/Timer/LevelTimeTimer.start()
 
 func level_setup_coins(Level):
 	
-	var Coins = Level["Coins"]
-	var Coin_Max = Level["Coins"].size()
+	var level_coins_count = get_tree().get_nodes_in_group("Coins").size()
+	var dict_coins_count = Level["Coins"].size()
 	var Coin_Curr = 1
 	
-	while Coin_Curr <= Coin_Max:
+	if level_coins_count != dict_coins_count:
+		Level["Coins"] = []
+		while Coin_Curr <= level_coins_count:
+			Level["Coins"].append(true)
+			Coin_Curr += 1
+	
+	var Coins = Level["Coins"]
+	Coin_Curr = 1
+	
+	while Coin_Curr <= level_coins_count:
 		get_node("Treasure/Coin" + str(Coin_Curr)).visible = Coins[Coin_Curr - 1]
 		Coin_Curr += 1
 

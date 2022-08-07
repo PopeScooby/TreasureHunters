@@ -46,7 +46,7 @@ func _new_player():
 
 	Global.new_game($Menu_NewGame/NewNameTxt.text)
 	Global.STATE_GLOBAL = "HomeBase"
-
+#	Global.load_debug($Menu_NewGame/NewNameTxt.text)
 
 
 func _continue():

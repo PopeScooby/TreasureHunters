@@ -22,7 +22,15 @@ func get_new_player_dict(PlayerName):
 					 "Level_Max": 1,
 					 "Level_Timer": 0,
 					 "Animation": "",
-					 "Levels": {"1" : {"Timer": 120,
+					 "Levels": {"0" : {"Timer": 120,
+									   "Coins_Collected": 0,
+									   "Coins": [true, false, true],
+									   "Chests": [true],
+									   "Diamonds": [],
+									   "Ruby": [],
+									   "Complete": false
+									},
+								"1" : {"Timer": 120,
 									   "Coins_Collected": 0,
 									   "Coins": [true],
 									   "Chests": [true],
@@ -43,7 +51,9 @@ func get_new_player_dict(PlayerName):
 									   "Can_OpenChest": false},
 					 "Scene_Seen": {"New_Game": false,
 									"Level1_Enter": false,
-									"Level1_2": false}
+									"Level1_2": false},
+					 "Scenes": {"Homebase": {"New_Game": {"Seen": false}},
+								"Level_01": {"Level_01_Enter": {"Seen": false}}}
 				}
 	
 	return NewPlayer

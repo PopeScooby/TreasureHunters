@@ -14,12 +14,15 @@ func _process(delta):
 			Global.STATE_GLOBAL = "Change_CharacterSelect"
 			$Character_Select.visible = true
 		elif curr_scene == 10:
-			GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Scene_Seen"]["New_Game"] = true
+#			Global.Player["Scene_Seen"]["New_Game"] = true
+			Global.Player["Scenes"]["Homebase"]["New_Game"]["Seen"] = true
+			GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])] = Global.Player
+			Global.save_game()
 			Global.load_level()
 		else:
 			curr_scene += 1
 			play_scene()
-	
+
 	elif Input.is_action_just_pressed("menu_select") and $Character_Select.visible == true:
 		$Character_Select.visible = false
 		curr_scene += 1

@@ -1,23 +1,17 @@
 extends CanvasLayer
 
-var player
-
 func _ready():
 	pass
 
 func _on_LevelTimeTimer_timeout():
 	
-	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	
 	$Timer/LevelTimeTimer.start()
-	player["Level_Timer"] -= 1
+	Global.Player["Level_Timer"] -= 1
 
 func _process(delta):
-	
-	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	
-	$Timer/LevelTimeLbl.text = str(player["Level_Timer"])
-	$Coin/Coin_Count_Label.text = str(player["Coins"])
+
+	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
+	$Coin/Coin_Count_Label.text = str(Global.Player["Coins"])
 	
 #	$Coin_Amount_Label.text = str(Player["Coins"])
 #

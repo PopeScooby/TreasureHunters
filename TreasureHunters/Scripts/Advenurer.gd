@@ -147,21 +147,17 @@ func exec_state_push_right():
 	GlobalDictionaries.player_info["Dir_Curr"] = 1
 	motion.x = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
 	if Global.Player["Player_Flags"]["Crate_R"]:
-#		$AnimationPlayer.play("Inda_1_Pull")
-		Global.Player["Animation"] = "Push"
+		Global.Player["Animation"] = "Pull"
 	else:
-#		$AnimationPlayer.play("Inda_1_Push")
 		Global.Player["Animation"] = "Push"
 
 func exec_state_push_left():
 	GlobalDictionaries.player_info["Dir_Curr"] = -1
 	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
 	if Global.Player["Player_Flags"]["Crate_R"]:
-#		$AnimationPlayer.play("Inda_-1_Push")
 		Global.Player["Animation"] = "Push"
 	else:
-#		$AnimationPlayer.play("Inda_-1_Pull")
-		Global.Player["Animation"] = "Push"
+		Global.Player["Animation"] = "Pull"
 
 func exec_state_push_idle():
 	GlobalDictionaries.player_info["Dir_Curr"] = -1

@@ -21,30 +21,30 @@ func _process(delta):
 	
 	var friction = false
 	
-#	if in_water == false:
-	if Global.Player["Player_Flags"]["Can_Push"] == true and Input.is_action_pressed("action_interact"):
-		
-		if Input.is_action_pressed("move_right") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
-			motion.x = min(motion.x+acceleration, GlobalDictionaries.player_info["SpeedMax"])
-		elif Input.is_action_pressed("move_left") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
-			motion.x = max(motion.x-acceleration, -GlobalDictionaries.player_info["SpeedMax"])
+	if in_water == false:
+		if Global.Player["Player_Flags"]["Can_Push"] == true and Input.is_action_pressed("action_interact"):
+			
+			if Input.is_action_pressed("move_right") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
+				motion.x = min(motion.x+acceleration, GlobalDictionaries.player_info["SpeedMax"])
+			elif Input.is_action_pressed("move_left") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
+				motion.x = max(motion.x-acceleration, -GlobalDictionaries.player_info["SpeedMax"])
+			else:
+				friction = true
+				
+			if is_on_floor():
+				if friction == true:
+					motion.x = lerp(motion.x, 0, 0.2)
+				
 		else:
-			friction = true
-			
-		if is_on_floor():
-			if friction == true:
-				motion.x = lerp(motion.x, 0, 0.2)
-			
-	else:
-		motion.x = 0
+			motion.x = 0
 		
-#	else:
-#		if flow_dir == 1:
-#			motion.x = 150
-##			motion.y = 80
-#		elif flow_dir == -1:
-#			motion.x = -150
-##			motion.y = 80
+	else:
+		if flow_dir == 1:
+			motion.x = 150
+#			motion.y = 80
+		elif flow_dir == -1:
+			motion.x = -150
+#			motion.y = 80
 	
 #	if on_elevator == true:
 #		motion.y = -800

@@ -769,6 +769,7 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 [node name="Water1" parent="Waters" instance=ExtResource( 39 )]
 position = Vector2( 2204, 955 )
 scale = Vector2( 7, 2 )
+flow_speed = 300
 
 [node name="Items" type="Node2D" parent="."]
 

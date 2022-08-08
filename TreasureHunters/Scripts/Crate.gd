@@ -10,6 +10,7 @@ var motion = Vector2()
 var on_elevator = false
 var in_water = false
 var flow_dir = 1
+var flow_speed = 150
 
 func _ready():
 	pass 
@@ -40,10 +41,10 @@ func _process(delta):
 		
 	else:
 		if flow_dir == 1:
-			motion.x = 150
+			motion.x = flow_speed
 #			motion.y = 80
 		elif flow_dir == -1:
-			motion.x = -150
+			motion.x = -flow_speed
 #			motion.y = 80
 	
 #	if on_elevator == true:

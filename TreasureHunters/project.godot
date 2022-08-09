@@ -141,6 +141,15 @@ action_interact={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Player"
+2d_render/layer_2="Level"
+2d_render/layer_3="Item"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Level"
+2d_physics/layer_3="Item"
+
 [physics]
 
 common/enable_pause_aware_picking=true

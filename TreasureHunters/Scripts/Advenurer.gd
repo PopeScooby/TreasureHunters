@@ -81,7 +81,10 @@ func exec_state_idle():
 		if motion.y < 0 and Global.Player["Player_Flags"]["Can_Climb"] == false:
 			Global.Player["Animation"] = "Jump"
 		else:
-			Global.Player["Animation"] = "Fall"
+			if  Global.Player["Player_Flags"]["On_Elevator"] == false:
+				Global.Player["Animation"] = "Fall"
+			else:
+				Global.Player["Animation"] = "Idle"
 
 func exec_state_move_right():
 	GlobalDictionaries.player_info["Dir_Curr"] = 1

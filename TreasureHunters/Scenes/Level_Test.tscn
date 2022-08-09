@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_02.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_03.png" type="Texture" id=2]
@@ -27,19 +27,10 @@
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_06.5.png" type="Texture" id=25]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_16.png" type="Texture" id=26]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_01.png" type="Texture" id=27]
-[ext_resource path="res://Scenes/Items/Crate.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
-[ext_resource path="res://Scenes/Items/Portal.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Interface/GameplayInterface.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scenes/Items/Portal_Exit.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Testing.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Textures/Tilesets/Water/WaterFall_01.png" type="Texture" id=34]
-[ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Scenes/Items/Treasure.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Textures/Tilesets/Water/Water_01.png" type="Texture" id=37]
 [ext_resource path="res://Textures/Tilesets/Water/Water_02.png" type="Texture" id=38]
-[ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=39]
-[ext_resource path="res://Scenes/Background/Platform_2.tscn" type="PackedScene" id=41]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -744,10 +735,6 @@ points = PoolVector2Array( 128, 80, 0, 80, 0, 0, 128, 0 )
 29/z_index = 0
 
 [node name="Level_00" type="Node2D"]
-script = ExtResource( 30 )
-cam_left = -1000
-cam_right = 3850
-cam_bottom = 3550
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -768,47 +755,12 @@ tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 
 
 [node name="Waters" type="Node2D" parent="."]
 
-[node name="Water1" parent="Waters" instance=ExtResource( 39 )]
-position = Vector2( 2204, 955 )
-scale = Vector2( 7, 2 )
-flow_speed = 300
-
 [node name="Movers" type="Node2D" parent="."]
-
-[node name="Platform_2" parent="Movers" instance=ExtResource( 41 )]
-position = Vector2( 279, 2822 )
-scale = Vector2( 2, 2 )
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="Portal" parent="Items" instance=ExtResource( 31 )]
-position = Vector2( 1225.6, 2871.81 )
-
-[node name="Portal2" parent="Items" instance=ExtResource( 33 )]
-position = Vector2( 2478, 2478 )
-
-[node name="Crate1" parent="Items" instance=ExtResource( 28 )]
-position = Vector2( 1278, 677 )
-collision_layer = 4
-collision_mask = 3
-
 [node name="Treasure" type="Node2D" parent="."]
 
-[node name="Coin1" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( 1831, 3004 )
-
-[node name="Coin2" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( -320, 2358 )
-
-[node name="Coin3" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( 3687, 2121 )
-
-[node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
-position = Vector2( 460, 3008 )
-
-[node name="Adventurer" parent="." instance=ExtResource( 29 )]
-position = Vector2( 1224, 2876 )
-collision_layer = 1
-collision_mask = 6
-
-[node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
+[node name="Node2D" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1540, 2799 )
+scale = Vector2( 0.5, 0.5 )

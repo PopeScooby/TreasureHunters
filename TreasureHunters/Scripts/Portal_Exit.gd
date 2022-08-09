@@ -61,10 +61,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Portal_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
-		GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Player_Flags"]["On_Exit"] = true
+		Global.Player["Player_Flags"]["On_Exit"] = true
 
 
 func _on_Portal_body_exited(body):
 	if body.name == "Adventurer" and self.visible == true:
-		GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]["Player_Flags"]["On_Exit"] = false
+		Global.Player["Player_Flags"]["On_Exit"] = false
 #

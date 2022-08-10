@@ -25,12 +25,16 @@ func check_state():
 	elif Global.STATE_PLAYER == "OffCrate":
 		Global.Player["Player_Flags"]["Can_Push"] = false
 		Global.STATE_PLAYER = "Move_Normal"
+	elif Global.STATE_PLAYER == "InWater":
+		Global.STATE_PLAYER = "Dying"
 #	elif Global.STATE_PLAYER == "Play_Scene":
 #		self.check_state_play_scene()
 
 func exec_state():
 	if Global.STATE_PLAYER == "Spawn_Player":
 		exec_state_spawn_player()
+	elif Global.STATE_PLAYER == "Dying":
+		exec_state_dying()
 	elif Global.STATE_PLAYER == "Bounce":
 		exec_state_bounce()
 	elif Global.STATE_PLAYER == "Move_Normal":
@@ -176,6 +180,10 @@ func exec_state_bounce():
 	motion.y = Global.Player["Interactions"]["Jumpshroom"]["BounceHeight"]
 	Global.STATE_PLAYER = "Move_Normal"
 
+func exec_state_dying():
+	motion.x = 0
+	Global.Player["Animation"] = "Die"
+	set_animation()
 
 
 func set_player():
@@ -207,6 +215,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.STATE_LEVEL = "Despawn_Portal_Exit"
 	if anim_name.find("_Interact") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
+	if anim_name.find("_Die") != -1:
+		Global.STATE_PLAYER = "Dead"
 #	elif anim_name.find("Scene") != -1:
 #		Global.STATE_LEVEL = "Scene_Complete"
 

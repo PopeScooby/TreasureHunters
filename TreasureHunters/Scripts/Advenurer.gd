@@ -31,6 +31,8 @@ func check_state():
 func exec_state():
 	if Global.STATE_PLAYER == "Spawn_Player":
 		exec_state_spawn_player()
+	elif Global.STATE_PLAYER == "Bounce":
+		exec_state_bounce()
 	elif Global.STATE_PLAYER == "Move_Normal":
 		exec_state_move()
 #	elif Global.STATE_PLAYER.left(5) == "Scene":
@@ -169,6 +171,10 @@ func exec_state_push_idle():
 		Global.Player["Animation"] = "Idle"
 	else:
 		Global.Player["Animation"] = "Idle"
+
+func exec_state_bounce():
+	motion.y = Global.Player["Interactions"]["Jumpshroom"]["BounceHeight"]
+	Global.STATE_PLAYER = "Move_Normal"
 
 
 

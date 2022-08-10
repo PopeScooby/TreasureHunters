@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_02.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_03.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://Textures/Tilesets/Water/Water_01.png" type="Texture" id=37]
 [ext_resource path="res://Textures/Tilesets/Water/Water_02.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Scenes/Items/Jumpshroom.tscn" type="PackedScene" id=40]
 [ext_resource path="res://Scenes/Background/Platform_2.tscn" type="PackedScene" id=41]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -791,6 +792,9 @@ position = Vector2( 2478, 2478 )
 position = Vector2( 1278, 677 )
 collision_layer = 4
 collision_mask = 3
+
+[node name="Jumpshroom1" parent="Items" instance=ExtResource( 40 )]
+position = Vector2( -59, 2369 )
 
 [node name="Treasure" type="Node2D" parent="."]
 

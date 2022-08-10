@@ -52,6 +52,7 @@ func get_new_player_dict(PlayerName):
 									   "Can_Push": false,
 									   "Crate_R": false,
 									   "On_Elevator": false},
+					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scene_Seen": {"New_Game": false,
 									"Level1_Enter": false,
 									"Level1_2": false},

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://Textures/Characters/Inda/Idle/Idle__000.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Advenurer.gd" type="Script" id=2]
@@ -57,6 +57,16 @@
 [ext_resource path="res://Textures/Characters/Inda/Dead/Dead__007.png" type="Texture" id=55]
 [ext_resource path="res://Textures/Characters/Inda/Dead/Dead__004.png" type="Texture" id=56]
 [ext_resource path="res://Textures/Characters/Inda/Dead/Dead__005.png" type="Texture" id=57]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__005.png" type="Texture" id=58]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__006.png" type="Texture" id=59]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__001.png" type="Texture" id=60]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__007.png" type="Texture" id=61]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__000.png" type="Texture" id=62]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__009.png" type="Texture" id=63]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__003.png" type="Texture" id=64]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__002.png" type="Texture" id=65]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__008.png" type="Texture" id=66]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__004.png" type="Texture" id=67]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 62.3142
@@ -449,6 +459,34 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=28]
+resource_name = "Inda_-1_Vines"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 62 ), ExtResource( 60 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 66 ), ExtResource( 63 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [sub_resource type="Animation" id=26]
 resource_name = "Inda_1_Die"
 tracks/0/type = "value"
@@ -830,6 +868,34 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "Inda_1_Vines"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 62 ), ExtResource( 60 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 66 ), ExtResource( 63 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -1240,6 +1306,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 50 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -1259,6 +1326,7 @@ anims/Inda_-1_Pull = SubResource( 24 )
 anims/Inda_-1_Push = SubResource( 18 )
 anims/Inda_-1_Run = SubResource( 5 )
 anims/Inda_-1_Spawn = SubResource( 6 )
+anims/Inda_-1_Vines = SubResource( 28 )
 anims/Inda_1_Die = SubResource( 26 )
 anims/Inda_1_Exit = SubResource( 21 )
 anims/Inda_1_Fall = SubResource( 7 )
@@ -1269,6 +1337,7 @@ anims/Inda_1_Pull = SubResource( 19 )
 anims/Inda_1_Push = SubResource( 17 )
 anims/Inda_1_Run = SubResource( 10 )
 anims/Inda_1_Spawn = SubResource( 11 )
+anims/Inda_1_Vines = SubResource( 29 )
 anims/Lary_-1_Idle = SubResource( 12 )
 anims/Lary_1_Idle = SubResource( 13 )
 anims/RESET = SubResource( 27 )

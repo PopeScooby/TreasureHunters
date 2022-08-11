@@ -263,9 +263,9 @@ func exec_state_idle_vines():
 		Global.Player["Animation"] = "Idle"
 	else:
 		if motion.y < 0:
-			Global.Player["Animation"] = "Vines"
+			Global.Player["Animation"] = "VinesIdle"
 		else:
-			Global.Player["Animation"] = "Vines"
+			Global.Player["Animation"] = "VinesIdle"
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
@@ -280,11 +280,15 @@ func set_player():
 
 
 func set_animation():
+	
+	if Global.Player["Animation"] == "VinesIdle":
+		$AnimationPlayer.playback_speed = 0
+	else:
+		$AnimationPlayer.playback_speed = 1
+		var anim_name = Global.Player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_" + Global.Player["Animation"]
 
-	var anim_name = Global.Player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_" + Global.Player["Animation"]
-
-	if $AnimationPlayer.current_animation != anim_name:
-		$AnimationPlayer.play(anim_name)
+		if $AnimationPlayer.current_animation != anim_name:
+			$AnimationPlayer.play(anim_name)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 

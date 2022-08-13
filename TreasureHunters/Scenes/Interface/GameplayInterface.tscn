@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/GameplayInterface.gd" type="Script" id=3]
 [ext_resource path="res://Textures/Items/Coins/skull/rotating_skull_coin_01.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Items/Heart.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -33,9 +34,6 @@ script = ExtResource( 3 )
 [node name="Timer" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LevelTimeLbl" type="Label" parent="Timer"]
 margin_left = 1179.45
@@ -118,5 +116,44 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Hearts" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Heart1" type="TextureRect" parent="Hearts"]
+margin_left = 1220.0
+margin_right = 1510.0
+margin_bottom = 286.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="Heart2" type="TextureRect" parent="Hearts"]
+margin_left = 1167.0
+margin_right = 1457.0
+margin_bottom = 286.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="Heart3" type="TextureRect" parent="Hearts"]
+margin_left = 1114.0
+margin_right = 1404.0
+margin_bottom = 286.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="Heart4" type="TextureRect" parent="Hearts"]
+margin_left = 1061.0
+margin_right = 1351.0
+margin_bottom = 286.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+
+[node name="Heart5" type="TextureRect" parent="Hearts"]
+margin_left = 1008.0
+margin_right = 1298.0
+margin_bottom = 286.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
 
 [connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]

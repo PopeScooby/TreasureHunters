@@ -96,10 +96,25 @@ func advance_movement(Destination):
 		enemy_dict["MoveIdx"] += 1
 		
 	position_start = Destination
-#	exec_state_move()
 
 
+func _on_Area2D_body_entered(body):
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	if body.name == "Adventurer" and Global.Player["Hearts"] > 0:
+		Global.Player["Player_Flags"]["On_Enemy"] = true
+		$Timer_Damage.start()
+	elif body.name == "Adventurer" and Global.Player["Hearts"] <= 0:
+		$Timer_Damage.stop()
+
+func _on_Area2D_body_exited(body):
+	$Timer_Damage.stop()
+	Global.Player["Player_Flags"]["On_Enemy"] = false
+
+
+func _on_Timer_Damage_timeout():
+
+	if Global.Player["Hearts"] > 0:
+		Global.Player["Player_Flags"]["On_Enemy"] = true
+		$Timer_Damage.start()
+	else:
+		$Timer_Damage.stop()

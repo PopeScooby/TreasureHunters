@@ -16,8 +16,9 @@ func _process(delta):
 	exec_state()
 
 func check_state():
-	pass
-	if Global.STATE_LEVEL == "Spawn_Player":
+	if Global.Player["Hearts"] <= 0 and Global.STATE_PLAYER != "Dead":
+		Global.STATE_PLAYER = "Dying"
+	elif Global.STATE_LEVEL == "Spawn_Player":
 		Global.STATE_PLAYER = "Spawn_Player"
 	elif Global.STATE_PLAYER == "OnCrate":
 		Global.Player["Player_Flags"]["Can_Push"] = true
@@ -37,6 +38,9 @@ func exec_state():
 		exec_state_dying()
 	elif Global.STATE_PLAYER == "Bounce":
 		exec_state_bounce()
+	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Enemy"] == true:
+		Global.Player["Player_Flags"]["On_Enemy"] = false
+		exec_state_damage()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == false:
 		exec_state_move()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == true:
@@ -266,6 +270,14 @@ func exec_state_idle_vines():
 			Global.Player["Animation"] = "VinesIdle"
 		else:
 			Global.Player["Animation"] = "VinesIdle"
+
+func exec_state_damage():
+	
+	if Global.Player["Hearts"] > 0:
+		Global.Player["Hearts"] -= 1
+		$AnimationPlayer2.play("Damage")
+	else:
+		Global.STATE_PLAYER = "Dying"
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

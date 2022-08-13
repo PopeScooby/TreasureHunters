@@ -14,6 +14,8 @@ func _on_LevelTimeTimer_timeout():
 func _process(delta):
 
 	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
+	if Global.Player["Level_Timer"] == 0:
+		get_tree().paused = true
 	$Coin/Coin_Count_Label.text = str(Global.Player["Coins"])
 	
 	if Global.Player["Hearts_Total"] < 5:
@@ -38,6 +40,7 @@ func _process(delta):
 				HeartNode.texture = heart_container
 			else:
 				HeartNode.texture = heart
-#
+
+	
 
 

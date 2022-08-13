@@ -35,7 +35,8 @@ func _process(delta):
 	
 
 func check_state():
-	pass
+	if Global.Player["Level_Timer"] == 0:
+		get_tree().paused = true
 
 func exec_state():
 	if Input.is_action_just_pressed("menu_select") and $GameplayInterface/Continue.visible == true:
@@ -68,18 +69,17 @@ func exec_state_complete():
 		Global.STATE_LEVEL = "Spawn_Portal_Exit"
 
 func level_setup():
-#
-#	player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
+
 	level_num = int(self.name.replace("Level_", ""))
 	Global.Level = Global.Player["Levels"][str(level_num)]
 	
-#	level_setup_timer()
+	level_setup_timer()
 	level_setup_coins()
 	level_setup_chests()
 
-#func level_setup_timer():
-#	Global.Player["Level_Timer"] = Global.Level["Timer"]
-#	$GameplayInterface/Timer/LevelTimeTimer.start()
+func level_setup_timer():
+	Global.Player["Level_Timer"] = Global.Level["Timer"]
+	$GameplayInterface/Timer/LevelTimeTimer.start()
 
 func level_setup_coins():
 	

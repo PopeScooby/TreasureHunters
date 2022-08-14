@@ -43,34 +43,12 @@ func load_saves():
 	
 	save_game.open(file_name, File.READ)
 	GlobalDictionaries.players.clear()
-#	while not save_game.eof_reached():
-#		var current_line = parse_json(save_game.get_line())
-#		if current_line!= null:
-#			GlobalDictionaries.players = current_line
+	while not save_game.eof_reached():
+		var current_line = parse_json(save_game.get_line())
+		if current_line!= null:
+			GlobalDictionaries.players = current_line
 
 	save_game.close()
-
-#
-#func load_debug(PlayerName):
-#
-#	var NewPlayerKey
-#	if GlobalDictionaries.players.has("1"):
-#		NewPlayerKey = GlobalDictionaries.players.size() + 1
-#	else:
-#		NewPlayerKey = 1
-#
-#	GlobalDictionaries.game["PlayerKey"] = NewPlayerKey
-#	GlobalDictionaries.players[str(NewPlayerKey)] = GlobalDictionaries.get_new_player_dict(PlayerName)
-#	save_game()
-#
-#	var player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-#
-#	player["Name_Explorer"] = "Inda"
-#	player["Scene_Seen"]["New_Game"] = true	
-#	player["Level_Current"] = 0
-#	var Level_Suffix = "0" + str(player["Level_Current"])
-#	GlobalDictionaries.player_info = player["Player_Info"]
-#	get_tree().change_scene("res://Scenes/Levels/Level_" + Level_Suffix + ".tscn")
 
 
 func save_game():

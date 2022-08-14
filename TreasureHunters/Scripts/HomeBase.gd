@@ -14,8 +14,7 @@ func _process(delta):
 			Global.STATE_GLOBAL = "Change_CharacterSelect"
 			$Character_Select.visible = true
 		elif curr_scene == 10:
-#			Global.Player["Scene_Seen"]["New_Game"] = true
-			Global.Player["Scenes"]["Homebase"]["New_Game"]["Seen"] = true
+			Global.Player["Scenes"]["New_Game"]["Seen"] = true
 			GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])] = Global.Player
 			Global.save_game()
 			Global.load_level()

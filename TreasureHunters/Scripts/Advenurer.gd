@@ -49,8 +49,6 @@ func exec_state():
 		exec_state_move()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == true:
 		exec_state_move_vines()
-#	elif Global.STATE_PLAYER.left(5) == "Scene":
-#		exec_state_scene()
 
 func exec_state_move():
 	

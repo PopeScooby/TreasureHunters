@@ -17,7 +17,6 @@ func exec_state():
 	if Global.STATE_LEVEL == "Spawn_Portal_Exit":
 		$AnimationPlayer.play("Portal_Spawn")
 		Global.STATE_LEVEL = "Gameplay"
-#		Global.STATE_LEVEL = "Portal_Exit_Spawning"
 	elif Global.STATE_LEVEL == "Despawn_Portal_Exit":
 		$AnimationPlayer.play("Portal_Close")
 		Global.STATE_LEVEL = "Gameplay"

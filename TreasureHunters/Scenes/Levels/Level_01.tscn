@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_02.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_03.png" type="Texture" id=2]
@@ -36,6 +36,19 @@
 [ext_resource path="res://Scenes/Triggers/Scene_Trigger.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Scenes/Items/Treasure.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Textures/Background/Items/Vine (1).png" type="Texture" id=37]
+[ext_resource path="res://Textures/Background/Items/Plant (3).png" type="Texture" id=38]
+[ext_resource path="res://Textures/Background/Items/Bush (2).png" type="Texture" id=39]
+[ext_resource path="res://Textures/Background/Items/Plant (5).png" type="Texture" id=40]
+[ext_resource path="res://Textures/Background/Items/Vine (2).png" type="Texture" id=41]
+[ext_resource path="res://Textures/Background/Items/Sign (1).png" type="Texture" id=42]
+[ext_resource path="res://Textures/Background/Items/Plant (2).png" type="Texture" id=43]
+[ext_resource path="res://Textures/Background/Items/Plant (4).png" type="Texture" id=44]
+[ext_resource path="res://Textures/Background/Items/Stone (3).png" type="Texture" id=45]
+[ext_resource path="res://Textures/Background/Items/Stone (2).png" type="Texture" id=46]
+[ext_resource path="res://Textures/Background/Items/Sign (3).png" type="Texture" id=47]
+[ext_resource path="res://Textures/Background/Items/Plant (1).png" type="Texture" id=48]
+[ext_resource path="res://Textures/Background/Items/Stone (1).png" type="Texture" id=49]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -701,9 +714,78 @@ margin_right = 3836.66
 margin_bottom = 3485.02
 texture = ExtResource( 28 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Sign1" type="Sprite" parent="Background"]
+position = Vector2( 1491, 2975 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 42 )
+
+[node name="Stone3" type="Sprite" parent="Background"]
+position = Vector2( 3438, 2252 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 49 )
+
+[node name="Plant1" type="Sprite" parent="Background"]
+position = Vector2( 2570, 2614 )
+scale = Vector2( 2, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant2" type="Sprite" parent="Background"]
+position = Vector2( 2514.75, 2670.5 )
+scale = Vector2( 1.17059, 0.875001 )
+texture = ExtResource( 40 )
+
+[node name="Plant3" type="Sprite" parent="Background"]
+position = Vector2( 3561, 2265 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 38 )
+
+[node name="Plant8" type="Sprite" parent="Background"]
+position = Vector2( 274, 2745 )
+scale = Vector2( 2, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant9" type="Sprite" parent="Background"]
+position = Vector2( 1594, 1007 )
+rotation = 3.14159
+scale = Vector2( 2, 3 )
+texture = ExtResource( 38 )
+
+[node name="Bush1" type="Sprite" parent="Background"]
+position = Vector2( 3127.5, 2956 )
+scale = Vector2( 2.5, 2.57778 )
+texture = ExtResource( 39 )
+
+[node name="Stone2" type="Sprite" parent="Background"]
+position = Vector2( 2450, 1875 )
+texture = ExtResource( 45 )
+
+[node name="Stone1" type="Sprite" parent="Background"]
+position = Vector2( 3111, 1386.5 )
+scale = Vector2( 1.05063, 0.974026 )
+texture = ExtResource( 46 )
+
+[node name="Plant4" type="Sprite" parent="Background"]
+position = Vector2( 1148, 2142 )
+texture = ExtResource( 43 )
+
+[node name="Plant5" type="Sprite" parent="Background"]
+position = Vector2( 1080, 2149 )
+texture = ExtResource( 44 )
+
+[node name="Plant6" type="Sprite" parent="Background"]
+position = Vector2( 2260, 862 )
+texture = ExtResource( 48 )
+
+[node name="Sign2" type="Sprite" parent="Background"]
+position = Vector2( 1288, 687 )
+rotation = -0.453786
+scale = Vector2( 2, 2 )
+texture = ExtResource( 47 )
+
+[node name="Plant7" type="Sprite" parent="Background"]
+position = Vector2( 410, 1239 )
+texture = ExtResource( 43 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 28 )
@@ -725,12 +807,43 @@ position = Vector2( 3449.23, 555.295 )
 [node name="Coin1" parent="Treasure" instance=ExtResource( 35 )]
 position = Vector2( 3459.91, 1430.95 )
 
+[node name="Coin2" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 704, 574 )
+
+[node name="Coin3" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 1380, 702 )
+
+[node name="Coin4" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 3488, 2994 )
+
 [node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
 position = Vector2( 351.478, 3240.83 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
 position = Vector2( 1224, 2876 )
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Vine1" type="Sprite" parent="Foreground"]
+position = Vector2( 1495.38, 2475 )
+scale = Vector2( 1.83756, 4.61719 )
+texture = ExtResource( 37 )
+
+[node name="Vine4" type="Sprite" parent="Foreground"]
+position = Vector2( 3347.69, 198.25 )
+scale = Vector2( 1.36118, 3.35547 )
+texture = ExtResource( 37 )
+
+[node name="Vine2" type="Sprite" parent="Foreground"]
+position = Vector2( 2656, 3354 )
+scale = Vector2( 6, 3 )
+texture = ExtResource( 41 )
+
+[node name="Vine3" type="Sprite" parent="Foreground"]
+position = Vector2( 231, 257 )
+scale = Vector2( 5.23502, 3.84375 )
+texture = ExtResource( 37 )
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
 

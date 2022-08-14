@@ -1405,7 +1405,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=34]
-resource_name = "Scene_Level1_2"
+resource_name = "Scene_Level_01_2"
 length = 7.0
 step = 0.05
 tracks/0/type = "value"
@@ -1566,7 +1566,7 @@ tracks/12/keys = {
 }
 
 [sub_resource type="Animation" id=35]
-resource_name = "Scene_Level1_Enter"
+resource_name = "Scene_Level_01_Enter"
 length = 4.5
 step = 0.05
 tracks/0/type = "value"
@@ -1738,6 +1738,7 @@ collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 50 )
 flip_h = true
 
@@ -1782,15 +1783,15 @@ anims/Scene_Level1_Enter = SubResource( 15 )
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 anims/Damage = SubResource( 32 )
 anims/RESET = SubResource( 33 )
-anims/Scene_Level1_2 = SubResource( 34 )
-anims/Scene_Level1_Enter = SubResource( 35 )
+anims/Scene_Level_01_2 = SubResource( 34 )
+anims/Scene_Level_01_Enter = SubResource( 35 )
 
 [node name="SpeechBubble" type="TextureRect" parent="."]
 visible = false
-margin_left = 228.273
-margin_top = -442.867
-margin_right = 510.273
-margin_bottom = -278.867
+margin_left = 228.0
+margin_top = -443.0
+margin_right = 532.0
+margin_bottom = -249.0
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 32 )
 expand = true
@@ -1823,12 +1824,13 @@ __meta__ = {
 [node name="SpeechText" type="Label" parent="SpeechBubble"]
 margin_left = 6.0
 margin_top = 7.0
-margin_right = 268.0
-margin_bottom = 149.0
+margin_right = 296.0
+margin_bottom = 179.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 16 )
-text = "What? Where did the portal go? I thought I had 2 minutes.  I'd better look around for another way out of here."
+text = "It looks like there's another portal up there. Weird, so the way out must open up in a different place then the way in. That mean I still have time to cellect treasure."
 autowrap = true
+percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

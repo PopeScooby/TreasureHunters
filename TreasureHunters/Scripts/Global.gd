@@ -1,6 +1,6 @@
 extends Node
 
-var isDebug = true
+var isDebug = false
 
 var Player
 var Level
@@ -18,9 +18,9 @@ func new_game(PlayerName):
 	
 	var NewPlayerKey
 	if GlobalDictionaries.players.has("1"):
-		NewPlayerKey = GlobalDictionaries.players.size() + 1
+		NewPlayerKey = str(GlobalDictionaries.players.size() + 1)
 	else:
-		NewPlayerKey = 1
+		NewPlayerKey = "1"
 	
 	GlobalDictionaries.game["PlayerKey"] = NewPlayerKey
 	GlobalDictionaries.players[str(NewPlayerKey)] = GlobalDictionaries.get_new_player_dict(PlayerName)

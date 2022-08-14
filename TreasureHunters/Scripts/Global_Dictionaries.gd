@@ -55,11 +55,10 @@ func get_new_player_dict(PlayerName):
 									   "On_Vines": false,
 									   "On_Enemy": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
-					 "Scene_Seen": {"New_Game": false,
-									"Level1_Enter": false,
-									"Level1_2": false},
-					 "Scenes": {"Homebase": {"New_Game": {"Seen": false}},
-								"Level_01": {"Level_01_Enter": {"Seen": false}}}
+					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
+								"New_Game": {"Seen": false, "Next": ""},
+								"Level_01_Enter": {"Seen": false, "Next": ""},
+								"Level_01_2": {"Seen": false, "Next": ""}}
 				}
 	
 	return NewPlayer

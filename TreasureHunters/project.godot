@@ -11,13 +11,14 @@ config_version=4
 [application]
 
 config/name="TreasureHunters"
-run/main_scene="res://Scenes/Levels/Level_00.tscn"
+run/main_scene="res://Scenes/Interface/Menu_GameStart.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalDictionaries="*res://Scripts/Global_Dictionaries.gd"
 Global="*res://Scripts/Global.gd"
+Scenes="*res://Scripts/Scenes.gd"
 
 [display]
 

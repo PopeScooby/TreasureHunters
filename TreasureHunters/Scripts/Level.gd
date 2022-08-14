@@ -15,7 +15,7 @@ func _ready():
 	if Global.isDebug == true:
 		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
 		Global.Player = GlobalDictionaries.players["1"]
-		Global.Player["Level_Current"] = 0
+		Global.Player["Level_Current"] = int(self.name.replace("Level_",""))
 		GlobalDictionaries.player_info = Global.Player["Player_Info"]
 		GlobalDictionaries.game["PlayerKey"] = "1"
 	if GlobalDictionaries.game["PlayerKey"] == "0":
@@ -40,33 +40,43 @@ func check_state():
 
 func exec_state():
 	if Input.is_action_just_pressed("menu_select") and $GameplayInterface/Continue.visible == true:
-		exec_state_complete()
-	elif Global.STATE_LEVEL == "Play_Scene":
-		exec_state_play_scene()
-	elif Global.STATE_LEVEL == "Scene_Complete":
-		exec_state_scene_complete()
+		exec_state_continuing_scene()
+	elif Global.STATE_LEVEL == "Playing_Scene":
+		exec_state_playing_scene()
+	elif Global.STATE_LEVEL == "Continue_Scene":
+		exec_state_continue_scene()
+	elif Global.STATE_LEVEL == "Complete_Scene":
+		exec_state_complete_scene()
 	
 	
-func exec_state_play_scene():
-#
-#	if player["Scene_Seen"]["Level1_Enter"] == false:
-		$GameplayInterface/Timer/LevelTimeTimer.stop()
-#		Global.STATE_LEVEL = "Scene_Level1"
+func exec_state_playing_scene():
+	$GameplayInterface/Timer/LevelTimeTimer.stop()
 
-func exec_state_scene_complete():
+func exec_state_continue_scene():
 	$GameplayInterface/Continue.visible = true
+	Global.STATE_PLAYER = "Waiting"
 
-func exec_state_complete():
-	if Global.STATE_PLAYER == "Scene_Level1_Playing":
-		$GameplayInterface/Continue.visible = false
-		Global.Player["Scene_Seen"]["Level1_Enter"] = true
-		$GameplayInterface/Timer/LevelTimeTimer.start()
-		Global.STATE_LEVEL = "Spawn_Portal_Exit"
-	elif Global.STATE_PLAYER == "Scene_Level1_2_Playing":
-		$GameplayInterface/Continue.visible = false
-		Global.Player["Scene_Seen"]["Level1_2"] = true
-		$GameplayInterface/Timer/LevelTimeTimer.start()
-		Global.STATE_LEVEL = "Spawn_Portal_Exit"
+func exec_state_continuing_scene():
+	$GameplayInterface/Continue.visible = false
+	Global.STATE_GLOBAL = "Continuing_Scene"
+
+func exec_state_complete_scene():
+	$GameplayInterface/Timer/LevelTimeTimer.start()
+	Global.STATE_GLOBAL = "Gameplay"
+	Global.STATE_LEVEL = "Gameplay"
+	
+#func exec_state_continue_scene():
+#	pass
+#	if Global.STATE_PLAYER == "Scene_Level1_Playing":
+#		$GameplayInterface/Continue.visible = false
+#		Global.Player["Scene_Seen"]["Level1_Enter"] = true
+#		$GameplayInterface/Timer/LevelTimeTimer.start()
+#		Global.STATE_LEVEL = "Spawn_Portal_Exit"
+#	elif Global.STATE_PLAYER == "Scene_Level1_2_Playing":
+#		$GameplayInterface/Continue.visible = false
+#		Global.Player["Scene_Seen"]["Level1_2"] = true
+#		$GameplayInterface/Timer/LevelTimeTimer.start()
+#		Global.STATE_LEVEL = "Spawn_Portal_Exit"
 
 func level_setup():
 

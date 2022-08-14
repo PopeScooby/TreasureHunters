@@ -8,6 +8,7 @@ var motion = Vector2(0,0)
 
 func _ready():
 	self.visible = false
+	$SpeechBubble.visible = false
 	set_player()
 
 func _process(delta):
@@ -28,12 +29,15 @@ func check_state():
 		Global.STATE_PLAYER = "Move_Normal"
 	elif Global.STATE_PLAYER == "InWater":
 		Global.STATE_PLAYER = "Dying"
-#	elif Global.STATE_PLAYER == "Play_Scene":
-#		self.check_state_play_scene()
+	
 
 func exec_state():
 	if Global.STATE_PLAYER == "Spawn_Player":
 		exec_state_spawn_player()
+	elif Global.STATE_PLAYER == "Start_Scene":
+		exec_state_start_scene()
+	elif Global.STATE_PLAYER == "Complete_Scene":
+		exec_state_complete_scene()
 	elif Global.STATE_PLAYER == "Dying":
 		exec_state_dying()
 	elif Global.STATE_PLAYER == "Bounce":
@@ -133,9 +137,7 @@ func exec_state_despawn_player():
 	Global.STATE_LEVEL = "Player_DeSpawning"
 	Global.STATE_PLAYER = "Player_DeSpawning"
 	Global.Player["Animation"] = "Exit"
-#	var amin_name = player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_Exit"
-#	$AnimationPlayer.play(amin_name)
-#
+
 func exec_state_open_chest():
 	
 	Global.Player["Player_Flags"]["Can_OpenChest"] = false
@@ -279,6 +281,21 @@ func exec_state_damage():
 	else:
 		Global.STATE_PLAYER = "Dying"
 
+func exec_state_start_scene():
+	
+	var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]
+	
+	$AnimationPlayer2.play(anim_name)
+
+func exec_state_continue_scene():
+	$AnimationPlayer2.stop()
+
+func exec_state_complete_scene():
+	$SpeechBubble.visible = false
+	Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
+	Global.STATE_PLAYER = "Move_Normal"
+
+
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
 		Global.Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
@@ -286,7 +303,7 @@ func set_player():
 	else:
 		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
 		Global.Player = GlobalDictionaries.players["1"]
-		Global.Player["Level_Current"] = 0
+		Global.Player["Level_Current"] = int(get_parent().name.replace("Level_",""))
 		GlobalDictionaries.player_info = Global.Player["Player_Info"]
 		GlobalDictionaries.game["PlayerKey"] = "1"
 
@@ -314,40 +331,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.STATE_PLAYER = "Move_Normal"
 	if anim_name.find("_Die") != -1:
 		Global.STATE_PLAYER = "Dead"
-#	elif anim_name.find("Scene") != -1:
-#		Global.STATE_LEVEL = "Scene_Complete"
-
-#func check_state_play_scene():
-#
-#	if player["Current_Level"] == 1:
-#		if player["Scene_Seen"]["Level1_Enter"] == false:
-#			Global.STATE_PLAYER = "Scene_Level1"
-#
-
-#
-#func exec_state_scene():
-#	if Global.STATE_PLAYER == "Scene_Level1":
-#		exec_state_scene_level1()
-#	elif Global.STATE_PLAYER == "Scene_Level1_2":
-#		exec_state_scene_level1_2()
-#	elif Global.STATE_PLAYER == "Scene_Level1_Playing" and player["Scene_Seen"]["Level1_Enter"] == true:
-#		$SpeechBubble.visible = false
-#		Global.STATE_PLAYER = "Move_Normal"
-#	elif Global.STATE_PLAYER == "Scene_Level1_2_Playing" and player["Scene_Seen"]["Level1_2"] == true:
-#		$SpeechBubble.visible = false
-#		Global.STATE_PLAYER = "Move_Normal"
+	elif anim_name.find("Scene") != -1:
+		Global.STATE_GLOBAL = "Continue_Scene"
 
 
-#
-
-#
-#
-#func exec_state_scene_level1():
-#	$AnimationPlayer.play("Scene_Level1_Enter")
-#	Global.STATE_PLAYER = "Scene_Level1_Playing"
-#
-#func exec_state_scene_level1_2():
-#	$AnimationPlayer.play("Scene_Level1_2")
-#	Global.STATE_PLAYER = "Scene_Level1_2_Playing"
 
 

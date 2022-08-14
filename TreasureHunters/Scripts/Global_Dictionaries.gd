@@ -22,6 +22,7 @@ func get_new_player_dict(PlayerName):
 					 "Level_Max": 1,
 					 "Level_Timer": 0,
 					 "Animation": "",
+					 "Animation2": "",
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,
 									   "Coins": [false],
@@ -38,6 +39,14 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false
 									},
+								"2" : {"Timer": 120,
+									   "Coins_Collected": 0,
+									   "Coins": [true],
+									   "Chests": [true],
+									   "Diamonds": [],
+									   "Ruby": [],
+									   "Complete": false
+									}
 								},
 					 "Player_Info" : {"Friction": false,
 									  "Gravity": 45,
@@ -53,7 +62,8 @@ func get_new_player_dict(PlayerName):
 									   "Crate_R": false,
 									   "On_Elevator": false,
 									   "On_Vines": false,
-									   "On_Enemy": false},
+									   "On_Enemy": false,
+									   "On_Spikes": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"New_Game": {"Seen": false, "Next": ""},

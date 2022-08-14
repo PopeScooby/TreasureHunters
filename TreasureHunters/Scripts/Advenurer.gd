@@ -45,6 +45,9 @@ func exec_state():
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Enemy"] == true:
 		Global.Player["Player_Flags"]["On_Enemy"] = false
 		exec_state_damage()
+	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Spikes"] == true:
+		Global.Player["Player_Flags"]["On_Spikes"] = false
+		exec_state_damage()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == false:
 		exec_state_move()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == true:
@@ -69,6 +72,8 @@ func exec_state_move():
 		exec_state_move_right()
 	elif Input.is_action_pressed("move_left"):
 		exec_state_move_left()
+	elif Input.is_action_pressed("move_down") and is_on_floor():
+		exec_state_move_crouch()
 	else:
 		exec_state_idle()
 
@@ -121,6 +126,15 @@ func exec_state_move_left():
 			Global.Player["Animation"] = "Jump"
 		else:
 			Global.Player["Animation"] = "Fall"
+
+func exec_state_move_crouch():
+
+	if GlobalDictionaries.player_info["Dir_Curr"] == 0:
+		GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+
+	GlobalDictionaries.player_info["Friction"] = true
+	Global.Player["Animation"] = "Crouch"
+#	Global.Player["Animation2"] = "Camera_Crouch"
 
 func exec_state_move_jump():
 	if is_on_floor():
@@ -316,6 +330,14 @@ func set_animation():
 
 		if $AnimationPlayer.current_animation != anim_name:
 			$AnimationPlayer.play(anim_name)
+
+#	if Global.Player["Animation"] != "Crouch" and Global.Player["Animation2"] == "Camera_Crouch":
+#		Global.Player["Animation2"] = "Camera_Stand"
+#
+#	var anim_name = Global.Player["Animation2"]
+#	var anim_curr = $AnimationPlayer2.current_animation
+#	if anim_curr != anim_name:
+#		$AnimationPlayer2.play(anim_name)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 

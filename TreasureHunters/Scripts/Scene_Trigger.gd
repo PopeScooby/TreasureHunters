@@ -1,6 +1,6 @@
 extends Area2D
 
-export var scene_num = 0
+export var scene_name = ""
 
 func _ready():
 	pass 
@@ -10,9 +10,9 @@ func _process(delta):
 
 
 func _on_Scene_Trigger_body_entered(body):
-	if body.name == "Adventurer":
-		Global.STATE_LEVEL = "Play_Scene"
-		Global.STATE_PLAYER = "Scene_Level1_2"
+	if body.name == "Adventurer" and Global.Player["Scenes"][scene_name]["Seen"] == false:
+		Global.STATE_GLOBAL = "Play_Scene"
+		Global.Player["Scenes"]["Scene_Curr"]["SceneName"] = scene_name
 
 func _on_Scene_Trigger_body_exited(body):
 	pass # Replace with function body.

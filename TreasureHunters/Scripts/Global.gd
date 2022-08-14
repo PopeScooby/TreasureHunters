@@ -43,10 +43,10 @@ func load_saves():
 	
 	save_game.open(file_name, File.READ)
 	GlobalDictionaries.players.clear()
-	while not save_game.eof_reached():
-		var current_line = parse_json(save_game.get_line())
-		if current_line!= null:
-			GlobalDictionaries.players = current_line
+#	while not save_game.eof_reached():
+#		var current_line = parse_json(save_game.get_line())
+#		if current_line!= null:
+#			GlobalDictionaries.players = current_line
 
 	save_game.close()
 

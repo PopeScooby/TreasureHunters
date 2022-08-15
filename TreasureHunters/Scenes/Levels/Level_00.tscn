@@ -108,7 +108,5 @@ position = Vector2( 460, 3008 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
 position = Vector2( 1224, 2876 )
-collision_layer = 1
-collision_mask = 6
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]

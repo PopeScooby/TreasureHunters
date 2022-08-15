@@ -43,7 +43,7 @@ func exec_state_move():
 	
 	var Movement = moves_list[enemy_dict["MoveIdx"]]
 	var Axis = Movement["Axis"]
-	var Distance = Movement["Distance"]
+	var Distance = Movement["Distance"] * Movement["Dir"]
 	var Destination = position_start
 	var curr_pos = self.position
 	
@@ -60,7 +60,7 @@ func exec_state_move():
 				return
 		
 		if is_on_floor():
-			motion.x = enemy_dict["Speed"] * Movement["Dir"]			
+			motion.x = enemy_dict["Speed"] * Movement["Dir"]
 			motion.y = gravity
 		else:
 			motion.x = 0
@@ -74,6 +74,8 @@ func exec_state_move():
 	
 	move_and_slide(motion, UP)
 	
+	var new_pos = self.position
+	var SlugName = self.name
 	if is_on_floor() and ceil(enemy_dict["x_Prev"]) == ceil(self.position.x) and enemy_dict["Attempts"] >= 500:
 		advance_movement(Destination)
 		position_start = self.position
@@ -81,11 +83,13 @@ func exec_state_move():
 		return
 	elif is_on_floor() and ceil(enemy_dict["x_Prev"]) == ceil(self.position.x):
 		enemy_dict["Attempts"] += 1
-		
+	else:
+		enemy_dict["Attempts"] = 0
 
 func advance_movement(Destination):
 	
 	var Move_Count = moves_list.size() - 1
+	var SlugName = self.name
 	
 	if enemy_dict["MoveIdx"] == Move_Count:
 		if enemy_dict["IsLoop"] == true:
@@ -94,7 +98,8 @@ func advance_movement(Destination):
 			STATE = "Complete"
 	else:
 		enemy_dict["MoveIdx"] += 1
-		
+	
+	var pos_curr = self.position
 	position_start = Destination
 
 

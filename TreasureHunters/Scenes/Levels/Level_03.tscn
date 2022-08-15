@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Characters/Slug.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Textures/Background/Items/Bush (3).png" type="Texture" id=9]
 [ext_resource path="res://Textures/Background/Items/Bush (4).png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
@@ -196,6 +197,10 @@ position = Vector2( 1977, 2541 )
 position = Vector2( 2491, 1903 )
 scale = Vector2( 1.25, 1 )
 
+[node name="Water" parent="Triggers" instance=ExtResource( 11 )]
+position = Vector2( 5553, 3385 )
+scale = Vector2( 9, 2 )
+
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Portal" parent="Items" instance=ExtResource( 31 )]
@@ -209,7 +214,7 @@ position = Vector2( 596, 1665 )
 scale = Vector2( 2, 2 )
 
 [node name="Jumpshroom2" parent="Items" instance=ExtResource( 7 )]
-position = Vector2( 1745, 1665 )
+position = Vector2( 1697, 1667 )
 scale = Vector2( 2, 2 )
 
 [node name="Jumpshroom3" parent="Items" instance=ExtResource( 7 )]
@@ -269,7 +274,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -1750
+"Distance": 1750
 } ]
 
 [node name="Slug3" parent="Enemies" instance=ExtResource( 8 )]
@@ -292,7 +297,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -850
+"Distance": 850
 } ]
 
 [node name="Slug5" parent="Enemies" instance=ExtResource( 8 )]
@@ -315,7 +320,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -1250
+"Distance": 1250
 } ]
 
 [node name="Slug6" parent="Enemies" instance=ExtResource( 8 )]
@@ -324,7 +329,7 @@ scale = Vector2( 0.5, 0.5 )
 enemy_dict = {
 "Attempts": 0,
 "IsLoop": true,
-"MoveIdx": 0,
+"MoveIdx": 1,
 "Speed": 40,
 "Type": "Slug",
 "x_Prev": 0
@@ -338,7 +343,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -1250
+"Distance": 1250
 } ]
 
 [node name="Slug4" parent="Enemies" instance=ExtResource( 8 )]
@@ -361,7 +366,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -500
+"Distance": 500
 } ]
 
 [node name="Slug2" parent="Enemies" instance=ExtResource( 8 )]
@@ -384,7 +389,7 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": -1000
+"Distance": 1000
 } ]
 
 [node name="Foreground" type="Node2D" parent="."]

@@ -1,13 +1,15 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Triggers/Spike_Trigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/Background/Items/Mushroom (1).png" type="Texture" id=4]
 [ext_resource path="res://Textures/Background/Items/Bush (1).png" type="Texture" id=5]
-[ext_resource path="res://Textures/Background/Items/Sign (4).png" type="Texture" id=6]
+[ext_resource path="res://Textures/Background/Items/Sign (1).png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Items/Jumpshroom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Slug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Textures/Background/Items/Bush (3).png" type="Texture" id=9]
+[ext_resource path="res://Textures/Background/Items/Bush (4).png" type="Texture" id=10]
 [ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
@@ -51,56 +53,119 @@ texture = ExtResource( 28 )
 expand = true
 
 [node name="Bush1" type="Sprite" parent="Background"]
-texture = ExtResource( 39 )
-
-[node name="Mushroom1" type="Sprite" parent="Background"]
-texture = ExtResource( 4 )
-
-[node name="Plant1" type="Sprite" parent="Background"]
-scale = Vector2( 1, 2 )
-texture = ExtResource( 38 )
-
-[node name="Plant6" type="Sprite" parent="Background"]
-scale = Vector2( 1, 2 )
-texture = ExtResource( 38 )
-
-[node name="Plant4" type="Sprite" parent="Background"]
-scale = Vector2( 1.25, 2.5 )
-texture = ExtResource( 38 )
+position = Vector2( 908, 3302 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
 
 [node name="Stone1" type="Sprite" parent="Background"]
-scale = Vector2( 3, 2.5 )
+position = Vector2( 3626, 3061 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 45 )
 
-[node name="Plant3" type="Sprite" parent="Background"]
-scale = Vector2( 1, 2 )
+[node name="Stone2" type="Sprite" parent="Background"]
+position = Vector2( 1157, 3357 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 49 )
+
+[node name="Plant1" type="Sprite" parent="Background"]
+position = Vector2( 2536, 3384 )
+scale = Vector2( 1, 3 )
 texture = ExtResource( 38 )
 
 [node name="Plant2" type="Sprite" parent="Background"]
-texture = ExtResource( 44 )
+position = Vector2( 2572, 3432 )
+texture = ExtResource( 40 )
 
-[node name="Stone2" type="Sprite" parent="Background"]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 49 )
-
-[node name="Bush2" type="Sprite" parent="Background"]
-scale = Vector2( 2, 2 )
-texture = ExtResource( 5 )
-
-[node name="Plant8" type="Sprite" parent="Background"]
-rotation = 0.301942
-texture = ExtResource( 43 )
+[node name="Plant6" type="Sprite" parent="Background"]
+position = Vector2( 3788, 3194 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 38 )
 
 [node name="Sign1" type="Sprite" parent="Background"]
-rotation = 0.301942
+position = Vector2( 4240, 3120 )
+rotation = -0.607375
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="Plant5" type="Sprite" parent="Background"]
-texture = ExtResource( 40 )
+[node name="Plant4" type="Sprite" parent="Background"]
+position = Vector2( 2936, 2676 )
+scale = Vector2( 3, 2 )
+texture = ExtResource( 38 )
+
+[node name="Bush2" type="Sprite" parent="Background"]
+position = Vector2( 1500, 2344 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 39 )
+
+[node name="Plant3" type="Sprite" parent="Background"]
+position = Vector2( 252, 2228 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant9" type="Sprite" parent="Background"]
+position = Vector2( 252, 2228 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant8" type="Sprite" parent="Background"]
+position = Vector2( 4156, 2360 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant13" type="Sprite" parent="Background"]
+position = Vector2( 5232, 682 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 38 )
 
 [node name="Plant7" type="Sprite" parent="Background"]
+position = Vector2( 4116, 2396 )
 texture = ExtResource( 48 )
+
+[node name="Plant5" type="Sprite" parent="Background"]
+position = Vector2( 5159, 2557 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 38 )
+
+[node name="Bush3" type="Sprite" parent="Background"]
+position = Vector2( 6447, 2329 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+
+[node name="Bush4" type="Sprite" parent="Background"]
+position = Vector2( 854, 1716 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Mushroom1" type="Sprite" parent="Background"]
+position = Vector2( 1557, 613 )
+texture = ExtResource( 4 )
+
+[node name="Plant10" type="Sprite" parent="Background"]
+position = Vector2( 2287, 1085 )
+scale = Vector2( 2, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant11" type="Sprite" parent="Background"]
+position = Vector2( 3284, 863 )
+texture = ExtResource( 43 )
+
+[node name="Bush5" type="Sprite" parent="Background"]
+position = Vector2( 4302, 1604 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+
+[node name="Stone4" type="Sprite" parent="Background"]
+position = Vector2( 4492, 1725 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 49 )
+
+[node name="Plant12" type="Sprite" parent="Background"]
+position = Vector2( 5765, 1761 )
+texture = ExtResource( 48 )
+
+[node name="Plant14" type="Sprite" parent="Background"]
+position = Vector2( 5270, 742 )
+texture = ExtResource( 44 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -148,7 +213,7 @@ position = Vector2( 1745, 1665 )
 scale = Vector2( 2, 2 )
 
 [node name="Jumpshroom3" parent="Items" instance=ExtResource( 7 )]
-position = Vector2( 3964, 1665 )
+position = Vector2( 3914, 1665 )
 scale = Vector2( 2, 2 )
 
 [node name="Treasure" type="Node2D" parent="."]
@@ -184,7 +249,7 @@ position = Vector2( 6124, 664 )
 position = Vector2( 1603, 569 )
 
 [node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
-position = Vector2( 5258, 2463 )
+position = Vector2( 5257, 2470 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
@@ -326,19 +391,23 @@ moves_list = [ {
 position = Vector2( 0, 121 )
 
 [node name="Vine1" type="Sprite" parent="Foreground"]
+position = Vector2( 2495, 1230 )
 scale = Vector2( 2, 3 )
 texture = ExtResource( 37 )
 
 [node name="Vine3" type="Sprite" parent="Foreground"]
-scale = Vector2( 2.75, 3 )
+position = Vector2( 5721, 844 )
+scale = Vector2( 2, 3 )
 texture = ExtResource( 37 )
 
 [node name="Vine2" type="Sprite" parent="Foreground"]
+position = Vector2( 1653, 2596 )
 scale = Vector2( 2, 3 )
 texture = ExtResource( 41 )
 
 [node name="Vine4" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 2 )
+position = Vector2( 5461, 940 )
+scale = Vector2( 2, 3 )
 texture = ExtResource( 41 )
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]

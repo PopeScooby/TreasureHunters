@@ -12,10 +12,26 @@ func _on_LevelTimeTimer_timeout():
 	Global.Player["Level_Timer"] -= 1
 
 func _process(delta):
-
+	
 	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
 	if Global.Player["Level_Timer"] == 0:
 		get_tree().paused = true
+		
+	if Input.is_action_just_pressed("pause") and get_tree().paused == true:
+		get_tree().paused = false
+#		Global.STATE_LEVEL = "Gameplay"
+#		Global.STATE_PLAYER = "Move_Normal"
+		$Timer/LevelTimeTimer.start()
+		$PauseScreen.visible = false
+	elif Input.is_action_just_pressed("pause") and get_tree().paused == false:
+		get_tree().paused = true
+#		Global.STATE_LEVEL = "Pause"
+#		Global.STATE_PLAYER = "Pause"
+		$Timer/LevelTimeTimer.stop()
+		$PauseScreen.visible = true
+		
+		
+		
 	$Coin/Coin_Count_Label.text = str(Global.Player["Coins"])
 	
 	if Global.Player["Hearts_Total"] < 5:

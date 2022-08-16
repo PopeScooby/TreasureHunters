@@ -150,6 +150,10 @@ texture = ExtResource( 38 )
 position = Vector2( 3284, 863 )
 texture = ExtResource( 43 )
 
+[node name="Plant15" type="Sprite" parent="Background"]
+position = Vector2( 1786, 1767 )
+texture = ExtResource( 43 )
+
 [node name="Bush5" type="Sprite" parent="Background"]
 position = Vector2( 4302, 1604 )
 scale = Vector2( 4, 4 )
@@ -278,7 +282,7 @@ moves_list = [ {
 } ]
 
 [node name="Slug3" parent="Enemies" instance=ExtResource( 8 )]
-position = Vector2( 711, 2392 )
+position = Vector2( 714, 2389 )
 scale = Vector2( 0.5, 0.5 )
 enemy_dict = {
 "Attempts": 0,
@@ -347,7 +351,7 @@ moves_list = [ {
 } ]
 
 [node name="Slug4" parent="Enemies" instance=ExtResource( 8 )]
-position = Vector2( 2251, 2396 )
+position = Vector2( 2246, 2389 )
 scale = Vector2( 0.5, 0.5 )
 enemy_dict = {
 "Attempts": 0,
@@ -416,3 +420,4 @@ scale = Vector2( 2, 3 )
 texture = ExtResource( 41 )
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
+pause_mode = 2

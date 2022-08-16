@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=2]
@@ -24,6 +24,16 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 45
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 38
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
@@ -155,5 +165,61 @@ margin_right = 1298.0
 margin_bottom = 286.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
+
+[node name="PauseScreen" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="ColorRect" parent="PauseScreen"]
+margin_left = 435.0
+margin_top = 181.0
+margin_right = 890.0
+margin_bottom = 474.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="PauseLbl" type="Label" parent="PauseScreen"]
+margin_left = 408.0
+margin_top = 207.0
+margin_right = 913.0
+margin_bottom = 269.0
+custom_colors/font_color = Color( 0.921569, 0.909804, 0.760784, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "~ Pause ~"
+align = 1
+valign = 1
+
+[node name="RetryLevelBtn" type="Button" parent="PauseScreen"]
+margin_left = 514.0
+margin_top = 276.0
+margin_right = 817.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 6 )
+text = "Retry Level"
+flat = true
+
+[node name="LevelSelectBtn" type="Button" parent="PauseScreen"]
+margin_left = 514.0
+margin_top = 336.0
+margin_right = 817.0
+margin_bottom = 390.0
+custom_fonts/font = SubResource( 6 )
+text = "Level Select"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitGameBtn" type="Button" parent="PauseScreen"]
+margin_left = 514.0
+margin_top = 396.0
+margin_right = 817.0
+margin_bottom = 450.0
+custom_fonts/font = SubResource( 6 )
+text = "Quit Game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]

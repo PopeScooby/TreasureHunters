@@ -52,9 +52,6 @@ margin_right = 1263.45
 margin_bottom = 114.983
 custom_fonts/font = SubResource( 1 )
 text = "000"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LevelTimeTimer" type="Timer" parent="Timer"]
 
@@ -167,7 +164,6 @@ rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
 
 [node name="PauseScreen" type="Control" parent="."]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -179,30 +175,36 @@ margin_bottom = 474.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="PauseLbl" type="Label" parent="PauseScreen"]
-margin_left = 408.0
-margin_top = 207.0
-margin_right = 913.0
-margin_bottom = 269.0
+margin_left = 435.0
+margin_top = 195.0
+margin_right = 890.0
+margin_bottom = 257.0
 custom_colors/font_color = Color( 0.921569, 0.909804, 0.760784, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "~ Pause ~"
 align = 1
 valign = 1
 
+[node name="Selector" parent="PauseScreen" instance=ExtResource( 1 )]
+margin_left = 483.0
+margin_top = 270.0
+margin_right = 841.0
+margin_bottom = 324.0
+
 [node name="RetryLevelBtn" type="Button" parent="PauseScreen"]
-margin_left = 514.0
-margin_top = 276.0
-margin_right = 817.0
-margin_bottom = 330.0
+margin_left = 511.0
+margin_top = 270.0
+margin_right = 814.0
+margin_bottom = 324.0
 custom_fonts/font = SubResource( 6 )
 text = "Retry Level"
 flat = true
 
 [node name="LevelSelectBtn" type="Button" parent="PauseScreen"]
-margin_left = 514.0
-margin_top = 336.0
-margin_right = 817.0
-margin_bottom = 390.0
+margin_left = 511.0
+margin_top = 330.0
+margin_right = 814.0
+margin_bottom = 384.0
 custom_fonts/font = SubResource( 6 )
 text = "Level Select"
 flat = true
@@ -211,10 +213,10 @@ __meta__ = {
 }
 
 [node name="QuitGameBtn" type="Button" parent="PauseScreen"]
-margin_left = 514.0
-margin_top = 396.0
-margin_right = 817.0
-margin_bottom = 450.0
+margin_left = 511.0
+margin_top = 390.0
+margin_right = 814.0
+margin_bottom = 444.0
 custom_fonts/font = SubResource( 6 )
 text = "Quit Game"
 flat = true

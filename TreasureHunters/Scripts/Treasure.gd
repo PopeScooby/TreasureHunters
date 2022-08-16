@@ -5,8 +5,8 @@ var STATE = "Closed"
 func _ready():
 	
 	self.add_to_group("Chests")
-	
-#	if Level["Treasure"] == false:
+#
+#	if Global.Level["Treasure"] == false:
 #		STATE = "Opened"
 #	else:
 #		STATE = "Closed"

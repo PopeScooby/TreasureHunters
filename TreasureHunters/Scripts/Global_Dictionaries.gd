@@ -80,3 +80,14 @@ func get_new_player_dict(PlayerName):
 				}
 	
 	return NewPlayer
+
+func reset_flags(LevelNum):
+	Global.Player["Player_Flags"] =  {"Can_Climb": false,
+									   "On_Exit": false,
+									   "Can_OpenChest": false,
+									   "Can_Push": false,
+									   "Crate_R": false,
+									   "On_Elevator": false,
+									   "On_Vines": false,
+									   "On_Enemy": false,
+									   "On_Spikes": false}

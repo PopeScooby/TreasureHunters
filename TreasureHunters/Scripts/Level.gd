@@ -118,8 +118,8 @@ func level_setup_chests():
 	
 	while Chest_Curr <= Chest_Max:
 		if Chests[Chest_Curr - 1]:
-			get_node("Treasure/Chest" + str(Chest_Curr) + "/AnimationPlayer").play("Chest_Opened")
-		else:
 			get_node("Treasure/Chest" + str(Chest_Curr) + "/AnimationPlayer").play("Chest_Closed")
+		else:
+			get_node("Treasure/Chest" + str(Chest_Curr) + "/AnimationPlayer").play("Chest_Opened")
 		Chest_Curr += 1
 

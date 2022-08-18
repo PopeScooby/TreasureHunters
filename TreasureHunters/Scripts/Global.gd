@@ -5,6 +5,16 @@ var isDebug = false
 var Player
 var Level
 
+var coins_total = 0
+var coins_collected_total = 0
+var coins_collected_level = 0
+var coins = []
+var chests = []
+var diamonds = []
+var ruby = []
+
+
+
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
 var STATE_LEVEL = ""
@@ -33,6 +43,7 @@ func load_level():
 	var Level_Suffix = "0" + str(Global.Player["Level_Current"])
 	GlobalDictionaries.player_info = Global.Player["Player_Info"]
 	GlobalDictionaries.reset_flags(Global.Player["Level_Current"])
+#	self.reset_level_variables()
 	get_tree().change_scene("res://Scenes/Levels/Level_" + Level_Suffix + ".tscn")
 
 func load_saves():
@@ -51,6 +62,65 @@ func load_saves():
 
 	save_game.close()
 
+func reset_level_variables():
+	
+	coins_total = Global.Player["Coins"]
+	coins_collected_total = Global.Player["Coins_Collected"]
+	coins_collected_level = Global.Level["Coins_Collected"]
+	coins = []
+	chests = []
+	diamonds = []
+	ruby = []
+	
+	var curr_idx = 0
+	while curr_idx < Global.Level["Coins"].size():
+		coins.append(Global.Level["Coins"][curr_idx])
+		curr_idx += 1
+	
+	curr_idx = 0
+	while curr_idx < Global.Level["Chests"].size():
+		chests.append(Global.Level["Chests"][curr_idx])
+		curr_idx += 1
+		
+	curr_idx = 0
+	while curr_idx < Global.Level["Diamonds"].size():
+		diamonds.append(Global.Level["Diamonds"][curr_idx])
+		curr_idx += 1
+	
+	curr_idx = 0
+	while curr_idx < Global.Level["Ruby"].size():
+		ruby.append(Global.Level["Ruby"][curr_idx])
+		curr_idx += 1
+
+func save_level_variables():
+	
+	Global.Player["Coins"] = coins_total 
+	Global.Player["Coins_Collected"] = coins_collected_total 
+	Global.Level["Coins_Collected"] = coins_collected_level 
+	Global.Level["Coins"] = []
+	Global.Level["Chests"] = []
+	Global.Level["Diamonds"] = []
+	Global.Level["Ruby"] = []
+	
+	var curr_idx = 0
+	while curr_idx < coins.size():
+		Global.Level["Coins"].append(coins[curr_idx])
+		curr_idx += 1
+		
+	curr_idx = 0
+	while curr_idx < chests.size():
+		Global.Level["Chests"].append(chests[curr_idx])
+		curr_idx += 1
+		
+	curr_idx = 0
+	while curr_idx < diamonds.size():
+		Global.Level["Diamonds"].append(diamonds[curr_idx])
+		curr_idx += 1
+	
+	curr_idx = 0
+	while curr_idx < ruby.size():
+		Global.Level["Ruby"].append(ruby[curr_idx])
+		curr_idx += 1
 
 func save_game():
 	

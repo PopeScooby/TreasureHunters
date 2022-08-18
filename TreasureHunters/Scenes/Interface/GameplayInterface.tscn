@@ -39,6 +39,7 @@ use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="GameplayInterface" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="Timer" type="Control" parent="."]

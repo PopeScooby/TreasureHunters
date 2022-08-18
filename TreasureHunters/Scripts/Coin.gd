@@ -13,11 +13,9 @@ func _on_Coin_body_entered(body):
 
 func register_coin():
 	
-	var player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	
-	player["Coins"] += 1
-	player["Coins_Collected"] += 1
+	Global.coins_total += 1
+	Global.coins_collected_total += 1
 	var coin_idx = int(self.name.right(4)) - 1
-	player["Levels"][str(player["Level_Current"])]["Coins_Collected"] += 1
-	player["Levels"][str(player["Level_Current"])]["Coins"][coin_idx] = false
+	Global.coins_collected_level += 1
+	Global.coins[coin_idx] = false
 	

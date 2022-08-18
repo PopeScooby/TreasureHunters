@@ -2,15 +2,16 @@ extends StaticBody2D
 
 var STATE = "Closed"
 
+var chest_name
+var chest_idx
+
 func _ready():
 	
 	self.add_to_group("Chests")
-#
-#	if Global.Level["Treasure"] == false:
-#		STATE = "Opened"
-#	else:
-#		STATE = "Closed"
-	
+
+	chest_name = self.name
+	chest_idx = int(chest_name.replace("Chest","")) - 1
+
 
 func _process(delta):
 	if Global.STATE_PLAYER == "Chest_Opening" and STATE == "Closed":
@@ -27,16 +28,12 @@ func _on_chest_opened():
 
 func register_chest():
 	
-	Global.Player["Coins"] += 10
-	Global.Player["Coins_Collected"] += 10
-	var chest_idx = int(self.name.right(4)) - 1
-	Global.Level["Coins_Collected"] += 10
-	Global.Level["Chests"][chest_idx] = false
-
-func _on_Area2D_body_entered(body):
+	Global.coins_total += 10
+	Global.coins_collected_total += 10
+	Global.coins_collected_level += 10
+	Global.chests[chest_idx] = false
 	
-	var chest_name = self.name
-	var chest_idx = int(chest_name.replace("Chest","")) - 1
+func _on_Area2D_body_entered(body):
 	
 	if body.name == "Adventurer" and Global.Level["Chests"][chest_idx] == true:
 		if body.position.x > self.position.x:

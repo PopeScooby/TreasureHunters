@@ -27,7 +27,7 @@ func _process(delta):
 		exec_state_menu()
 		
 		
-	$Coin/Coin_Count_Label.text = str(Global.Player["Coins"])
+	$Coin/Coin_Count_Label.text = str(Global.coins_total)
 	
 	if Global.Player["Hearts_Total"] < 5:
 		$Hearts/Heart5.visible = false
@@ -76,6 +76,7 @@ func exec_state_menu():
 	elif Input.is_action_just_pressed("menu_select"):
 		if selector_curr == 1:
 			exec_state_unpause()
+			Global.reset_level_variables()
 			Global.load_level()
 		elif selector_curr == 2:
 			exec_state_unpause()

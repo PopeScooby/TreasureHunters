@@ -10,6 +10,8 @@ export var cam_bottom = 0
 
 var level_num
 
+
+
 func _ready():
 
 	if Global.isDebug == true:
@@ -25,9 +27,9 @@ func _ready():
 	$Adventurer/Camera2D.limit_right = cam_right
 	$Adventurer/Camera2D.limit_top = cam_top
 	$Adventurer/Camera2D.limit_bottom = cam_bottom
-	level_setup()	
+	level_setup()
 	Global.STATE_LEVEL = "Spawn_Portal"
-#	level = 
+ 
 
 func _process(delta):
 	check_state()
@@ -65,18 +67,7 @@ func exec_state_complete_scene():
 	Global.STATE_GLOBAL = "Gameplay"
 	Global.STATE_LEVEL = "Gameplay"
 	get_node("Adventurer")
-#func exec_state_continue_scene():
-#	pass
-#	if Global.STATE_PLAYER == "Scene_Level1_Playing":
-#		$GameplayInterface/Continue.visible = false
-#		Global.Player["Scene_Seen"]["Level1_Enter"] = true
-#		$GameplayInterface/Timer/LevelTimeTimer.start()
-#		Global.STATE_LEVEL = "Spawn_Portal_Exit"
-#	elif Global.STATE_PLAYER == "Scene_Level1_2_Playing":
-#		$GameplayInterface/Continue.visible = false
-#		Global.Player["Scene_Seen"]["Level1_2"] = true
-#		$GameplayInterface/Timer/LevelTimeTimer.start()
-#		Global.STATE_LEVEL = "Spawn_Portal_Exit"
+
 
 func level_setup():
 
@@ -86,6 +77,8 @@ func level_setup():
 	level_setup_timer()
 	level_setup_coins()
 	level_setup_chests()
+	
+	Global.reset_level_variables()
 
 func level_setup_timer():
 	Global.Player["Level_Timer"] = Global.Level["Timer"]

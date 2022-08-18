@@ -35,8 +35,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		elif Global.Player["Level_Current"] == Global.Player["Level_Max"] and Global.Player["Level_Current"] != (Global.Player["Levels"].size() - 1):
 			Global.Player["Level_Max"] += 1
 		Global.Level["Complete"] = true
-		Global.Player["Levels"][str(Global.Player["Level_Current"])] = Global.Level
-		GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])] = Global.Player
+#		Global.Player["Levels"][str(Global.Player["Level_Current"])] = Global.Level
+#		GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])] = Global.Player
+		Global.save_level_variables()
 		Global.save_game()
 		get_tree().change_scene("res://Scenes/Interface/Menu_LevelSelect.tscn")
 

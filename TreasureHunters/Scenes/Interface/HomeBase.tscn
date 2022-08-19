@@ -3129,9 +3129,6 @@ bg_color = Color( 0.980392, 0.960784, 0.964706, 1 )
 
 [node name="HomeBase" type="Control"]
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" type="TextureRect" parent="."]
 margin_left = 1.0

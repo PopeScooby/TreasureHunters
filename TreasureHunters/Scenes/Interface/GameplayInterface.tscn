@@ -165,6 +165,7 @@ rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
 
 [node name="PauseScreen" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 

@@ -85,7 +85,7 @@ __meta__ = {
 position = Vector2( 322.54, 347.738 )
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 4
+frame = 1
 playing = true
 
 [node name="Inda_Label" type="Label" parent="Inda"]
@@ -119,7 +119,7 @@ __meta__ = {
 [node name="Lary_Sprite" type="AnimatedSprite" parent="Lary"]
 position = Vector2( 847.927, 347.738 )
 frames = SubResource( 3 )
-frame = 9
+frame = 6
 playing = true
 
 [node name="Lary_Label2" type="Label" parent="Lary"]

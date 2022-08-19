@@ -66,7 +66,7 @@ func exec_state_complete_scene():
 	$GameplayInterface/Timer/LevelTimeTimer.start()
 	Global.STATE_GLOBAL = "Gameplay"
 	Global.STATE_LEVEL = "Gameplay"
-	get_node("Adventurer")
+
 
 
 func level_setup():

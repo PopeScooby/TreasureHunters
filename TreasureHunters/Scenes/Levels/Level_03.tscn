@@ -420,4 +420,3 @@ scale = Vector2( 2, 3 )
 texture = ExtResource( 41 )
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
-pause_mode = 2

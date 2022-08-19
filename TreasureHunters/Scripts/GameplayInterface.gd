@@ -16,12 +16,18 @@ func _on_LevelTimeTimer_timeout():
 
 func _process(delta):
 	
+	if Global.STATE_PLAYER == "Dead":
+		$PauseScreen/PauseLbl.text = "You are Dead"
+		exec_state_pause()
+	else:
+		$PauseScreen/PauseLbl.text = "~Pause~"
+	
 	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
 	if Global.Player["Level_Timer"] == 0:
 		get_tree().paused = true		
-	if Input.is_action_just_pressed("pause") and get_tree().paused == true:
+	if Input.is_action_just_pressed("pause") and get_tree().paused == true and Global.STATE_PLAYER != "Dead":
 		exec_state_unpause()
-	elif Input.is_action_just_pressed("pause") and get_tree().paused == false:
+	elif Input.is_action_just_pressed("pause") and get_tree().paused == false and Global.STATE_PLAYER != "Dead":
 		exec_state_pause()
 	elif $PauseScreen.visible == true:
 		exec_state_menu()
@@ -47,7 +53,7 @@ func _process(delta):
 			if Global.Player["Hearts_Total"] < x:
 				HeartNode.visible = false
 
-			if Global.Player["Hearts"] < x:
+			if Global.hearts < x:
 				HeartNode.texture = heart_container
 			else:
 				HeartNode.texture = heart
@@ -74,10 +80,11 @@ func exec_state_menu():
 			_move_selector()
 	
 	elif Input.is_action_just_pressed("menu_select"):
-		if selector_curr == 1:
+		if selector_curr == 1:			
 			exec_state_unpause()
 			Global.reset_level_variables()
 			Global.load_level()
+			Global.STATE_PLAYER = ""
 		elif selector_curr == 2:
 			exec_state_unpause()
 			get_tree().change_scene("res://Scenes/Interface/Menu_LevelSelect.tscn")

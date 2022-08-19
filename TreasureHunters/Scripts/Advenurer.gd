@@ -17,7 +17,9 @@ func _process(delta):
 	exec_state()
 
 func check_state():
-	if Global.Player["Hearts"] <= 0 and Global.STATE_PLAYER != "Dead":
+	if Global.hearts <= 0 and Global.STATE_PLAYER != "Dead":
+		Global.STATE_PLAYER = "Dying"
+	elif Global.STATE_PLAYER == "InWater":
 		Global.STATE_PLAYER = "Dying"
 	elif Global.STATE_LEVEL == "Spawn_Player":
 		Global.STATE_PLAYER = "Spawn_Player"
@@ -27,8 +29,6 @@ func check_state():
 	elif Global.STATE_PLAYER == "OffCrate":
 		Global.Player["Player_Flags"]["Can_Push"] = false
 		Global.STATE_PLAYER = "Move_Normal"
-	elif Global.STATE_PLAYER == "InWater":
-		Global.STATE_PLAYER = "Dying"
 	
 
 func exec_state():
@@ -287,8 +287,8 @@ func exec_state_idle_vines():
 
 func exec_state_damage():
 	
-	if Global.Player["Hearts"] > 0:
-		Global.Player["Hearts"] -= 1
+	if Global.hearts > 0:
+		Global.hearts -= 1
 		$AnimationPlayer2.play("Damage")
 	else:
 		Global.STATE_PLAYER = "Dying"

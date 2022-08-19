@@ -54,6 +54,14 @@ func get_new_player_dict(PlayerName):
 									   "Diamonds": [],
 									   "Ruby": [],
 									   "Complete": false
+									},
+								"4" : {"Timer": 120,
+									   "Coins_Collected": 0,
+									   "Coins": [true],
+									   "Chests": [true],
+									   "Diamonds": [],
+									   "Ruby": [],
+									   "Complete": false
 									}
 								},
 					 "Player_Info" : {"Friction": false,

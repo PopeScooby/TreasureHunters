@@ -5,6 +5,7 @@ var isDebug = false
 var Player
 var Level
 
+var hearts = 0
 var coins_total = 0
 var coins_collected_total = 0
 var coins_collected_level = 0
@@ -22,7 +23,9 @@ var STATE_LEVEL = ""
 func _ready():
 	
 	load_saves()
-	
+
+func _process(delta):
+	pass
 
 func new_game(PlayerName):
 	
@@ -64,6 +67,7 @@ func load_saves():
 
 func reset_level_variables():
 	
+	hearts = Global.Player["Hearts"]
 	coins_total = Global.Player["Coins"]
 	coins_collected_total = Global.Player["Coins_Collected"]
 	coins_collected_level = Global.Level["Coins_Collected"]
@@ -94,6 +98,8 @@ func reset_level_variables():
 
 func save_level_variables():
 	
+	
+	Global.Player["Hearts"] = hearts
 	Global.Player["Coins"] = coins_total 
 	Global.Player["Coins_Collected"] = coins_collected_total 
 	Global.Level["Coins_Collected"] = coins_collected_level 

@@ -46,7 +46,6 @@ func load_level():
 	var Level_Suffix = "0" + str(Global.Player["Level_Current"])
 	GlobalDictionaries.player_info = Global.Player["Player_Info"]
 	GlobalDictionaries.reset_flags(Global.Player["Level_Current"])
-#	self.reset_level_variables()
 	get_tree().change_scene("res://Scenes/Levels/Level_" + Level_Suffix + ".tscn")
 
 func load_saves():

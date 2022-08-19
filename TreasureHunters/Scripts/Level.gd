@@ -32,7 +32,7 @@ func _ready():
  
 
 func _process(delta):
-	check_state()
+#	check_state()
 	exec_state()
 	
 

@@ -266,12 +266,12 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": 200
+"Distance": 400
 }, {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": 1,
-"Distance": 200
+"Distance": 400
 } ]
 
 [node name="Slug3" parent="Enemies" instance=ExtResource( 8 )]
@@ -312,30 +312,39 @@ moves_list = [ {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": 1,
-"Distance": 200
+"Distance": 1000
 }, {
 "Anim_Suffix": "Crawl",
 "Axis": "x",
 "Dir": -1,
-"Distance": 200
+"Distance": 1000
 } ]
 
 [node name="Foreground" type="Node2D" parent="."]
 position = Vector2( 0, 121 )
 
 [node name="Vine1" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 3 )
+position = Vector2( 1853.25, 1427.33 )
+scale = Vector2( 3, 2 )
 texture = ExtResource( 37 )
 
 [node name="Vine3" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 3 )
+position = Vector2( 5438.83, 3586.76 )
+scale = Vector2( 3, 2 )
 texture = ExtResource( 37 )
 
-[node name="Vine2" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 3 )
-texture = ExtResource( 41 )
+[node name="Vine5" type="Sprite" parent="Foreground"]
+position = Vector2( 2294.57, 4742.67 )
+scale = Vector2( 6, 2 )
+texture = ExtResource( 37 )
 
 [node name="Vine4" type="Sprite" parent="Foreground"]
+position = Vector2( 456.431, 185.837 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+
+[node name="Vine2" type="Sprite" parent="Foreground"]
+position = Vector2( 4016.41, 1810 )
 scale = Vector2( 2, 3 )
 texture = ExtResource( 41 )
 

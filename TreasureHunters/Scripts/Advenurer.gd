@@ -29,7 +29,7 @@ func check_state():
 	elif Global.STATE_PLAYER == "OffCrate":
 		Global.Player["Player_Flags"]["Can_Push"] = false
 		Global.STATE_PLAYER = "Move_Normal"
-	
+
 
 func exec_state():
 	if Global.STATE_PLAYER == "Spawn_Player":

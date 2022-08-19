@@ -17,14 +17,16 @@ func _on_LevelTimeTimer_timeout():
 func _process(delta):
 	
 	if Global.STATE_PLAYER == "Dead":
-		$PauseScreen/PauseLbl.text = "You are Dead"
+		$PauseScreen/PauseLbl.text = "You are Dead!"
+		exec_state_pause()
+	elif Global.STATE_PLAYER == "Timeout":
+		$PauseScreen/PauseLbl.text = "Out Of Time!"
 		exec_state_pause()
 	else:
 		$PauseScreen/PauseLbl.text = "~Pause~"
 	
 	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
-	if Global.Player["Level_Timer"] == 0:
-		get_tree().paused = true		
+
 	if Input.is_action_just_pressed("pause") and get_tree().paused == true and Global.STATE_PLAYER != "Dead":
 		exec_state_unpause()
 	elif Input.is_action_just_pressed("pause") and get_tree().paused == false and Global.STATE_PLAYER != "Dead":
@@ -93,6 +95,12 @@ func exec_state_menu():
 	
 	elif Input.is_action_just_pressed("menu_back"):
 		exec_state_unpause()
+
+#func exec_state_timeout():
+#	get_tree().paused = true
+#	$Timer/LevelTimeTimer.stop()
+#	$PauseScreen.visible = true
+
 
 func _move_selector():
 	$PauseScreen/Selector.rect_position.y = selector_locations[selector_curr]

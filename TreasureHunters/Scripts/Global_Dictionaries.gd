@@ -92,7 +92,8 @@ func get_new_player_dict(PlayerName):
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"New_Game": {"Seen": false, "Next": ""},
 								"Level_01_Enter": {"Seen": false, "Next": ""},
-								"Level_01_2": {"Seen": false, "Next": ""}}
+								"Level_01_2": {"Seen": false, "Next": ""},
+								"Level_05_HospitalFound": {"Seen": false, "Next": ""}}
 				}
 	
 	return NewPlayer

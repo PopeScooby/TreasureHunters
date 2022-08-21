@@ -1,82 +1,243 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=141 format=2]
 
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__000.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Advenurer.gd" type="Script" id=2]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__005.png" type="Texture" id=3]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__004.png" type="Texture" id=4]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__002.png" type="Texture" id=5]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__003.png" type="Texture" id=6]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__000.png" type="Texture" id=7]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__002.png" type="Texture" id=8]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__004.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__009.png" type="Texture" id=10]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__008.png" type="Texture" id=11]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__003.png" type="Texture" id=12]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__006.png" type="Texture" id=13]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__009.png" type="Texture" id=14]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__008.png" type="Texture" id=15]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__005.png" type="Texture" id=16]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__007.png" type="Texture" id=17]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__006.png" type="Texture" id=18]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__007.png" type="Texture" id=19]
-[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__001.png" type="Texture" id=20]
-[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__001.png" type="Texture" id=21]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__004.png" type="Texture" id=22]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__000.png" type="Texture" id=23]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__006.png" type="Texture" id=24]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__007.png" type="Texture" id=25]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__008.png" type="Texture" id=26]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__009.png" type="Texture" id=27]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__002.png" type="Texture" id=28]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__003.png" type="Texture" id=29]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__001.png" type="Texture" id=30]
-[ext_resource path="res://Textures/Characters/Inda/Run/Run__005.png" type="Texture" id=31]
-[ext_resource path="res://Textures/Misc/SpeechBubbles/panel_04.png" type="Texture" id=32]
-[ext_resource path="res://Textures/Misc/SpeechBubbles/connector_02.png" type="Texture" id=33]
-[ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=34]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_000.png" type="Texture" id=35]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_001.png" type="Texture" id=36]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_002.png" type="Texture" id=37]
-[ext_resource path="res://Textures/Characters/Inda/Jump/Jump__004.png" type="Texture" id=38]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_006.png" type="Texture" id=39]
-[ext_resource path="res://Textures/Characters/Inda/Jump/Jump__009.png" type="Texture" id=40]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_003.png" type="Texture" id=41]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_004.png" type="Texture" id=42]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_005.png" type="Texture" id=43]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_007.png" type="Texture" id=44]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_008.png" type="Texture" id=45]
-[ext_resource path="res://Textures/Characters/Inda/Pull/Pull_000.png" type="Texture" id=46]
-[ext_resource path="res://Textures/Characters/Inda/Push/Push_009.png" type="Texture" id=47]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__002.png" type="Texture" id=48]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__003.png" type="Texture" id=49]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__000.png" type="Texture" id=50]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__001.png" type="Texture" id=51]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__008.png" type="Texture" id=52]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__009.png" type="Texture" id=53]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__006.png" type="Texture" id=54]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__007.png" type="Texture" id=55]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__004.png" type="Texture" id=56]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__005.png" type="Texture" id=57]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__005.png" type="Texture" id=58]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__006.png" type="Texture" id=59]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__001.png" type="Texture" id=60]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__007.png" type="Texture" id=61]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__000.png" type="Texture" id=62]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__009.png" type="Texture" id=63]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__003.png" type="Texture" id=64]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__002.png" type="Texture" id=65]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__008.png" type="Texture" id=66]
-[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__004.png" type="Texture" id=67]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__000.png" type="Texture" id=68]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__001.png" type="Texture" id=69]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__002.png" type="Texture" id=70]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__003.png" type="Texture" id=71]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__004.png" type="Texture" id=72]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__007.png" type="Texture" id=73]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__005.png" type="Texture" id=74]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__008.png" type="Texture" id=75]
+[ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
+[ext_resource path="res://Scripts/Advenurer.gd" type="Script" id=3]
+[ext_resource path="res://Textures/Background/Items/Mushroom (1).png" type="Texture" id=4]
+[ext_resource path="res://Textures/Background/Items/Bush (1).png" type="Texture" id=5]
+[ext_resource path="res://Textures/Background/Items/Sign (4).png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Portal_Exit.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Spikes.gd" type="Script" id=8]
+[ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__000.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__009.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Characters/Inda/Jump/Jump__009.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__001.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__004.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_003.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_004.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_008.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__002.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__007.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__007.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_005.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_002.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Characters/Inda/Jump/Jump__004.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__007.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__005.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__005.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__003.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__006.png" type="Texture" id=29]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Items/Portal.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Interface/GameplayInterface.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_006.png" type="Texture" id=33]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__008.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Items/Treasure.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Textures/Background/Items/Vine (1).png" type="Texture" id=37]
+[ext_resource path="res://Textures/Background/Items/Plant (3).png" type="Texture" id=38]
+[ext_resource path="res://Textures/Background/Items/Bush (2).png" type="Texture" id=39]
+[ext_resource path="res://Textures/Background/Items/Plant (5).png" type="Texture" id=40]
+[ext_resource path="res://Textures/Background/Items/Vine (2).png" type="Texture" id=41]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__004.png" type="Texture" id=42]
+[ext_resource path="res://Textures/Background/Items/Plant (2).png" type="Texture" id=43]
+[ext_resource path="res://Textures/Background/Items/Plant (4).png" type="Texture" id=44]
+[ext_resource path="res://Textures/Background/Items/Stone (3).png" type="Texture" id=45]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_000.png" type="Texture" id=46]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__007.png" type="Texture" id=47]
+[ext_resource path="res://Textures/Background/Items/Plant (1).png" type="Texture" id=48]
+[ext_resource path="res://Textures/Background/Items/Stone (1).png" type="Texture" id=49]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__001.png" type="Texture" id=50]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__008.png" type="Texture" id=51]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__007.png" type="Texture" id=52]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__006.png" type="Texture" id=53]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__001.png" type="Texture" id=54]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__008.png" type="Texture" id=55]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__001.png" type="Texture" id=56]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_009.png" type="Texture" id=57]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__009.png" type="Texture" id=58]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__001.png" type="Texture" id=59]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__005.png" type="Texture" id=60]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__007.png" type="Texture" id=61]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__001.png" type="Texture" id=62]
+[ext_resource path="res://Textures/Characters/Inda/Pull/Pull_000.png" type="Texture" id=63]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__000.png" type="Texture" id=64]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__003.png" type="Texture" id=65]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__005.png" type="Texture" id=66]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__002.png" type="Texture" id=67]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__004.png" type="Texture" id=68]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__006.png" type="Texture" id=69]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_001.png" type="Texture" id=70]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__002.png" type="Texture" id=71]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__003.png" type="Texture" id=72]
+[ext_resource path="res://Textures/Characters/Inda/Push/Push_007.png" type="Texture" id=73]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__009.png" type="Texture" id=74]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__000.png" type="Texture" id=75]
 [ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__009.png" type="Texture" id=76]
-[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__006.png" type="Texture" id=77]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__008.png" type="Texture" id=77]
+[ext_resource path="res://Textures/Characters/Inda/Crouch/Crouch__006.png" type="Texture" id=78]
+[ext_resource path="res://Textures/Items/Portal_Exit.png" type="Texture" id=79]
+[ext_resource path="res://Textures/Misc/SpeechBubbles/connector_02.png" type="Texture" id=80]
+[ext_resource path="res://Textures/Misc/SpeechBubbles/panel_04.png" type="Texture" id=81]
+[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__000.png" type="Texture" id=82]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__003.png" type="Texture" id=83]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__004.png" type="Texture" id=84]
+[ext_resource path="res://Textures/Characters/Inda/Climb/Climb__006.png" type="Texture" id=85]
+[ext_resource path="res://Textures/Characters/Inda/Run/Run__002.png" type="Texture" id=86]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__000.png" type="Texture" id=87]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__005.png" type="Texture" id=88]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__004.png" type="Texture" id=89]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__002.png" type="Texture" id=90]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__003.png" type="Texture" id=91]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__000.png" type="Texture" id=92]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__002.png" type="Texture" id=93]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__004.png" type="Texture" id=94]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__009.png" type="Texture" id=95]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__008.png" type="Texture" id=96]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__009.png" type="Texture" id=97]
+[ext_resource path="res://Textures/Characters/Inda/Idle/Idle__006.png" type="Texture" id=98]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__003.png" type="Texture" id=99]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__008.png" type="Texture" id=100]
+[ext_resource path="res://Textures/Characters/Lary/Idle/Idle__005.png" type="Texture" id=101]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 257.5, 23 )
+
+[sub_resource type="CapsuleShape2D" id=39]
+radius = 101.964
+height = 173.02
+
+[sub_resource type="Animation" id=2]
+resource_name = "Portal_Close"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1e-05, 1.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Portal_Idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:flip_v")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1.5 ), Vector2( 0.2, 1.5 ), Vector2( 1.5, 1.5 ), Vector2( 1.7, 1.5 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="CapsuleShape2D" id=40]
 radius = 62.3142
@@ -95,7 +256,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 76 ) ]
+"values": [ ExtResource( 75 ), ExtResource( 13 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 78 ), ExtResource( 20 ), ExtResource( 77 ), ExtResource( 76 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -170,7 +331,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 53 ) ]
+"values": [ ExtResource( 82 ), ExtResource( 54 ), ExtResource( 18 ), ExtResource( 27 ), ExtResource( 42 ), ExtResource( 26 ), ExtResource( 69 ), ExtResource( 19 ), ExtResource( 55 ), ExtResource( 58 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -270,7 +431,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:flip_h")
@@ -347,7 +508,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 40 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -434,7 +595,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 14 ) ]
+"values": [ ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 61 ), ExtResource( 96 ), ExtResource( 97 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -510,7 +671,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 61 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 88 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -587,7 +748,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 38 ) ]
+"values": [ ExtResource( 23 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -675,7 +836,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 46 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ) ]
+"values": [ ExtResource( 63 ), ExtResource( 70 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 73 ), ExtResource( 17 ), ExtResource( 57 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -763,7 +924,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ) ]
+"values": [ ExtResource( 46 ), ExtResource( 70 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 73 ), ExtResource( 17 ), ExtResource( 57 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -851,7 +1012,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 23 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 56 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 68 ), ExtResource( 66 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -962,7 +1123,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:flip_h")
@@ -1038,7 +1199,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 62 ), ExtResource( 60 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 66 ), ExtResource( 63 ) ]
+"values": [ ExtResource( 64 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 65 ), ExtResource( 84 ), ExtResource( 60 ), ExtResource( 85 ), ExtResource( 24 ), ExtResource( 34 ), ExtResource( 74 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1114,7 +1275,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 74 ), ExtResource( 77 ), ExtResource( 73 ), ExtResource( 75 ), ExtResource( 76 ) ]
+"values": [ ExtResource( 75 ), ExtResource( 13 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 78 ), ExtResource( 20 ), ExtResource( 77 ), ExtResource( 76 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1189,7 +1350,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 53 ) ]
+"values": [ ExtResource( 82 ), ExtResource( 54 ), ExtResource( 18 ), ExtResource( 27 ), ExtResource( 42 ), ExtResource( 26 ), ExtResource( 69 ), ExtResource( 19 ), ExtResource( 55 ), ExtResource( 58 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1289,7 +1450,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:flip_h")
@@ -1366,7 +1527,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 40 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1453,7 +1614,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 14 ) ]
+"values": [ ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 61 ), ExtResource( 96 ), ExtResource( 97 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1529,7 +1690,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 1 ), ExtResource( 21 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 89 ), ExtResource( 88 ), ExtResource( 98 ), ExtResource( 61 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 87 ), ExtResource( 50 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 88 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1607,7 +1768,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 38 ) ]
+"values": [ ExtResource( 23 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1695,7 +1856,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 46 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ) ]
+"values": [ ExtResource( 63 ), ExtResource( 70 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 73 ), ExtResource( 17 ), ExtResource( 57 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1783,7 +1944,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 39 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 47 ) ]
+"values": [ ExtResource( 46 ), ExtResource( 70 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 33 ), ExtResource( 73 ), ExtResource( 17 ), ExtResource( 57 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1870,7 +2031,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 23 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 56 ), ExtResource( 86 ), ExtResource( 83 ), ExtResource( 68 ), ExtResource( 66 ), ExtResource( 53 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -1981,7 +2142,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Sprite:flip_h")
@@ -2057,7 +2218,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 62 ), ExtResource( 60 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 67 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 61 ), ExtResource( 66 ), ExtResource( 63 ) ]
+"values": [ ExtResource( 64 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 65 ), ExtResource( 84 ), ExtResource( 60 ), ExtResource( 85 ), ExtResource( 24 ), ExtResource( 34 ), ExtResource( 74 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -2132,7 +2293,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 10 ) ]
+"values": [ ExtResource( 92 ), ExtResource( 59 ), ExtResource( 93 ), ExtResource( 99 ), ExtResource( 94 ), ExtResource( 101 ), ExtResource( 29 ), ExtResource( 47 ), ExtResource( 100 ), ExtResource( 95 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -2207,7 +2368,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 20 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 10 ) ]
+"values": [ ExtResource( 92 ), ExtResource( 59 ), ExtResource( 93 ), ExtResource( 99 ), ExtResource( 94 ), ExtResource( 101 ), ExtResource( 29 ), ExtResource( 47 ), ExtResource( 100 ), ExtResource( 95 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:flip_h")
@@ -2282,7 +2443,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 50 ) ]
+"values": [ ExtResource( 82 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -2361,7 +2522,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 50 ) ]
+"values": [ ExtResource( 82 ) ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -2402,7 +2563,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 32 ) ]
+"values": [ ExtResource( 81 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("SpeechBubble/SpeechPointer:texture")
@@ -2414,7 +2575,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 33 ) ]
+"values": [ ExtResource( 80 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("SpeechBubble/SpeechPointer:rect_position")
@@ -2563,7 +2724,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 32 ) ]
+"values": [ ExtResource( 81 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("SpeechBubble/SpeechPointer:texture")
@@ -2575,7 +2736,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 33 ) ]
+"values": [ ExtResource( 80 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("SpeechBubble/SpeechPointer:rect_position")
@@ -2724,7 +2885,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 32 ) ]
+"values": [ ExtResource( 81 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("SpeechBubble/SpeechPointer:texture")
@@ -2736,7 +2897,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 33 ) ]
+"values": [ ExtResource( 80 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("SpeechBubble/SpeechPointer:rect_position")
@@ -2851,25 +3012,213 @@ tracks/12/keys = {
 size = 20
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 34 )
+font_data = ExtResource( 9 )
 
-[node name="Adventurer" type="KinematicBody2D"]
+[node name="Level_02" type="Node2D"]
+script = ExtResource( 30 )
+cam_right = 4475
+cam_bottom = 3825
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Image" type="TextureRect" parent="Background"]
+margin_left = 6.0
+margin_top = 43.0
+margin_right = 4477.0
+margin_bottom = 3808.0
+texture = ExtResource( 28 )
+expand = true
+
+[node name="Bush1" type="Sprite" parent="Background"]
+position = Vector2( 1134, 989 )
+texture = ExtResource( 39 )
+
+[node name="Mushroom1" type="Sprite" parent="Background"]
+position = Vector2( 1229, 1002 )
+texture = ExtResource( 4 )
+
+[node name="Plant1" type="Sprite" parent="Background"]
+position = Vector2( 301, 1752 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 38 )
+
+[node name="Plant6" type="Sprite" parent="Background"]
+position = Vector2( 1338, 2776 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 38 )
+
+[node name="Plant4" type="Sprite" parent="Background"]
+position = Vector2( 3256, 586 )
+scale = Vector2( 1.25, 2.5 )
+texture = ExtResource( 38 )
+
+[node name="Stone1" type="Sprite" parent="Background"]
+position = Vector2( 1851, 1920 )
+scale = Vector2( 3, 2.5 )
+texture = ExtResource( 45 )
+
+[node name="Plant3" type="Sprite" parent="Background"]
+position = Vector2( 1942, 2000 )
+scale = Vector2( 1, 2 )
+texture = ExtResource( 38 )
+
+[node name="Plant2" type="Sprite" parent="Background"]
+position = Vector2( 1918, 2018 )
+texture = ExtResource( 44 )
+
+[node name="Stone2" type="Sprite" parent="Background"]
+position = Vector2( 2016, 2001 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 49 )
+
+[node name="Bush2" type="Sprite" parent="Background"]
+position = Vector2( 3185, 1691 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="Plant8" type="Sprite" parent="Background"]
+position = Vector2( 924, 3428 )
+rotation = 0.301942
+texture = ExtResource( 43 )
+
+[node name="Sign1" type="Sprite" parent="Background"]
+position = Vector2( 3691, 2597 )
+rotation = 0.301942
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Plant5" type="Sprite" parent="Background"]
+position = Vector2( 1313, 2787 )
+texture = ExtResource( 40 )
+
+[node name="Plant7" type="Sprite" parent="Background"]
+position = Vector2( 992, 3428 )
+texture = ExtResource( 48 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 128 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 7, 5, 0, 8, 5, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 12, 5, 0, 13, 5, 0, 14, 5, 0, 15, 5, 0, 16, 5, 0, 17, 5, 0, 18, 5, 0, 19, 5, 0, 20, 5, 0, 21, 5, 0, 22, 5, 0, 23, 5, 0, 24, 5, 0, 25, 5, 0, 26, 5, 0, 27, 5, 0, 28, 5, 0, 29, 5, 0, 30, 5, 0, 31, 5, 0, 32, 5, 0, 33, 5, 0, 34, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 5, 0, 65542, 5, 0, 65543, 5, 0, 65544, 5, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 65548, 5, 0, 65549, 5, 0, 65550, 5, 0, 65551, 5, 0, 65552, 5, 0, 65553, 5, 0, 65554, 5, 0, 65555, 5, 0, 65556, 5, 0, 65557, 5, 0, 65558, 5, 0, 65559, 5, 0, 65560, 5, 0, 65561, 5, 0, 65562, 5, 0, 65563, 5, 0, 65564, 5, 0, 65565, 5, 0, 65566, 5, 0, 65567, 5, 0, 65568, 5, 0, 65569, 5, 0, 65570, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 9, 0, 131075, 9, 0, 131076, 9, 0, 131077, 9, 0, 131078, 9, 0, 131079, 9, 0, 131080, 9, 0, 131081, 9, 0, 131082, 9, 0, 131083, 9, 0, 131084, 9, 0, 131085, 9, 0, 131086, 9, 0, 131087, 9, 0, 131088, 9, 0, 131089, 9, 0, 131090, 9, 0, 131091, 9, 0, 131092, 9, 0, 131093, 9, 0, 131094, 9, 0, 131095, 5, 0, 131096, 5, 0, 131097, 9, 0, 131098, 9, 0, 131099, 9, 0, 131100, 9, 0, 131101, 9, 0, 131102, 9, 0, 131103, 9, 0, 131104, 9, 0, 131105, 5, 0, 131106, 5, 0, 196608, 5, 0, 196609, 7, 0, 196631, 3, 0, 196632, 7, 0, 196641, 3, 0, 196642, 5, 0, 262144, 5, 0, 262145, 7, 0, 262167, 3, 0, 262168, 7, 0, 262177, 3, 0, 262178, 5, 0, 327680, 5, 0, 327681, 7, 0, 327682, 30, 0, 327703, 3, 0, 327704, 6, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 327713, 3, 0, 327714, 5, 0, 393216, 5, 0, 393217, 7, 0, 393218, 31, 0, 393219, 0, 0, 393220, 2, 0, 393239, 3, 0, 393240, 5, 0, 393241, 9, 0, 393242, 9, 0, 393243, 10, 0, 393249, 3, 0, 393250, 5, 0, 458752, 5, 0, 458753, 7, 0, 458754, 31, 0, 458755, 3, 0, 458756, 7, 0, 458766, 16, 0, 458767, 18, 0, 458775, 3, 0, 458776, 7, 0, 458785, 3, 0, 458786, 5, 0, 524288, 5, 0, 524289, 7, 0, 524290, 32, 0, 524291, 3, 0, 524292, 7, 0, 524296, 0, 0, 524297, 2, 0, 524298, 33, 0, 524299, 33, 0, 524300, 33, 0, 524301, 33, 0, 524302, 33, 0, 524303, 33, 0, 524304, 33, 0, 524305, 33, 0, 524306, 33, 0, 524307, 33, 0, 524308, 33, 0, 524309, 2, 0, 524311, 13, 0, 524312, 14, 0, 524321, 3, 0, 524322, 5, 0, 589824, 5, 0, 589825, 7, 0, 589827, 3, 0, 589828, 7, 0, 589832, 3, 0, 589833, 5, 0, 589834, 5, 0, 589835, 5, 0, 589836, 5, 0, 589837, 5, 0, 589838, 5, 0, 589839, 5, 0, 589840, 5, 0, 589841, 5, 0, 589842, 5, 0, 589843, 5, 0, 589844, 5, 0, 589845, 7, 0, 589847, 12, 0, 589848, 26, 0, 589857, 3, 0, 589858, 5, 0, 655360, 5, 0, 655361, 7, 0, 655363, 13, 0, 655364, 14, 0, 655368, 8, 0, 655369, 9, 0, 655370, 9, 0, 655371, 9, 0, 655372, 9, 0, 655373, 9, 0, 655374, 9, 0, 655375, 9, 0, 655376, 9, 0, 655377, 9, 0, 655378, 9, 0, 655379, 9, 0, 655380, 9, 0, 655381, 10, 0, 655393, 3, 0, 655394, 5, 0, 720896, 5, 0, 720897, 7, 0, 720899, 11, 0, 720900, 26, 0, 720924, 0, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 4, 0, 720930, 5, 0, 786432, 5, 0, 786433, 7, 0, 786459, 0, 0, 786460, 4, 0, 786461, 5, 0, 786462, 14, 0, 786463, 9, 0, 786464, 9, 0, 786465, 5, 0, 786466, 5, 0, 851968, 5, 0, 851969, 7, 0, 851986, 30, 0, 851995, 3, 0, 851996, 5, 0, 851997, 14, 0, 851998, 26, 0, 852001, 3, 0, 852002, 5, 0, 917504, 5, 0, 917505, 6, 0, 917506, 2, 0, 917507, 30, 0, 917522, 31, 0, 917523, 0, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 4, 0, 917532, 14, 0, 917533, 26, 0, 917537, 3, 0, 917538, 5, 0, 983040, 5, 0, 983041, 5, 0, 983042, 7, 0, 983043, 31, 0, 983044, 0, 0, 983045, 2, 0, 983058, 31, 0, 983059, 8, 0, 983060, 13, 0, 983061, 14, 0, 983062, 9, 0, 983063, 9, 0, 983064, 9, 0, 983065, 9, 0, 983066, 9, 0, 983067, 9, 0, 983068, 26, 0, 983072, 16, 0, 983073, 4, 0, 983074, 5, 0, 1048576, 5, 0, 1048577, 5, 0, 1048578, 7, 0, 1048579, 31, 0, 1048580, 3, 0, 1048581, 7, 0, 1048584, 0, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 2, 0, 1048594, 31, 0, 1048596, 12, 0, 1048597, 26, 0, 1048609, 3, 0, 1048610, 5, 0, 1114112, 5, 0, 1114113, 5, 0, 1114114, 7, 0, 1114115, 31, 0, 1114116, 3, 0, 1114117, 7, 0, 1114120, 3, 0, 1114121, 5, 0, 1114122, 6, 0, 1114123, 5, 0, 1114124, 5, 0, 1114125, 5, 0, 1114126, 6, 0, 1114127, 5, 0, 1114128, 5, 0, 1114129, 7, 0, 1114130, 31, 0, 1114145, 3, 0, 1114146, 5, 0, 1179648, 5, 0, 1179649, 5, 0, 1179650, 7, 0, 1179651, 31, 0, 1179652, 3, 0, 1179653, 7, 0, 1179656, 8, 0, 1179657, 9, 0, 1179658, 9, 0, 1179659, 9, 0, 1179660, 9, 0, 1179661, 9, 0, 1179662, 9, 0, 1179663, 9, 0, 1179664, 9, 0, 1179665, 10, 0, 1179666, 31, 0, 1179681, 3, 0, 1179682, 5, 0, 1245184, 5, 0, 1245185, 5, 0, 1245186, 7, 0, 1245187, 31, 0, 1245188, 3, 0, 1245189, 7, 0, 1245202, 31, 0, 1245208, 0, 0, 1245209, 2, 0, 1245217, 3, 0, 1245218, 5, 0, 1310720, 5, 0, 1310721, 5, 0, 1310722, 7, 0, 1310723, 31, 0, 1310724, 3, 0, 1310725, 7, 0, 1310738, 32, 0, 1310744, 3, 0, 1310745, 7, 0, 1310753, 3, 0, 1310754, 5, 0, 1376256, 5, 0, 1376257, 5, 0, 1376258, 7, 0, 1376259, 31, 0, 1376260, 3, 0, 1376261, 7, 0, 1376280, 3, 0, 1376281, 7, 0, 1376284, 0, 0, 1376289, 3, 0, 1376290, 5, 0, 1441792, 5, 0, 1441793, 5, 0, 1441794, 7, 0, 1441795, 31, 0, 1441796, 13, 0, 1441797, 6, 0, 1441798, 1, 0, 1441799, 1, 0, 1441800, 1, 0, 1441801, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441805, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441808, 18, 0, 1441815, 16, 0, 1441816, 4, 0, 1441817, 7, 0, 1441820, 3, 0, 1441821, 33, 0, 1441822, 33, 0, 1441823, 33, 0, 1441824, 33, 0, 1441825, 3, 0, 1441826, 5, 0, 1507328, 5, 0, 1507329, 5, 0, 1507330, 7, 0, 1507331, 31, 0, 1507332, 12, 0, 1507333, 9, 0, 1507334, 9, 0, 1507335, 9, 0, 1507336, 9, 0, 1507337, 9, 0, 1507338, 9, 0, 1507339, 9, 0, 1507340, 9, 0, 1507341, 9, 0, 1507342, 9, 0, 1507343, 26, 0, 1507352, 3, 0, 1507353, 7, 0, 1507356, 8, 0, 1507357, 9, 0, 1507358, 9, 0, 1507359, 9, 0, 1507360, 9, 0, 1507361, 5, 0, 1507362, 5, 0, 1572864, 5, 0, 1572865, 5, 0, 1572866, 7, 0, 1572867, 31, 0, 1572888, 3, 0, 1572889, 7, 0, 1572897, 3, 0, 1572898, 5, 0, 1638400, 5, 0, 1638401, 5, 0, 1638402, 7, 0, 1638403, 32, 0, 1638417, 16, 0, 1638418, 18, 0, 1638424, 3, 0, 1638425, 6, 0, 1638426, 18, 0, 1638433, 3, 0, 1638434, 5, 0, 1703936, 5, 0, 1703937, 5, 0, 1703938, 7, 0, 1703949, 0, 0, 1703950, 1, 0, 1703951, 2, 0, 1703960, 3, 0, 1703961, 7, 0, 1703969, 3, 0, 1703970, 5, 0, 1769472, 5, 0, 1769473, 5, 0, 1769474, 6, 0, 1769475, 1, 0, 1769476, 1, 0, 1769477, 1, 0, 1769478, 1, 0, 1769479, 1, 0, 1769480, 1, 0, 1769481, 1, 0, 1769482, 1, 0, 1769483, 1, 0, 1769484, 1, 0, 1769485, 4, 0, 1769486, 5, 0, 1769487, 7, 0, 1769488, 33, 0, 1769489, 33, 0, 1769490, 33, 0, 1769491, 33, 0, 1769492, 33, 0, 1769493, 33, 0, 1769494, 33, 0, 1769495, 33, 0, 1769496, 3, 0, 1769497, 7, 0, 1769505, 3, 0, 1769506, 5, 0, 1835008, 5, 0, 1835009, 5, 0, 1835010, 5, 0, 1835011, 5, 0, 1835012, 5, 0, 1835013, 5, 0, 1835014, 5, 0, 1835015, 5, 0, 1835016, 5, 0, 1835017, 5, 0, 1835018, 5, 0, 1835019, 5, 0, 1835020, 5, 0, 1835021, 5, 0, 1835022, 5, 0, 1835023, 5, 0, 1835024, 5, 0, 1835025, 5, 0, 1835026, 5, 0, 1835027, 5, 0, 1835028, 5, 0, 1835029, 5, 0, 1835030, 5, 0, 1835031, 5, 0, 1835032, 5, 0, 1835033, 6, 0, 1835034, 1, 0, 1835035, 1, 0, 1835036, 1, 0, 1835037, 1, 0, 1835038, 1, 0, 1835039, 1, 0, 1835040, 1, 0, 1835041, 4, 0, 1835042, 5, 0, 1900544, 5, 0, 1900545, 5, 0, 1900546, 5, 0, 1900547, 5, 0, 1900548, 5, 0, 1900549, 5, 0, 1900550, 5, 0, 1900551, 5, 0, 1900552, 5, 0, 1900553, 5, 0, 1900554, 5, 0, 1900555, 5, 0, 1900556, 5, 0, 1900557, 5, 0, 1900558, 5, 0, 1900559, 5, 0, 1900560, 5, 0, 1900561, 5, 0, 1900562, 5, 0, 1900563, 5, 0, 1900564, 5, 0, 1900565, 5, 0, 1900566, 5, 0, 1900567, 5, 0, 1900568, 5, 0, 1900569, 5, 0, 1900570, 5, 0, 1900571, 5, 0, 1900572, 5, 0, 1900573, 5, 0, 1900574, 5, 0, 1900575, 5, 0, 1900576, 5, 0, 1900577, 5, 0, 1900578, 5, 0 )
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="Vines1" parent="Triggers" instance=ExtResource( 1 )]
+position = Vector2( 319, 937 )
+scale = Vector2( 1, 1.75 )
+
+[node name="Vines2" parent="Triggers" instance=ExtResource( 1 )]
+position = Vector2( 447, 2591 )
+scale = Vector2( 1, 6.5 )
+
+[node name="Vines3" parent="Triggers" instance=ExtResource( 1 )]
+position = Vector2( 2369, 2213 )
+scale = Vector2( 1, 4.25 )
+
+[node name="Spikes1" type="Area2D" parent="Triggers"]
+position = Vector2( 1973, 1133 )
+scale = Vector2( 3, 1 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Spikes1"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Timer_Damage" type="Timer" parent="Triggers/Spikes1"]
+wait_time = 0.75
+
+[node name="Spikes2" type="Area2D" parent="Triggers"]
+position = Vector2( 3974, 2923 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Spikes2"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Timer_Damage" type="Timer" parent="Triggers/Spikes2"]
+wait_time = 0.75
+
+[node name="Spikes3" type="Area2D" parent="Triggers"]
+position = Vector2( 2566, 3561 )
+scale = Vector2( 2, 1 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/Spikes3"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Timer_Damage" type="Timer" parent="Triggers/Spikes3"]
+wait_time = 0.75
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Portal" parent="Items" instance=ExtResource( 31 )]
+position = Vector2( 1185, 2623 )
+
+[node name="Portal2" type="Area2D" parent="Items"]
+position = Vector2( 4085, 3374 )
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Portal2"]
+visible = false
+shape = SubResource( 39 )
+
+[node name="Sprite" type="Sprite" parent="Items/Portal2"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 79 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/Portal2"]
+anims/Portal_Close = SubResource( 2 )
+anims/Portal_Idle = SubResource( 3 )
+anims/Portal_Spawn = SubResource( 4 )
+
+[node name="Treasure" type="Node2D" parent="."]
+
+[node name="Coin1" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 456, 3375 )
+
+[node name="Coin2" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 523, 691 )
+
+[node name="Coin3" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 1923, 834 )
+
+[node name="Coin4" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 2523, 2091 )
+
+[node name="Coin5" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 3384, 555 )
+
+[node name="Coin6" parent="Treasure" instance=ExtResource( 35 )]
+position = Vector2( 4162, 1853 )
+
+[node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
+position = Vector2( 4112, 1317 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Adventurer" type="KinematicBody2D" parent="."]
+position = Vector2( 3599, 3189 )
 scale = Vector2( 0.5, 0.5 )
 collision_mask = 6
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 50 )
+[node name="Sprite" type="Sprite" parent="Adventurer"]
+texture = ExtResource( 82 )
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Adventurer"]
+visible = false
 shape = SubResource( 40 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Adventurer"]
 current = true
 zoom = Vector2( 2, 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Adventurer"]
 anims/Inda_-1_Crouch = SubResource( 36 )
 anims/Inda_-1_Die = SubResource( 25 )
 anims/Inda_-1_Exit = SubResource( 20 )
@@ -2898,39 +3247,39 @@ anims/Lary_-1_Idle = SubResource( 12 )
 anims/Lary_1_Idle = SubResource( 13 )
 anims/RESET = SubResource( 27 )
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Adventurer"]
 anims/Damage = SubResource( 32 )
 anims/RESET = SubResource( 33 )
 anims/Scene_Level_01_2 = SubResource( 34 )
 anims/Scene_Level_01_Enter = SubResource( 35 )
 anims/Scene_Level_05_HospitalFound = SubResource( 38 )
 
-[node name="SpeechBubble" type="TextureRect" parent="."]
+[node name="SpeechBubble" type="TextureRect" parent="Adventurer"]
 visible = false
 margin_left = 228.273
 margin_top = -442.867
 margin_right = 510.273
 margin_bottom = -278.867
 rect_scale = Vector2( 3, 3 )
-texture = ExtResource( 32 )
+texture = ExtResource( 81 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpeechPointer" type="TextureRect" parent="SpeechBubble"]
+[node name="SpeechPointer" type="TextureRect" parent="Adventurer/SpeechBubble"]
 margin_left = -24.0188
 margin_top = 130.165
 margin_right = 1.9812
 margin_bottom = 151.165
-texture = ExtResource( 33 )
+texture = ExtResource( 80 )
 expand = true
 flip_h = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="SpeechBubble"]
+[node name="ColorRect" type="ColorRect" parent="Adventurer/SpeechBubble"]
 margin_left = 1.68356
 margin_top = 136.906
 margin_right = 4.68356
@@ -2940,7 +3289,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SpeechText" type="Label" parent="SpeechBubble"]
+[node name="SpeechText" type="Label" parent="Adventurer/SpeechBubble"]
 margin_left = 6.0
 margin_top = 7.0
 margin_right = 268.0
@@ -2954,5 +3303,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_AnimationPlayer_animation_finished"]
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Vine1" type="Sprite" parent="Foreground"]
+position = Vector2( 2023, 1338 )
+scale = Vector2( 2, 3 )
+texture = ExtResource( 37 )
+
+[node name="Vine3" type="Sprite" parent="Foreground"]
+position = Vector2( 3415, 2877 )
+scale = Vector2( 2.75, 3 )
+texture = ExtResource( 37 )
+
+[node name="Vine2" type="Sprite" parent="Foreground"]
+position = Vector2( 2274, 1437 )
+scale = Vector2( 2, 3 )
+texture = ExtResource( 41 )
+
+[node name="Vine4" type="Sprite" parent="Foreground"]
+position = Vector2( 1522, 3005 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 41 )
+
+[node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
+
+[connection signal="body_entered" from="Triggers/Spikes1" to="Triggers/Spikes1" method="_on_Spikes_body_entered"]
+[connection signal="body_exited" from="Triggers/Spikes1" to="Triggers/Spikes1" method="_on_Spikes_body_exited"]
+[connection signal="timeout" from="Triggers/Spikes1/Timer_Damage" to="Triggers/Spikes1" method="_on_Timer_Damage_timeout"]
+[connection signal="body_entered" from="Triggers/Spikes2" to="Triggers/Spikes2" method="_on_Spikes_body_entered"]
+[connection signal="body_exited" from="Triggers/Spikes2" to="Triggers/Spikes2" method="_on_Spikes_body_exited"]
+[connection signal="timeout" from="Triggers/Spikes2/Timer_Damage" to="Triggers/Spikes2" method="_on_Timer_Damage_timeout"]
+[connection signal="body_entered" from="Triggers/Spikes3" to="Triggers/Spikes3" method="_on_Spikes_body_entered"]
+[connection signal="body_exited" from="Triggers/Spikes3" to="Triggers/Spikes3" method="_on_Spikes_body_exited"]
+[connection signal="timeout" from="Triggers/Spikes3/Timer_Damage" to="Triggers/Spikes3" method="_on_Timer_Damage_timeout"]
+[connection signal="body_entered" from="Items/Portal2" to="Items/Portal2" method="_on_Portal_body_entered"]
+[connection signal="body_exited" from="Items/Portal2" to="Items/Portal2" method="_on_Portal_body_exited"]
+[connection signal="animation_finished" from="Items/Portal2/AnimationPlayer" to="Items/Portal2" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Adventurer/AnimationPlayer" to="Adventurer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Adventurer/AnimationPlayer2" to="Adventurer" method="_on_AnimationPlayer_animation_finished"]

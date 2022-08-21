@@ -302,7 +302,7 @@ func exec_state_damage():
 func exec_state_start_scene():
 	
 	var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]
-	
+	$AnimationPlayer.playback_speed = 0
 	$AnimationPlayer2.play(anim_name)
 
 func exec_state_continue_scene():
@@ -311,6 +311,7 @@ func exec_state_continue_scene():
 func exec_state_complete_scene():
 	$SpeechBubble.visible = false
 	Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
+	$AnimationPlayer.playback_speed = 1
 	Global.STATE_PLAYER = "Move_Normal"
 
 

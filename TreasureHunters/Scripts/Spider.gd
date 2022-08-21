@@ -1,24 +1,50 @@
 extends KinematicBody2D
 
-var move_speed = 100
+#export var move_speed = [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+export var move_speed = 100
 export (NodePath) var patrol_path
 var patrol_points
 var patrol_index = 0
+#var speed_index = 0
 var velocity = Vector2.ZERO
+#var speed = move_speed[speed_index]
+
+var SpiderName
 
 func _ready():
+	SpiderName = self.name
 	if patrol_path:
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
+		self.position = patrol_points[0]
 
+		
 func _process(delta):
 	if !patrol_path:
 		return
 	var target = patrol_points[patrol_index]
-	if position.distance_to(target) < 1:
+	var dist = position.distance_to(target)
+		
+	if SpiderName == "Spider1":
+		pass
+	
+	if dist < 1:
 		patrol_index = wrapi(patrol_index + 1, 0, patrol_points.size())
 		target = patrol_points[patrol_index]
-	velocity = (target - position).normalized() * move_speed
+	
+	var vecToTarget = (target - self.position)
+	var dirToTarget = vecToTarget.normalized()
+	var distToTarget = vecToTarget.length()
+	
+	var willOvershoot = move_speed * delta > distToTarget
+	
+	if willOvershoot:
+		var tempSpeed = distToTarget / delta
+		velocity = dirToTarget * tempSpeed
+	else:
+		velocity = dirToTarget * move_speed
+		
 	velocity = move_and_slide(velocity)
+
 
 
 func _on_Area2D_body_entered(body):
@@ -30,8 +56,9 @@ func _on_Area2D_body_entered(body):
 		$Timer_Damage.stop()
 
 func _on_Area2D_body_exited(body):
-	$Timer_Damage.stop()
-	Global.Player["Player_Flags"]["On_Enemy"] = false
+	if body.name == "Adventurer":
+		$Timer_Damage.stop()
+		Global.Player["Player_Flags"]["On_Enemy"] = false
 
 
 func _on_Timer_Damage_timeout():

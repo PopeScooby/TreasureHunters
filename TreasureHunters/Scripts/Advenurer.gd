@@ -224,6 +224,9 @@ func exec_state_move_vines():
 		exec_state_move_down_vines()
 	else:
 		exec_state_idle_vines()
+#
+#	if Input.is_action_just_pressed("move_jump"):
+#		exec_state_move_jump_vines()
 
 	set_animation()
 
@@ -253,7 +256,7 @@ func exec_state_move_left_vines():
 
 func exec_state_move_up_vines():
 	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	motion.y = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
+	motion.y = max(motion.x - GlobalDictionaries.player_info["Acceleration"] * 1.5, -GlobalDictionaries.player_info["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -264,7 +267,7 @@ func exec_state_move_up_vines():
 
 func exec_state_move_down_vines():
 	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	motion.y = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
+	motion.y = min(motion.x + GlobalDictionaries.player_info["Acceleration"] * 3, GlobalDictionaries.player_info["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Idle"
 	else:
@@ -272,6 +275,9 @@ func exec_state_move_down_vines():
 			Global.Player["Animation"] = "Vines"
 		else:
 			Global.Player["Animation"] = "Vines"
+
+func exec_state_move_jump_vines():
+	motion.y = GlobalDictionaries.player_info["JumpHeight"] * 15
 
 func exec_state_idle_vines():
 	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]

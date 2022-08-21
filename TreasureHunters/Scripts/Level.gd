@@ -29,8 +29,8 @@ func _ready():
 	$Adventurer/Camera2D.limit_bottom = cam_bottom
 	level_setup()
 	Global.STATE_LEVEL = "Spawn_Portal"
- 
-
+	
+	
 func _process(delta):
 #	check_state()
 	exec_state()
@@ -105,16 +105,23 @@ func level_setup_coins():
 
 func level_setup_chests():
 	
-	var Chests = Global.Level["Chests"]
-	var Chest_Max = Global.Level["Chests"].size()
+	var level_chests_count = get_tree().get_nodes_in_group("Chests").size()
+	var dict_chests_count = Global.Level["Chests"].size()
 	var Chest_Curr = 1
 	
-	while Chest_Curr <= Chest_Max:
+	if level_chests_count != dict_chests_count:
+		Global.Level["Chests"] = []
+		while Chest_Curr <= level_chests_count:
+			Global.Level["Chests"].append(true)
+			Chest_Curr += 1
+	
+	var Chests = Global.Level["Chests"]
+	Chest_Curr = 1
+	
+	while Chest_Curr <= level_chests_count:
 		if Chests[Chest_Curr - 1]:
 			get_node("Treasure/Chest" + str(Chest_Curr)).STATE = "Closed"
-#			get_node("Treasure/Chest" + str(Chest_Curr) + "/AnimationPlayer").play("Chest_Closed")
 		else:
 			get_node("Treasure/Chest" + str(Chest_Curr)).STATE = "Opened"
-#			get_node("Treasure/Chest" + str(Chest_Curr) + "/AnimationPlayer").play("Chest_Opened")
 		Chest_Curr += 1
 

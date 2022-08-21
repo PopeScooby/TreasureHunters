@@ -55,7 +55,15 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false
 									},
-								"4" : {"Timer": 120,
+								"4" : {"Timer": 180,
+									   "Coins_Collected": 0,
+									   "Coins": [true],
+									   "Chests": [true],
+									   "Diamonds": [],
+									   "Ruby": [],
+									   "Complete": false
+									},
+								"5" : {"Timer": 240,
 									   "Coins_Collected": 0,
 									   "Coins": [true],
 									   "Chests": [true],

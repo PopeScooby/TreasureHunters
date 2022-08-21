@@ -211,7 +211,7 @@ scale = Vector2( 19.5, 2 )
 flow_speed = 125
 
 [node name="Water2" parent="Triggers" instance=ExtResource( 11 )]
-position = Vector2( 4116, 3506 )
+position = Vector2( 4116, 3523 )
 scale = Vector2( 15, 2 )
 flow_dir = -1
 flow_speed = 125
@@ -281,7 +281,7 @@ position = Vector2( 350, 4129 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
-position = Vector2( 675, 1215 )
+position = Vector2( 672, 1205 )
 
 [node name="Enemies" type="Node2D" parent="."]
 

@@ -3162,6 +3162,7 @@ __meta__ = {
 }
 
 [node name="SpeechBubble" type="TextureRect" parent="Speech"]
+visible = false
 margin_left = 903.0
 margin_top = 335.0
 margin_right = 1261.0

@@ -83,6 +83,9 @@ margin_right = 1265.84
 margin_bottom = 704.045
 expand = true
 
+[node name="Hospital" parent="." instance=ExtResource( 6 )]
+visible = false
+
 [node name="Coin" type="Control" parent="."]
 margin_left = -9.34388
 margin_top = -4.67194
@@ -226,8 +229,5 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Hospital" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]

@@ -5,6 +5,7 @@ var isDebug = false
 var Player
 var Level
 
+var hearts_total = 0
 var hearts = 0
 var coins_total = 0
 var coins_collected_total = 0
@@ -66,6 +67,7 @@ func load_saves():
 
 func reset_level_variables():
 	
+	hearts_total = Global.Player["Hearts_Total"]
 	hearts = Global.Player["Hearts"]
 	coins_total = Global.Player["Coins"]
 	coins_collected_total = Global.Player["Coins_Collected"]
@@ -98,6 +100,7 @@ func reset_level_variables():
 func save_level_variables():
 	
 	
+	Global.Player["Hearts_Total"] = hearts_total
 	Global.Player["Hearts"] = hearts
 	Global.Player["Coins"] = coins_total 
 	Global.Player["Coins_Collected"] = coins_collected_total 

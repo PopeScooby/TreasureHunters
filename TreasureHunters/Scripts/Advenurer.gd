@@ -42,6 +42,8 @@ func exec_state():
 		exec_state_dying()
 	elif Global.STATE_PLAYER == "Bounce":
 		exec_state_bounce()
+	elif Global.STATE_PLAYER == "ExitHospital":
+		exec_state_exit_hospital()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Enemy"] == true:
 		Global.Player["Player_Flags"]["On_Enemy"] = false
 		exec_state_damage()
@@ -317,7 +319,16 @@ func exec_state_complete_scene():
 	Global.STATE_PLAYER = "Move_Normal"
 
 func exec_state_go_to_hospital():
-	Global.STATE_LEVEL = "GoToHospital"
+	Global.STATE_PLAYER = "GoToHospital"
+	Global.Player["Animation"] = "GoToHospital"
+#	Global.STATE_LEVEL = "GoToHospital"
+
+func exec_state_exit_hospital():
+	Global.STATE_PLAYER = "ExitingHospital"
+	Global.Player["Animation"] = "LeaveHospital"
+
+	set_animation()
+
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
@@ -338,8 +349,9 @@ func set_animation():
 	else:
 		$AnimationPlayer.playback_speed = 1
 		var anim_name = Global.Player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_" + Global.Player["Animation"]
+		var curr_anim = $AnimationPlayer.current_animation
 
-		if $AnimationPlayer.current_animation != anim_name:
+		if curr_anim != anim_name:
 			$AnimationPlayer.play(anim_name)
 
 #	if Global.Player["Animation"] != "Crouch" and Global.Player["Animation2"] == "Camera_Crouch":
@@ -356,14 +368,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$AnimationPlayer.play(Global.Player["Name_Explorer"] + "_1_Idle")
 		Global.STATE_LEVEL = "Despawn_Portal"
 		Global.STATE_PLAYER = "Move_Normal"
-	if anim_name.find("_Exit") != -1:
+	elif anim_name.find("_Exit") != -1:
 		Global.STATE_LEVEL = "Despawn_Portal_Exit"
-	if anim_name.find("_Interact") != -1:
+	elif anim_name.find("_Interact") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
-	if anim_name.find("_Die") != -1:
+	elif anim_name.find("_Die") != -1:
 		Global.STATE_PLAYER = "Dead"
 	elif anim_name.find("Scene") != -1:
 		Global.STATE_GLOBAL = "Continue_Scene"
+	elif anim_name.find("_GoToHospital") != -1:
+		Global.STATE_LEVEL = "GoToHospital"
+	elif anim_name.find("_LeaveHospital") != -1:
+		Global.STATE_PLAYER = "Move_Normal"
 
 
 

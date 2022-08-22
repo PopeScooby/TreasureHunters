@@ -41,22 +41,32 @@ func _process(delta):
 		
 	$Coin/Coin_Count_Label.text = str(Global.coins_total)
 	
-	if Global.Player["Hearts_Total"] < 5:
+	if Global.hearts_total < 5:
 		$Hearts/Heart5.visible = false
-	if Global.Player["Hearts_Total"] < 4:
+	else:
+		$Hearts/Heart5.visible = true
+	if Global.hearts_total < 4:
 		$Hearts/Heart4.visible = false
-	if Global.Player["Hearts_Total"] < 3:
+	else:
+		$Hearts/Heart4.visible = true
+	if Global.hearts_total < 3:
 		$Hearts/Heart3.visible = false
-	if Global.Player["Hearts_Total"] < 2:
+	else:
+		$Hearts/Heart3.visible = true
+	if Global.hearts_total < 2:
 		$Hearts/Heart2.visible = false
-	if Global.Player["Hearts_Total"] < 1:
+	else:
+		$Hearts/Heart2.visible = true
+	if Global.hearts_total < 1:
 		$Hearts/Heart1.visible = false
+	else:
+		$Hearts/Heart1.visible = true
 #
 	for x in 6:
 		if x != 0:
 			var HeartNode = get_node("Hearts/Heart" + str(x))
 
-			if Global.Player["Hearts_Total"] < x:
+			if Global.hearts_total < x:
 				HeartNode.visible = false
 
 			if Global.hearts < x:
@@ -113,9 +123,10 @@ func exec_state_go_to_hospital():
 
 func exec_state_exit_hospital():
 	$Hospital.visible = false
+	Global.STATE_LEVEL = "Gameplay"
+	Global.STATE_PLAYER = "ExitHospital"
 	get_tree().paused = false
 	$Timer/LevelTimeTimer.start()
-	Global.STATE_LEVEL = "Gameplay"
 
 func _move_selector():
 	$PauseScreen/Selector.rect_position.y = selector_locations[selector_curr]

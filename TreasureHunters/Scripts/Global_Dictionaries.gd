@@ -14,7 +14,7 @@ func get_new_player_dict(PlayerName):
 					 "Name_Explorer": "Inda",
 					 "Hearts": 3, 
 					 "Hearts_Total": 3,
-					 "Coins": 0, 
+					 "Coins": 70, 
 					 "Coins_Collected": 0,
 					 "Treasure": [],
 					 "Weapons": [],
@@ -108,4 +108,5 @@ func reset_flags(LevelNum):
 									   "On_Elevator": false,
 									   "On_Vines": false,
 									   "On_Enemy": false,
-									   "On_Spikes": false}
+									   "On_Spikes": false,
+									   "On_Hospital": false}

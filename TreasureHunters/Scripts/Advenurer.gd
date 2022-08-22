@@ -66,6 +66,8 @@ func exec_state_move():
 		exec_state_open_chest()
 	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
 		exec_state_despawn_player()
+	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Hospital"] == true:
+		exec_state_go_to_hospital()
 	elif Global.Player["Player_Flags"]["Can_Push"] == true:
 		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
@@ -314,6 +316,8 @@ func exec_state_complete_scene():
 	$AnimationPlayer.playback_speed = 1
 	Global.STATE_PLAYER = "Move_Normal"
 
+func exec_state_go_to_hospital():
+	Global.STATE_LEVEL = "GoToHospital"
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

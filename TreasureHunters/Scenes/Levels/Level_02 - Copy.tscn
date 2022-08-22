@@ -2443,7 +2443,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 82 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -2493,6 +2493,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SpeechBubble:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=32]
 resource_name = "Damage"
@@ -2522,7 +2546,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 82 ) ]
+"values": [ ExtResource( 87 ) ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -3207,8 +3231,7 @@ collision_mask = 6
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Adventurer"]
-texture = ExtResource( 82 )
-flip_h = true
+texture = ExtResource( 87 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Adventurer"]
 visible = false

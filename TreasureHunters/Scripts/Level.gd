@@ -68,7 +68,6 @@ func exec_state_complete_scene():
 	Global.STATE_LEVEL = "Gameplay"
 
 
-
 func level_setup():
 
 	level_num = int(self.name.replace("Level_", ""))

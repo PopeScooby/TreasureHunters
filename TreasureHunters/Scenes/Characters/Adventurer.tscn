@@ -2282,7 +2282,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 50 ) ]
+"values": [ ExtResource( 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -2332,6 +2332,30 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("SpeechBubble:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=32]
 resource_name = "Damage"
@@ -2361,7 +2385,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 50 ) ]
+"values": [ ExtResource( 1 ) ]
 }
 
 [sub_resource type="Animation" id=34]
@@ -2859,8 +2883,7 @@ collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 50 )
-flip_h = true
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 40 )
@@ -2906,7 +2929,6 @@ anims/Scene_Level_01_Enter = SubResource( 35 )
 anims/Scene_Level_05_HospitalFound = SubResource( 38 )
 
 [node name="SpeechBubble" type="TextureRect" parent="."]
-visible = false
 margin_left = 228.273
 margin_top = -442.867
 margin_right = 510.273

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Textures/Background/Items/Sign (1).png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Items/Jumpshroom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Slug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Triggers/HospitalDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Items/Crate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (72).png" type="Texture" id=13]
@@ -190,10 +191,13 @@ position = Vector2( 2340, 4161 )
 scale = Vector2( 9, 2 )
 flow_speed = 125
 
-[node name="Scene_Trigger" parent="Triggers" instance=ExtResource( 5 )]
+[node name="HospitalFound" parent="Triggers" instance=ExtResource( 5 )]
 position = Vector2( 908, -628 )
-scale = Vector2( 2.25, 2.25 )
+scale = Vector2( 4, 4 )
 scene_name = "Level_05_HospitalFound"
+
+[node name="HospitalDoor" parent="Triggers" instance=ExtResource( 9 )]
+position = Vector2( 906, -627 )
 
 [node name="Treasure" type="Node2D" parent="."]
 
@@ -265,7 +269,7 @@ position = Vector2( 1308, 932 )
 position = Vector2( 1652, -600 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
-position = Vector2( 456, 4629 )
+position = Vector2( 2293, -919 )
 
 [node name="Enemies" type="Node2D" parent="."]
 

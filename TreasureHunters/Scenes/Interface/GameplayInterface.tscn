@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scripts/GameplayInterface.gd" type="Script" id=3]
 [ext_resource path="res://Textures/Items/Coins/skull/rotating_skull_coin_01.png" type="Texture" id=4]
 [ext_resource path="res://Textures/Items/Heart.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Interface/Hospital.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -225,5 +226,8 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Hospital" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]

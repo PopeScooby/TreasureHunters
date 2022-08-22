@@ -3155,6 +3155,7 @@ anims/NewGame_8 = SubResource( 10 )
 anims/NewGame_9 = SubResource( 11 )
 
 [node name="Speech" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -3162,57 +3163,53 @@ __meta__ = {
 }
 
 [node name="SpeechBubble" type="TextureRect" parent="Speech"]
-visible = false
-margin_left = 903.0
-margin_top = 335.0
-margin_right = 1261.0
-margin_bottom = 420.0
+margin_left = 925.0
+margin_top = 102.591
+margin_right = 1002.0
+margin_bottom = 143.591
 texture = ExtResource( 7 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SpeechPointer" type="TextureRect" parent="Speech/SpeechBubble"]
-margin_left = -41.5483
-margin_top = 42.1803
-margin_right = 3.4517
-margin_bottom = 83.1803
-texture = ExtResource( 6 )
+margin_left = -20.2855
+margin_top = -0.247437
+margin_right = 5.7145
+margin_bottom = 20.7526
+texture = ExtResource( 3 )
 expand = true
 flip_h = true
+flip_v = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="Speech/SpeechBubble"]
-margin_left = 5.64819
-margin_top = 45.9988
-margin_right = 11.6482
-margin_bottom = 76.9988
+margin_left = 1.63348
+margin_top = 1.77933
+margin_right = 7.63348
+margin_bottom = 32.7793
 color = Color( 0.921569, 0.960784, 0.964706, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpeechText" type="Label" parent="Speech/SpeechBubble"]
-margin_left = 14.6482
-margin_top = 14.9988
-margin_right = 344.648
-margin_bottom = 73.9988
+margin_left = 6.0
+margin_top = 7.0
+margin_right = 268.0
+margin_bottom = 33.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
-text = "Ureka, My invention works. Inda, Lary come over here and see."
+text = "Wow!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SpeechBubble2" type="TextureRect" parent="Speech"]
-visible = false
 margin_left = 875.0
 margin_top = 178.0
-margin_right = 1024.0
+margin_right = 949.0
 margin_bottom = 219.0
 texture = ExtResource( 7 )
 expand = true
@@ -3223,7 +3220,7 @@ __meta__ = {
 [node name="SpeechPointer" type="TextureRect" parent="Speech/SpeechBubble2"]
 margin_left = -20.2855
 margin_top = -0.247437
-margin_right = 5.71448
+margin_right = 5.7145
 margin_bottom = 20.7526
 texture = ExtResource( 3 )
 expand = true
@@ -3250,9 +3247,8 @@ margin_right = 268.0
 margin_bottom = 33.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
-text = "We'll Be Rich!"
+text = "How?"
 autowrap = true
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

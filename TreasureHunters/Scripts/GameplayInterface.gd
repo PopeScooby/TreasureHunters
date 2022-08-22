@@ -23,7 +23,9 @@ func _process(delta):
 		$PauseScreen/PauseLbl.text = "Out Of Time!"
 		exec_state_pause()
 	elif Global.STATE_LEVEL == "GoToHospital":
-		exec_state_hospital()
+		exec_state_go_to_hospital()
+	elif Global.STATE_LEVEL == "ExitHospital":
+		exec_state_exit_hospital()
 	else:
 		$PauseScreen/PauseLbl.text = "~Pause~"
 	
@@ -98,7 +100,7 @@ func exec_state_menu():
 	elif Input.is_action_just_pressed("menu_back"):
 		exec_state_unpause()
 
-func exec_state_hospital():
+func exec_state_go_to_hospital():
 	get_tree().paused = true
 	$Timer/LevelTimeTimer.stop()
 	$Hospital.visible = true
@@ -109,6 +111,11 @@ func exec_state_hospital():
 #	$Timer/LevelTimeTimer.stop()
 #	$PauseScreen.visible = true
 
+func exec_state_exit_hospital():
+	$Hospital.visible = false
+	get_tree().paused = false
+	$Timer/LevelTimeTimer.start()
+	Global.STATE_LEVEL = "Gameplay"
 
 func _move_selector():
 	$PauseScreen/Selector.rect_position.y = selector_locations[selector_curr]

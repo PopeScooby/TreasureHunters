@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Textures/Background/hospital.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Interface/SidePanel_Hospital.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/Background/ForestRidge2.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/Interface/Hospital.gd" type="Script" id=4]
 [ext_resource path="res://Textures/Misc/SpeechBubbles/connector_02.png" type="Texture" id=5]
-[ext_resource path="res://Textures/Characters/Inda/Dead/Dead__000.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Textures/Misc/SpeechBubbles/panel_04.png" type="Texture" id=8]
 
@@ -18,7 +17,7 @@ font_data = ExtResource( 7 )
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("SpeechBubble:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,10 +26,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 6 ) ]
+"values": [ Vector2( 228.273, -442.867 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpeechBubble:rect_position")
+tracks/1/path = NodePath("SpeechBubble:rect_size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -39,10 +38,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 228.273, -442.867 ) ]
+"values": [ Vector2( 282, 164 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpeechBubble:rect_size")
+tracks/2/path = NodePath("SpeechBubble:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -51,10 +50,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 282, 164 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("SpeechBubble:texture")
+tracks/3/path = NodePath("SpeechBubble:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -63,10 +62,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 8 ) ]
+"values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("SpeechBubble:visible")
+tracks/4/path = NodePath("SpeechBubble/SpeechPointer:rect_position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,10 +74,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ Vector2( -24.0188, 130.165 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("SpeechBubble/SpeechPointer:rect_position")
+tracks/5/path = NodePath("SpeechBubble/SpeechPointer:rect_size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -87,10 +86,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -24.0188, 130.165 ) ]
+"values": [ Vector2( 26, 21 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("SpeechBubble/SpeechPointer:rect_size")
+tracks/6/path = NodePath("SpeechBubble/SpeechPointer:texture")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -99,10 +98,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 26, 21 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("SpeechBubble/SpeechPointer:texture")
+tracks/7/path = NodePath("SpeechBubble/ColorRect:rect_position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -111,10 +110,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 5 ) ]
+"values": [ Vector2( 1.68356, 136.906 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("SpeechBubble/ColorRect:rect_position")
+tracks/8/path = NodePath("SpeechBubble/ColorRect:rect_size")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -123,10 +122,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1.68356, 136.906 ) ]
+"values": [ Vector2( 3, 12 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("SpeechBubble/ColorRect:rect_size")
+tracks/9/path = NodePath("SpeechBubble/SpeechText:rect_position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -135,10 +134,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 3, 12 ) ]
+"values": [ Vector2( 6, 7 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("SpeechBubble/SpeechText:rect_position")
+tracks/10/path = NodePath("SpeechBubble/SpeechText:rect_size")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -147,10 +146,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 6, 7 ) ]
+"values": [ Vector2( 262, 142 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("SpeechBubble/SpeechText:rect_size")
+tracks/11/path = NodePath("SpeechBubble/SpeechText:text")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -159,10 +158,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 262, 142 ) ]
+"values": [ "Wierd, why is there a hospital in the middle of a remote forest? Well, whatever the reason I bet I could go inside." ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("SpeechBubble/SpeechText:text")
+tracks/12/path = NodePath("SpeechBubble/SpeechText:visible_characters")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -171,10 +170,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ "Wierd, why is there a hospital in the middle of a remote forest? Well, whatever the reason I bet I could go inside." ]
+"values": [ 0 ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("SpeechBubble/SpeechText:visible_characters")
+tracks/13/path = NodePath("ContinueLabel:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -183,27 +182,15 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ false ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("ContinueLabel:visible")
+tracks/14/path = NodePath("SidePanel:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("SidePanel:visible")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,

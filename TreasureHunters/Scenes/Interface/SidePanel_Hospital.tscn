@@ -45,9 +45,9 @@ custom_fonts/font = SubResource( 1 )
 text = "Exit"
 
 [node name="Selector" type="TextureRect" parent="."]
-margin_left = 411.25
-margin_top = 267.0
-margin_right = 604.25
-margin_bottom = 430.0
+margin_left = 271.0
+margin_top = 453.0
+margin_right = 424.0
+margin_bottom = 528.0
 texture = ExtResource( 5 )
 expand = true

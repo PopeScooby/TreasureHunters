@@ -14,7 +14,7 @@ var coins = []
 var chests = []
 var diamonds = []
 var ruby = []
-
+var heart_container = false
 
 
 var STATE_GLOBAL = "GameStart"
@@ -76,6 +76,10 @@ func reset_level_variables():
 	chests = []
 	diamonds = []
 	ruby = []
+	if Global.Level.has("Heart_Container"):
+		heart_container = Global.Level["Heart_Container"]
+	else:
+		heart_container = false
 	
 	var curr_idx = 0
 	while curr_idx < Global.Level["Coins"].size():
@@ -109,6 +113,8 @@ func save_level_variables():
 	Global.Level["Chests"] = []
 	Global.Level["Diamonds"] = []
 	Global.Level["Ruby"] = []
+	if Global.Level.has("Heart_Container"):
+		Global.Level["Heart_Container"] = heart_container 
 	
 	var curr_idx = 0
 	while curr_idx < coins.size():

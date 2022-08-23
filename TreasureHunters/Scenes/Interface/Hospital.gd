@@ -15,6 +15,14 @@ func _ready():
 
 func _process(delta):
 	
+	if Global.Level.has("Heart_Container"):
+		
+		if Global.heart_container and $SidePanel.visible == true:
+			$SidePanel/HeartContainer.visible = false
+		else:
+			$SidePanel/HeartContainer.visible = true
+		
+	
 	if Global.STATE_LEVEL == "InHospital" and curr_scene != "" and self.visible == true and $ContinueLabel.visible == false and $SidePanel.visible == false:
 		$AnimationPlayer.play(curr_scene)
 	elif Input.is_action_just_pressed("menu_select") and $ContinueLabel.visible == true:
@@ -49,10 +57,11 @@ func move_selector():
 	$SidePanel/Selector.rect_size = selector_locations[selector_curr]["Size"]
 
 func buy_heart_container():
-	if Global.coins_total >= 50:
+	if Global.coins_total >= 50 and Global.Level["Heart_Container"] == false:
 		Global.hearts_total += 1
 		Global.hearts += 1
 		Global.coins_total -= 50
+		Global.heart_container = true
 	
 	
 

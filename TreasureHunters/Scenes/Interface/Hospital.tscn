@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Textures/Background/hospital.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Interface/SidePanel_Hospital.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/Background/ForestRidge2.jpg" type="Texture" id=3]
 [ext_resource path="res://Scenes/Interface/Hospital.gd" type="Script" id=4]
 [ext_resource path="res://Textures/Misc/SpeechBubbles/connector_02.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Background/Items/Bush (2).png" type="Texture" id=6]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Textures/Misc/SpeechBubbles/panel_04.png" type="Texture" id=8]
 
@@ -412,6 +413,16 @@ margin_right = 500.0
 margin_bottom = 588.0
 texture = ExtResource( 1 )
 expand = true
+
+[node name="Bush(2)" type="Sprite" parent="HospitalImg"]
+position = Vector2( 328, 384 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+
+[node name="Bush(2)2" type="Sprite" parent="HospitalImg"]
+position = Vector2( 88, 384 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
 
 [node name="SidePanel" parent="." instance=ExtResource( 2 )]
 visible = false

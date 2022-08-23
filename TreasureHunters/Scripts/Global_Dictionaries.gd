@@ -14,7 +14,7 @@ func get_new_player_dict(PlayerName):
 					 "Name_Explorer": "Inda",
 					 "Hearts": 3, 
 					 "Hearts_Total": 3,
-					 "Coins": 70, 
+					 "Coins": 0, 
 					 "Coins_Collected": 0,
 					 "Treasure": [],
 					 "Weapons": [],
@@ -69,7 +69,8 @@ func get_new_player_dict(PlayerName):
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Heart_Container": false
 									}
 								},
 					 "Player_Info" : {"Friction": false,

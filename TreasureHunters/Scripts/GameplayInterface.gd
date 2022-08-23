@@ -116,10 +116,6 @@ func exec_state_go_to_hospital():
 	$Hospital.visible = true
 	$Hospital.curr_scene = "Scene_Hospital_01"
 	Global.STATE_LEVEL = "InHospital"
-#func exec_state_timeout():
-#	get_tree().paused = true
-#	$Timer/LevelTimeTimer.stop()
-#	$PauseScreen.visible = true
 
 func exec_state_exit_hospital():
 	$Hospital.visible = false
@@ -127,6 +123,11 @@ func exec_state_exit_hospital():
 	Global.STATE_PLAYER = "ExitHospital"
 	get_tree().paused = false
 	$Timer/LevelTimeTimer.start()
+
+#func exec_state_timeout():
+#	get_tree().paused = true
+#	$Timer/LevelTimeTimer.stop()
+#	$PauseScreen.visible = true
 
 func _move_selector():
 	$PauseScreen/Selector.rect_position.y = selector_locations[selector_curr]

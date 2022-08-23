@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -8,26 +8,52 @@
 [ext_resource path="res://Textures/Background/Items/Sign (1).png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Items/Jumpshroom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Slug.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Triggers/HospitalDoor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Textures/Background/Items/Stone (2).png" type="Texture" id=9]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/light-green-stalk-2.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Items/Crate.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (72).png" type="Texture" id=13]
 [ext_resource path="res://Textures/Tilesets/Water/Water_02.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Characters/Spider.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Textures/Background/hospital.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Background/Items/Sign (4).png" type="Texture" id=17]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/blue-mushroom-group.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/light-green-stalk-5.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/glow.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/single.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/cap-light-green-4.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/yellow.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Triggers/HospitalDoor.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Textures/Background/Items/corner_web_1_white.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Background/Items/full_web_white.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-mushroom-group.png" type="Texture" id=27]
 [ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
 [ext_resource path="res://Scenes/Items/Portal.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scenes/Interface/GameplayInterface.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/Items/Portal_Exit.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/glow.png" type="Texture" id=34]
 [ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Scenes/Items/Treasure.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Textures/Background/Items/Vine (1).png" type="Texture" id=37]
 [ext_resource path="res://Textures/Background/Items/Plant (3).png" type="Texture" id=38]
 [ext_resource path="res://Textures/Background/Items/Bush (2).png" type="Texture" id=39]
+[ext_resource path="res://Textures/Background/Items/Plant (5).png" type="Texture" id=40]
 [ext_resource path="res://Textures/Background/Items/Vine (2).png" type="Texture" id=41]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/blue-stalk-4.png" type="Texture" id=42]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/cap-1-blue.png" type="Texture" id=43]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/glow-blue.png" type="Texture" id=44]
 [ext_resource path="res://Textures/Background/Items/Stone (3).png" type="Texture" id=45]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/red_tilt_right.png" type="Texture" id=46]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/group.png" type="Texture" id=47]
+[ext_resource path="res://Textures/Background/Items/Bush (3).png" type="Texture" id=48]
+[ext_resource path="res://Textures/Background/Items/Stone (1).png" type="Texture" id=49]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-stalk-3.png" type="Texture" id=50]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-cap-6.png" type="Texture" id=51]
+[ext_resource path="res://Textures/Background/Items/Bush (4).png" type="Texture" id=52]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-mushroom-6.png" type="Texture" id=53]
+[ext_resource path="res://Textures/Background/Items/corner_web_2_white.png" type="Texture" id=54]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile (72).png 0"
@@ -80,6 +106,11 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 6943, 684, 0, 0, 0, 0, 5892, 1874 )
 }
 
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 3977, -339, 0, 0, 0, 0, 4800, 122, 0, 0, 0, 0, 5504, -325, 0, 0, 0, 0, 4801, 123, 0, 0, 0, 0, 3977, -339 )
+}
+
 [node name="Level_05" type="Node2D"]
 position = Vector2( -4, 0 )
 script = ExtResource( 30 )
@@ -123,10 +154,124 @@ position = Vector2( 1270.6, -589.203 )
 scale = Vector2( 2.0703, 1.86217 )
 texture = ExtResource( 39 )
 
+[node name="Bush3" type="Sprite" parent="Background"]
+position = Vector2( 3062, -1365 )
+scale = Vector2( 4.18899, 4.71997 )
+texture = ExtResource( 52 )
+
+[node name="Plant7" type="Sprite" parent="Background"]
+position = Vector2( 3177, -1257.06 )
+scale = Vector2( 1.94118, 4.42892 )
+texture = ExtResource( 38 )
+
+[node name="Plant6" type="Sprite" parent="Background"]
+position = Vector2( 3182, -1429 )
+scale = Vector2( 3.0945, 3.39487 )
+texture = ExtResource( 40 )
+
+[node name="Bush4" type="Sprite" parent="Background"]
+position = Vector2( 3317, -1298 )
+scale = Vector2( 3.0945, 3.39487 )
+texture = ExtResource( 48 )
+
+[node name="Bush2" type="Sprite" parent="Background"]
+position = Vector2( 542, -585 )
+scale = Vector2( 2.0703, 1.86217 )
+texture = ExtResource( 39 )
+
+[node name="Plant2" type="Sprite" parent="Background"]
+position = Vector2( 2561, -775 )
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Plant5" type="Sprite" parent="Background"]
+position = Vector2( 4197, 941 )
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Plant3" type="Sprite" parent="Background"]
+position = Vector2( 2565, -665 )
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Web1" type="Sprite" parent="Background"]
+position = Vector2( 867, 3234 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Web2" type="Sprite" parent="Background"]
+position = Vector2( 3199, 1652 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 25 )
+
+[node name="Web5" type="Sprite" parent="Background"]
+position = Vector2( 5381, -206 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 54 )
+
+[node name="Web6" type="Sprite" parent="Background"]
+position = Vector2( 3974, -287 )
+rotation = -1.31598
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 26 )
+
+[node name="Web7" type="Sprite" parent="Background"]
+position = Vector2( 4803.56, 237.119 )
+rotation = -1.55509
+scale = Vector2( 0.25, 0.232743 )
+texture = ExtResource( 26 )
+
+[node name="Web3" type="Sprite" parent="Background"]
+position = Vector2( 4612, 3070 )
+scale = Vector2( 0.5, 0.25 )
+texture = ExtResource( 26 )
+
+[node name="Web4" type="Sprite" parent="Background"]
+position = Vector2( 6448, 1405 )
+rotation = 0.657989
+scale = Vector2( 0.25, 0.75 )
+texture = ExtResource( 26 )
+
+[node name="Mushroom10" type="Sprite" parent="Background"]
+position = Vector2( 1384, 2141 )
+rotation = -0.47822
+scale = Vector2( 0.222656, 0.311151 )
+texture = ExtResource( 21 )
+
+[node name="Plant4" type="Sprite" parent="Background"]
+position = Vector2( 3583, -326 )
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
 [node name="Stone1" type="Sprite" parent="Background"]
 position = Vector2( 2450, -699 )
 scale = Vector2( 3.91, 3.63084 )
 texture = ExtResource( 45 )
+
+[node name="Stone2" type="Sprite" parent="Background"]
+position = Vector2( 716, 967 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Stone4" type="Sprite" parent="Background"]
+position = Vector2( 876, 2776 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
+
+[node name="Stone5" type="Sprite" parent="Background"]
+position = Vector2( 1451, 2128 )
+scale = Vector2( 1.25, 1.50467 )
+texture = ExtResource( 45 )
+flip_h = true
+
+[node name="Mushroom2" type="Sprite" parent="Background"]
+position = Vector2( 897, 2802 )
+texture = ExtResource( 4 )
+
+[node name="Stone3" type="Sprite" parent="Background"]
+position = Vector2( 961, 2789 )
+texture = ExtResource( 49 )
 
 [node name="Sign1" type="Sprite" parent="Background"]
 position = Vector2( 1556, 933 )
@@ -134,13 +279,131 @@ rotation = 0.139626
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
+[node name="Sign2" type="Sprite" parent="Background"]
+position = Vector2( 3888, -1245 )
+rotation = -0.139626
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
 [node name="Plant1" type="Sprite" parent="Background"]
 position = Vector2( 1510, 971 )
 scale = Vector2( 1, 3 )
 texture = ExtResource( 38 )
 
+[node name="Mushroom6" type="Sprite" parent="Background"]
+position = Vector2( 1787, 2484 )
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 27 )
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom6"]
+texture = ExtResource( 34 )
+
+[node name="Mushroom14" type="Sprite" parent="Background"]
+position = Vector2( 7325, -189 )
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom14"]
+texture = ExtResource( 44 )
+
+[node name="Mushroom15" type="Sprite" parent="Background"]
+position = Vector2( 6396, -162 )
+rotation = 2.27416
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom15"]
+texture = ExtResource( 20 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom15"]
+position = Vector2( -66.668, -229.289 )
+texture = ExtResource( 22 )
+
+[node name="Mushroom16" type="Sprite" parent="Background"]
+position = Vector2( 3617, -162 )
+rotation = 2.27416
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 50 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom16"]
+texture = ExtResource( 34 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom16"]
+position = Vector2( -66.668, -229.289 )
+texture = ExtResource( 51 )
+
+[node name="Mushroom13" type="Sprite" parent="Background"]
+position = Vector2( 7857, 339 )
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 23 )
+
+[node name="Mushroom4" type="Sprite" parent="Background"]
+position = Vector2( 2711, 2278 )
+rotation = -0.837758
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 34 )
+flip_h = true
+
+[node name="Mushroom7" type="Sprite" parent="Background"]
+position = Vector2( 2711, 2278 )
+rotation = -0.837758
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 53 )
+flip_h = true
+
 [node name="Mushroom1" type="Sprite" parent="Background"]
 position = Vector2( 1498, 1000 )
+texture = ExtResource( 4 )
+
+[node name="Mushroom12" type="Sprite" parent="Background"]
+position = Vector2( 2071, 1706 )
+rotation = -0.598648
+scale = Vector2( 0.5, 0.13559 )
+texture = ExtResource( 42 )
+
+[node name="Cap-1-blue" type="Sprite" parent="Background/Mushroom12"]
+position = Vector2( -4, -314.694 )
+scale = Vector2( 1, 1.39571 )
+texture = ExtResource( 43 )
+
+[node name="Cap-1-blue2" type="Sprite" parent="Background/Mushroom12"]
+position = Vector2( -4, -314.694 )
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 44 )
+
+[node name="Mushroom5" type="Sprite" parent="Background"]
+position = Vector2( 2508, 2411 )
+texture = ExtResource( 4 )
+
+[node name="Mushroom8" type="Sprite" parent="Background"]
+position = Vector2( 4969, 1845 )
+texture = ExtResource( 46 )
+
+[node name="Mushroom11" type="Sprite" parent="Background"]
+position = Vector2( 3356, 2619 )
+rotation = -1.97397
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom11"]
+position = Vector2( -70.3945, -8.28271 )
+rotation = -3.89034
+texture = ExtResource( 22 )
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom11"]
+position = Vector2( 15.9893, -17.0977 )
+texture = ExtResource( 20 )
+
+[node name="Mushroom9" type="Sprite" parent="Background"]
+position = Vector2( 4796, 1976 )
+scale = Vector2( 0.773438, 0.690647 )
+texture = ExtResource( 47 )
+
+[node name="Mushroom3" type="Sprite" parent="Background"]
+position = Vector2( 4912, 2023 )
 texture = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -176,6 +439,10 @@ scale = Vector2( 1.5, 1 )
 [node name="Spikes2" parent="Triggers" instance=ExtResource( 3 )]
 position = Vector2( 7045, 1640 )
 
+[node name="Spikes3" parent="Triggers" instance=ExtResource( 3 )]
+position = Vector2( 6141, 148 )
+scale = Vector2( 0.5, 1 )
+
 [node name="Water1" parent="Triggers" instance=ExtResource( 11 )]
 position = Vector2( 2524, 1219 )
 scale = Vector2( 7.5, 2 )
@@ -196,7 +463,7 @@ position = Vector2( 908, -628 )
 scale = Vector2( 4, 4 )
 scene_name = "Level_05_HospitalFound"
 
-[node name="HospitalDoor" parent="Triggers" instance=ExtResource( 9 )]
+[node name="HospitalDoor" parent="Triggers" instance=ExtResource( 24 )]
 position = Vector2( 906, -627 )
 
 [node name="Treasure" type="Node2D" parent="."]
@@ -269,7 +536,7 @@ position = Vector2( 1308, 932 )
 position = Vector2( 1652, -600 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
-position = Vector2( 2293, -919 )
+position = Vector2( 456, 4629 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -366,6 +633,12 @@ scale = Vector2( 0.5, 0.5 )
 move_speed = 300
 patrol_path = NodePath("../Paths/Spider4")
 
+[node name="Spider5" parent="Enemies" instance=ExtResource( 15 )]
+position = Vector2( 4800, 139 )
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+patrol_path = NodePath("../Paths/Spider5")
+
 [node name="Paths" type="Node2D" parent="Enemies"]
 
 [node name="Spider1" type="Path2D" parent="Enemies/Paths"]
@@ -380,28 +653,34 @@ curve = SubResource( 4 )
 [node name="Spider4" type="Path2D" parent="Enemies/Paths"]
 curve = SubResource( 5 )
 
+[node name="Spider5" type="Path2D" parent="Enemies/Paths"]
+curve = SubResource( 7 )
+
 [node name="Foreground" type="Node2D" parent="."]
-visible = false
-position = Vector2( 0, 121 )
 
 [node name="Vine1" type="Sprite" parent="Foreground"]
+position = Vector2( 2307, 2832 )
 scale = Vector2( 3, 2 )
 texture = ExtResource( 37 )
 
 [node name="Vine3" type="Sprite" parent="Foreground"]
-scale = Vector2( 3, 2 )
+position = Vector2( 7876.25, 1818.5 )
+scale = Vector2( 2.81336, 1.91406 )
 texture = ExtResource( 37 )
 
 [node name="Vine5" type="Sprite" parent="Foreground"]
-scale = Vector2( 6, 2 )
+position = Vector2( 5503, 4357 )
+scale = Vector2( 5.92627, 2 )
 texture = ExtResource( 37 )
 
 [node name="Vine4" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 2 )
+position = Vector2( 3345, 3642 )
+scale = Vector2( 4.07353, 2 )
 texture = ExtResource( 41 )
 
 [node name="Vine2" type="Sprite" parent="Foreground"]
-scale = Vector2( 2, 3 )
+position = Vector2( 3748, -770 )
+scale = Vector2( 4.17647, 4.09677 )
 texture = ExtResource( 41 )
 
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]

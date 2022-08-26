@@ -44,6 +44,7 @@ func _physics_process(delta):
 			get_tree().change_scene("res://Scenes/Interface/Menu_GameStart.tscn")
 		else:
 			GlobalDictionaries.game["PlayerKey"] = str(selector_curr)
+			Global.Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
 			get_tree().change_scene("res://Scenes/Interface/Menu_LevelSelect.tscn")
 
 func _move_selector():

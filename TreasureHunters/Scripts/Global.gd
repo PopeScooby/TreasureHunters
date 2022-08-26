@@ -1,6 +1,6 @@
 extends Node
 
-var isDebug = false
+#var isDebug = false
 
 var Player
 var Level
@@ -15,7 +15,8 @@ var chests = []
 var diamonds = []
 var ruby = []
 var heart_container = false
-
+var gem_square_count = 0
+var gem_square
 
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
@@ -39,7 +40,7 @@ func new_game(PlayerName):
 	GlobalDictionaries.game["PlayerKey"] = NewPlayerKey
 	GlobalDictionaries.players[str(NewPlayerKey)] = GlobalDictionaries.get_new_player_dict(PlayerName)
 	save_game()
-	Player = GlobalDictionaries.players[str(NewPlayerKey)]
+	Player = GlobalDictionaries.players[NewPlayerKey]
 	get_tree().change_scene("res://Scenes/Interface/HomeBase.tscn")
 
 func load_level():
@@ -72,6 +73,8 @@ func reset_level_variables():
 	coins_total = Global.Player["Coins"]
 	coins_collected_total = Global.Player["Coins_Collected"]
 	coins_collected_level = Global.Level["Coins_Collected"]
+	gem_square_count = Global.Player["Gem_Square_Count"]
+	gem_square = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
 	coins = []
 	chests = []
 	diamonds = []
@@ -109,6 +112,8 @@ func save_level_variables():
 	Global.Player["Coins"] = coins_total 
 	Global.Player["Coins_Collected"] = coins_collected_total 
 	Global.Level["Coins_Collected"] = coins_collected_level 
+	Global.Level["Gem_Square_Count"] = gem_square_count 
+	Global.Player["Gem_Square"][Global.Level["Gem_Square"]] = gem_square 
 	Global.Level["Coins"] = []
 	Global.Level["Chests"] = []
 	Global.Level["Diamonds"] = []

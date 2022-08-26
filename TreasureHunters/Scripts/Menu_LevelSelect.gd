@@ -9,8 +9,7 @@ func _ready():
 	
 	var LevelsLoaded = 1
 	var SelectorLocation = 142
-	var Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-	var Level_Max = Player["Level_Max"]
+	var Level_Max = Global.Player["Level_Max"]
 	
 	while LevelsLoaded <= Level_Max:
 		selector_curr = LevelsLoaded

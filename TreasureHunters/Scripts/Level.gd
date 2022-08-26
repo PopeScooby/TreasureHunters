@@ -11,15 +11,8 @@ export var cam_bottom = 0
 var level_num
 
 
-
 func _ready():
 
-	if Global.isDebug == true:
-		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
-		Global.Player = GlobalDictionaries.players["1"]
-		Global.Player["Level_Current"] = int(self.name.replace("Level_",""))
-		GlobalDictionaries.player_info = Global.Player["Player_Info"]
-		GlobalDictionaries.game["PlayerKey"] = "1"
 	if GlobalDictionaries.game["PlayerKey"] == "0":
 		GlobalDictionaries.game["PlayerKey"] = "1"
 
@@ -76,6 +69,7 @@ func level_setup():
 	level_setup_timer()
 	level_setup_coins()
 	level_setup_chests()
+	level_setup_gems()
 	
 	Global.reset_level_variables()
 
@@ -124,3 +118,7 @@ func level_setup_chests():
 			get_node("Treasure/Chest" + str(Chest_Curr)).STATE = "Opened"
 		Chest_Curr += 1
 
+func level_setup_gems():
+	
+	if Global.Level["Gem_Square"] != "":
+		get_node("Treasure/Gem_Square").visible = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]

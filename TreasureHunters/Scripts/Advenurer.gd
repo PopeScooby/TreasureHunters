@@ -13,6 +13,9 @@ func _ready():
 
 func _process(delta):
 	
+#	var anim_curr = $AnimationPlayer.current_animation
+#	var anim_speed = $AnimationPlayer.playback_speed
+	
 	check_state()
 	exec_state()
 
@@ -147,7 +150,8 @@ func exec_state_move_jump():
 func exec_state_spawn_player():
 	Global.STATE_LEVEL = "Player_Spawning"
 	Global.STATE_PLAYER = "Player_Spawning"
-	$AnimationPlayer.play(Global.Player["Name_Explorer"] + "_1_Spawn")
+	Global.Player["Animation"] = "Spawn"
+	self.set_animation()
 
 func exec_state_despawn_player():
 	Global.STATE_LEVEL = "Player_DeSpawning"
@@ -215,8 +219,6 @@ func exec_state_move_vines():
 		GlobalDictionaries.player_info["Dir_Prev"] = GlobalDictionaries.player_info["Dir_Curr"]
 
 	GlobalDictionaries.player_info["Friction"] = false
-#
-#	motion.y += GlobalDictionaries.player_info["Gravity"]
 
 	if Input.is_action_pressed("move_right"):
 		exec_state_move_right_vines()
@@ -337,6 +339,7 @@ func set_player():
 	else:
 		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
 		Global.Player = GlobalDictionaries.players["1"]
+		Global.Player["Name_Explorer"] = "Inda"
 		Global.Player["Level_Current"] = int(get_parent().name.replace("Level_",""))
 		GlobalDictionaries.player_info = Global.Player["Player_Info"]
 		GlobalDictionaries.game["PlayerKey"] = "1"

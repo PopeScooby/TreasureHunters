@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_02.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_03.png" type="Texture" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://Textures/Background/Items/Sign (3).png" type="Texture" id=47]
 [ext_resource path="res://Textures/Background/Items/Plant (1).png" type="Texture" id=48]
 [ext_resource path="res://Textures/Background/Items/Stone (1).png" type="Texture" id=49]
+[ext_resource path="res://Scenes/Items/Gem_Square.tscn" type="PackedScene" id=50]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -812,14 +813,14 @@ position = Vector2( 3459.91, 1430.95 )
 position = Vector2( 704, 574 )
 
 [node name="Coin3" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( 1380, 702 )
-
-[node name="Coin4" parent="Treasure" instance=ExtResource( 35 )]
 position = Vector2( 3488, 2994 )
 
 [node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
 position = Vector2( 351.478, 3240.83 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="Gem_Square" parent="Treasure" instance=ExtResource( 50 )]
+position = Vector2( 1389, 703 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
 position = Vector2( 1224, 2876 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Textures/Background/Items/Mushroom (1).png" type="Texture" id=4]
 [ext_resource path="res://Textures/Background/Items/Bush (1).png" type="Texture" id=5]
 [ext_resource path="res://Textures/Background/Items/Sign (4).png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Items/Gem_Square.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
 [ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
@@ -164,12 +165,12 @@ position = Vector2( 2523, 2091 )
 [node name="Coin5" parent="Treasure" instance=ExtResource( 35 )]
 position = Vector2( 3384, 555 )
 
-[node name="Coin6" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( 4162, 1853 )
-
 [node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
 position = Vector2( 4112, 1317 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="Gem_Square" parent="Treasure" instance=ExtResource( 7 )]
+position = Vector2( 4170, 1858 )
 
 [node name="Adventurer" parent="." instance=ExtResource( 29 )]
 position = Vector2( 1187, 2620 )

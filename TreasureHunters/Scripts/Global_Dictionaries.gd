@@ -11,7 +11,7 @@ func _ready():
 func get_new_player_dict(PlayerName):
 
 	var NewPlayer = {"Name": PlayerName, 
-					 "Name_Explorer": "Inda",
+					 "Name_Explorer": "",
 					 "Hearts": 3, 
 					 "Hearts_Total": 3,
 					 "Coins": 0, 
@@ -23,13 +23,16 @@ func get_new_player_dict(PlayerName):
 					 "Level_Timer": 0,
 					 "Animation": "",
 					 "Animation2": "",
+					 "Gem_Square_Count": 0,
+					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true},
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,
 									   "Coins": [false],
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Gem_Square": ""
 									},
 								"1" : {"Timer": 120,
 									   "Coins_Collected": 0,
@@ -37,7 +40,8 @@ func get_new_player_dict(PlayerName):
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Gem_Square": "Pink"
 									},
 								"2" : {"Timer": 120,
 									   "Coins_Collected": 0,
@@ -45,7 +49,8 @@ func get_new_player_dict(PlayerName):
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Gem_Square": "Orange"
 									},
 								"3" : {"Timer": 120,
 									   "Coins_Collected": 0,
@@ -53,7 +58,8 @@ func get_new_player_dict(PlayerName):
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Gem_Square": "Green"
 									},
 								"4" : {"Timer": 180,
 									   "Coins_Collected": 0,
@@ -61,7 +67,8 @@ func get_new_player_dict(PlayerName):
 									   "Chests": [true],
 									   "Diamonds": [],
 									   "Ruby": [],
-									   "Complete": false
+									   "Complete": false,
+									   "Gem_Square": "Blue"
 									},
 								"5" : {"Timer": 240,
 									   "Coins_Collected": 0,
@@ -70,6 +77,7 @@ func get_new_player_dict(PlayerName):
 									   "Diamonds": [],
 									   "Ruby": [],
 									   "Complete": false,
+									   "Gem_Square": "Purple",
 									   "Heart_Container": false
 									}
 								},
@@ -92,7 +100,16 @@ func get_new_player_dict(PlayerName):
 									   "On_Hospital": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
-								"New_Game": {"Seen": false, "Next": ""},
+								"Homebase_Intro_01": {"Seen": false, "Next": "Homebase_Intro_02"},
+								"Homebase_Intro_02": {"Seen": false, "Next": "Homebase_Intro_03"},
+								"Homebase_Intro_03": {"Seen": false, "Next": "Homebase_Intro_04"},
+								"Homebase_Intro_04": {"Seen": false, "Next": "Homebase_Intro_05"},
+								"Homebase_Intro_05": {"Seen": false, "Next": "Homebase_Intro_06"},
+								"Homebase_Intro_06": {"Seen": false, "Next": "Homebase_Intro_07"},
+								"Homebase_Intro_07": {"Seen": false, "Next": "Homebase_Intro_08"},
+								"Homebase_Intro_08": {"Seen": false, "Next": ""},
+								"Homebase_Intro_09": {"Seen": false, "Next": "Homebase_Intro_10"},
+								"Homebase_Intro_10": {"Seen": false, "Next": ""},
 								"Level_01_Enter": {"Seen": false, "Next": ""},
 								"Level_01_2": {"Seen": false, "Next": ""},
 								"Level_05_HospitalFound": {"Seen": false, "Next": ""}}

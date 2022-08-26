@@ -16,6 +16,7 @@ func _ready():
 	if patrol_path:
 		patrol_points = get_node(patrol_path).curve.get_baked_points()
 		self.position = patrol_points[0]
+		$AnimationPlayer.play("Spider_1_Move")
 
 		
 func _process(delta):

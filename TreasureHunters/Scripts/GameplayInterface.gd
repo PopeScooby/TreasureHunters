@@ -26,6 +26,10 @@ func _process(delta):
 		exec_state_go_to_hospital()
 	elif Global.STATE_LEVEL == "ExitHospital":
 		exec_state_exit_hospital()
+	elif Global.STATE_PLAYER == "Start_Scene":
+		exec_state_start_scene()
+	elif Global.STATE_PLAYER == "Complete_Scene":
+		exec_state_complete_scene()
 	else:
 		$PauseScreen/PauseLbl.text = "~Pause~"
 	
@@ -124,6 +128,20 @@ func exec_state_exit_hospital():
 	get_tree().paused = false
 	$Timer/LevelTimeTimer.start()
 
+func exec_state_start_scene():
+	if Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Parent"] == "GameplayInterface":
+		var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]
+		$Radio/AnimationPlayer.play(anim_name)
+	else:
+		$Radio.visible = false
+
+func exec_state_complete_scene():
+	$Radio.visible = false
+	if Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Parent"] == "GameplayInterface":
+		Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
+		Global.STATE_PLAYER = "Move_Normal"
+
+
 #func exec_state_timeout():
 #	get_tree().paused = true
 #	$Timer/LevelTimeTimer.stop()
@@ -134,3 +152,8 @@ func _move_selector():
 
 
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name.find("Scene") != -1:
+		Global.STATE_GLOBAL = "Continue_Scene"

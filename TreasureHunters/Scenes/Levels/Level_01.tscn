@@ -850,5 +850,6 @@ texture = ExtResource( 37 )
 [node name="GameplayInterface" parent="." instance=ExtResource( 32 )]
 
 [node name="Scene_Trigger" parent="." instance=ExtResource( 34 )]
-position = Vector2( 3016.74, 1436.29 )
+position = Vector2( 3065, 1417 )
+scale = Vector2( 2, 0.5 )
 scene_name = "Level_01_2"

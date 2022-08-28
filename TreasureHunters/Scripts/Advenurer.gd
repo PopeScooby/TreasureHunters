@@ -306,19 +306,22 @@ func exec_state_damage():
 		Global.STATE_PLAYER = "Dying"
 
 func exec_state_start_scene():
-	
-	var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]
 	$AnimationPlayer.playback_speed = 0
-	$AnimationPlayer2.play(anim_name)
-
-func exec_state_continue_scene():
-	$AnimationPlayer2.stop()
+	if Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Parent"] == "Adventurer":
+		var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]
+		$AnimationPlayer2.play(anim_name)
+	else:
+		$SpeechBubble.visible = false
+#
+#func exec_state_continue_scene():
+#	$AnimationPlayer2.stop()
 
 func exec_state_complete_scene():
 	$SpeechBubble.visible = false
-	Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
 	$AnimationPlayer.playback_speed = 1
-	Global.STATE_PLAYER = "Move_Normal"
+	if Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Parent"] == "Adventurer":
+		Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
+		Global.STATE_PLAYER = "Move_Normal"
 
 func exec_state_go_to_hospital():
 	Global.STATE_PLAYER = "GoToHospital"

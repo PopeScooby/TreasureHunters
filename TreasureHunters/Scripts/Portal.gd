@@ -9,7 +9,6 @@ func _process(delta):
 		Global.STATE_LEVEL = "Portal_Spawning"
 	elif Global.STATE_LEVEL == "Despawn_Portal":
 		$AnimationPlayer.play("Portal_Close")
-#		Global.STATE_LEVEL = "Gameplay"
 		Global.STATE_LEVEL = "Spawn_Portal_Exit"
 		
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -20,5 +19,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name == "Portal_Close":
 		self.visible = false
 		if Global.Player["Level_Current"] == 1 and Global.Player["Scenes"]["Level_01_Enter"]["Seen"] == false:
-			Global.STATE_GLOBAL = "Play_Scene"
 			Global.Player["Scenes"]["Scene_Curr"]["SceneName"] = "Level_01_Enter"
+			Global.STATE_GLOBAL = "Play_Scene"
+		elif Global.Player["Level_Current"] == 2 and Global.Player["Scenes"]["Level_02_Enter"]["Seen"] == false:
+			Global.Player["Scenes"]["Scene_Curr"]["SceneName"] = "Level_02_Enter"
+			Global.STATE_GLOBAL = "Play_Scene"

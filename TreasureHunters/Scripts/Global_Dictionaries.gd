@@ -114,6 +114,10 @@ func get_new_player_dict(PlayerName):
 								"Level_01_Radio_01": {"Seen": false, "Next": "Level_01_Radio_02", "Parent":"GameplayInterface"},
 								"Level_01_Radio_02": {"Seen": false, "Next": "", "Parent":"GameplayInterface"},
 								"Level_01_2": {"Seen": false, "Next": "", "Parent":"Adventurer"},
+								"Level_02_Enter_01": {"Seen": false, "Next": "Level_02_Enter_02", "Parent":"Adventurer"},
+								"Level_02_Enter_02": {"Seen": false, "Next": "Level_02_Enter_03", "Parent":"Adventurer"},
+								"Level_02_Enter_03": {"Seen": false, "Next": "Level_02_Enter_04", "Parent":"GameplayInterface"},
+								"Level_02_Enter_04": {"Seen": false, "Next": "", "Parent":"GameplayInterface"},
 								"Level_05_HospitalFound": {"Seen": false, "Next": "", "Parent":"Adventurer"}}
 				}
 	

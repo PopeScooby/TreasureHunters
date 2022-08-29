@@ -79,6 +79,16 @@ func get_new_player_dict(PlayerName):
 									   "Complete": false,
 									   "Gem_Square": "Purple",
 									   "Heart_Container": false
+									},
+								"6" : {"Timer": 240,
+									   "Coins_Collected": 0,
+									   "Coins": [true],
+									   "Chests": [true],
+									   "Diamonds": [],
+									   "Ruby": [],
+									   "Complete": false,
+									   "Gem_Square": "Purple",
+									   "Heart_Container": false
 									}
 								},
 					 "Player_Info" : {"Friction": false,
@@ -97,7 +107,8 @@ func get_new_player_dict(PlayerName):
 									   "On_Vines": false,
 									   "On_Enemy": false,
 									   "On_Spikes": false,
-									   "On_Hospital": false},
+									   "On_Hospital": false,
+									   "Can_PullLever": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"Homebase_Intro_01": {"Seen": false, "Next": "Homebase_Intro_02", "Parent":"Homebase"},
@@ -133,4 +144,5 @@ func reset_flags(LevelNum):
 									   "On_Vines": false,
 									   "On_Enemy": false,
 									   "On_Spikes": false,
-									   "On_Hospital": false}
+									   "On_Hospital": false,
+									   "Can_PullLever": false}

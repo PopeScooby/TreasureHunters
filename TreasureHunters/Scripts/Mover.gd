@@ -1,9 +1,10 @@
 extends Node2D
 
-export var anim_name = "Up_Down_50"
+export var anim_name = ""
 
 func _ready():
-	$AnimationPlayer.play(anim_name)
+	if anim_name != "":
+		$AnimationPlayer.play(anim_name)
 
 
 #func _process(delta):

@@ -1,0 +1,587 @@
+[gd_scene load_steps=60 format=2]
+
+[ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Triggers/Spike_Trigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Textures/Background/Items/Mushroom (1).png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Background/Platform_4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Textures/Background/Items/Sign (1).png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Items/Jumpshroom.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Characters/Slug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Textures/Background/Items/Stone (2).png" type="Texture" id=9]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/light-green-stalk-2.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Triggers/Water_Trigger.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Items/Crate.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (72).png" type="Texture" id=13]
+[ext_resource path="res://Textures/Tilesets/Water/Water_02.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Characters/Spider.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Textures/Background/Items/Sign (4).png" type="Texture" id=17]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/blue-mushroom-group.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/light-green-stalk-5.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/glow.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/single.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/light-green-glow/cap-light-green-4.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/yellow.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Background/Items/corner_web_1_white.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Background/Items/full_web_white.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-mushroom-group.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Background/Forest.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
+[ext_resource path="res://Scenes/Items/Portal.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Interface/GameplayInterface.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Items/Portal_Exit.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/glow.png" type="Texture" id=34]
+[ext_resource path="res://Scenes/Items/Coin.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Items/Treasure.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Textures/Background/Items/Vine (1).png" type="Texture" id=37]
+[ext_resource path="res://Textures/Background/Items/Plant (3).png" type="Texture" id=38]
+[ext_resource path="res://Textures/Background/Items/Bush (2).png" type="Texture" id=39]
+[ext_resource path="res://Textures/Background/Items/Plant (5).png" type="Texture" id=40]
+[ext_resource path="res://Textures/Background/Items/Vine (2).png" type="Texture" id=41]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/blue-stalk-4.png" type="Texture" id=42]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/cap-1-blue.png" type="Texture" id=43]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/blue-glow/glow-blue.png" type="Texture" id=44]
+[ext_resource path="res://Textures/Background/Items/Stone (3).png" type="Texture" id=45]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/red_tilt_right.png" type="Texture" id=46]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/group.png" type="Texture" id=47]
+[ext_resource path="res://Textures/Background/Items/Bush (3).png" type="Texture" id=48]
+[ext_resource path="res://Textures/Background/Items/Stone (1).png" type="Texture" id=49]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-stalk-3.png" type="Texture" id=50]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-cap-6.png" type="Texture" id=51]
+[ext_resource path="res://Textures/Background/Items/Bush (4).png" type="Texture" id=52]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/intense-green-glow/green-mushroom-6.png" type="Texture" id=53]
+[ext_resource path="res://Textures/Background/Items/corner_web_2_white.png" type="Texture" id=54]
+[ext_resource path="res://Scenes/Items/Gem_Square.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/blue_tile_right.png" type="Texture" id=56]
+[ext_resource path="res://Textures/Background/Items/Mushrooms/unoutlined/gree_tilt_left.png" type="Texture" id=57]
+[ext_resource path="res://Textures/Background/Items/Plant (2).png" type="Texture" id=58]
+[ext_resource path="res://Textures/Background/Items/Plant (1).png" type="Texture" id=59]
+[ext_resource path="res://Textures/Background/Items/Bush (1).png" type="Texture" id=60]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Tile (72).png 0"
+0/texture = ExtResource( 13 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Water_02.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="Level_05" type="Node2D"]
+position = Vector2( -4, 0 )
+script = ExtResource( 30 )
+cam_right = 8800
+cam_top = -1650
+cam_bottom = 4950
+
+[node name="Backdrop" type="Node2D" parent="."]
+
+[node name="Image_Left" type="TextureRect" parent="Backdrop"]
+margin_left = 18.0
+margin_top = -4332.0
+margin_right = 5441.0
+margin_bottom = 573.0
+texture = ExtResource( 28 )
+expand = true
+
+[node name="Image_Right" type="TextureRect" parent="Backdrop"]
+margin_left = 3687.0
+margin_top = -5230.0
+margin_right = 9146.0
+margin_bottom = -459.0
+texture = ExtResource( 28 )
+expand = true
+
+[node name="TileMap_Background" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
+
+[node name="Movers" type="Node2D" parent="."]
+
+[node name="Platform_2" parent="Movers" instance=ExtResource( 5 )]
+position = Vector2( 645, 687 )
+
+[node name="Background" type="Node2D" parent="."]
+visible = false
+
+[node name="Bush1" type="Sprite" parent="Background"]
+scale = Vector2( 2.0703, 1.86217 )
+texture = ExtResource( 39 )
+
+[node name="Bush3" type="Sprite" parent="Background"]
+scale = Vector2( 4.18899, 4.71997 )
+texture = ExtResource( 52 )
+
+[node name="Plant7" type="Sprite" parent="Background"]
+scale = Vector2( 1.94118, 4.42892 )
+texture = ExtResource( 38 )
+
+[node name="Plant6" type="Sprite" parent="Background"]
+scale = Vector2( 3.0945, 3.39487 )
+texture = ExtResource( 40 )
+
+[node name="Bush4" type="Sprite" parent="Background"]
+scale = Vector2( 3.0945, 3.39487 )
+texture = ExtResource( 48 )
+
+[node name="Bush5" type="Sprite" parent="Background"]
+scale = Vector2( 3.0945, 3.39487 )
+texture = ExtResource( 60 )
+
+[node name="Bush2" type="Sprite" parent="Background"]
+scale = Vector2( 2.0703, 1.86217 )
+texture = ExtResource( 39 )
+
+[node name="Plant2" type="Sprite" parent="Background"]
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Plant5" type="Sprite" parent="Background"]
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Plant3" type="Sprite" parent="Background"]
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Web1" type="Sprite" parent="Background"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 26 )
+flip_h = true
+
+[node name="Web2" type="Sprite" parent="Background"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 25 )
+
+[node name="Web5" type="Sprite" parent="Background"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 54 )
+
+[node name="Web6" type="Sprite" parent="Background"]
+rotation = -1.31598
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 26 )
+
+[node name="Web7" type="Sprite" parent="Background"]
+rotation = -1.55509
+scale = Vector2( 0.25, 0.232743 )
+texture = ExtResource( 26 )
+
+[node name="Web3" type="Sprite" parent="Background"]
+scale = Vector2( 0.5, 0.25 )
+texture = ExtResource( 26 )
+
+[node name="Web4" type="Sprite" parent="Background"]
+rotation = 0.657989
+scale = Vector2( 0.25, 0.75 )
+texture = ExtResource( 26 )
+
+[node name="Mushroom10" type="Sprite" parent="Background"]
+rotation = -0.47822
+scale = Vector2( 0.222656, 0.311151 )
+texture = ExtResource( 21 )
+
+[node name="Plant4" type="Sprite" parent="Background"]
+scale = Vector2( 1, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Stone1" type="Sprite" parent="Background"]
+scale = Vector2( 3.91, 3.63084 )
+texture = ExtResource( 45 )
+
+[node name="Stone6" type="Sprite" parent="Background"]
+scale = Vector2( 6.2275, 3.24333 )
+texture = ExtResource( 49 )
+
+[node name="Stone2" type="Sprite" parent="Background"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+
+[node name="Stone4" type="Sprite" parent="Background"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
+
+[node name="Stone5" type="Sprite" parent="Background"]
+scale = Vector2( 1.25, 1.50467 )
+texture = ExtResource( 45 )
+flip_h = true
+
+[node name="Mushroom2" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+
+[node name="Stone3" type="Sprite" parent="Background"]
+texture = ExtResource( 49 )
+
+[node name="Sign1" type="Sprite" parent="Background"]
+rotation = 0.139626
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Sign2" type="Sprite" parent="Background"]
+rotation = -0.139626
+scale = Vector2( 2, 2 )
+texture = ExtResource( 17 )
+
+[node name="Plant1" type="Sprite" parent="Background"]
+scale = Vector2( 1, 3 )
+texture = ExtResource( 38 )
+
+[node name="Plant8" type="Sprite" parent="Background"]
+scale = Vector2( 3, 3.25 )
+texture = ExtResource( 38 )
+
+[node name="Plant11" type="Sprite" parent="Background"]
+scale = Vector2( 1, 2 )
+texture = ExtResource( 38 )
+
+[node name="Plant9" type="Sprite" parent="Background"]
+texture = ExtResource( 59 )
+
+[node name="Plant10" type="Sprite" parent="Background"]
+texture = ExtResource( 58 )
+
+[node name="Mushroom6" type="Sprite" parent="Background"]
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 27 )
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom6"]
+texture = ExtResource( 34 )
+
+[node name="Mushroom14" type="Sprite" parent="Background"]
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 18 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom14"]
+texture = ExtResource( 44 )
+
+[node name="Mushroom15" type="Sprite" parent="Background"]
+rotation = 2.27416
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom15"]
+texture = ExtResource( 20 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom15"]
+texture = ExtResource( 22 )
+
+[node name="Mushroom16" type="Sprite" parent="Background"]
+rotation = 2.27416
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 50 )
+flip_h = true
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom16"]
+texture = ExtResource( 34 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom16"]
+texture = ExtResource( 51 )
+
+[node name="Mushroom13" type="Sprite" parent="Background"]
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 23 )
+
+[node name="Mushroom4" type="Sprite" parent="Background"]
+rotation = -0.837758
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 34 )
+flip_h = true
+
+[node name="Mushroom7" type="Sprite" parent="Background"]
+rotation = -0.837758
+scale = Vector2( 0.33, 0.257317 )
+texture = ExtResource( 53 )
+flip_h = true
+
+[node name="Mushroom1" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+
+[node name="Mushroom12" type="Sprite" parent="Background"]
+rotation = -0.598648
+scale = Vector2( 0.5, 0.13559 )
+texture = ExtResource( 42 )
+
+[node name="Cap-1-blue" type="Sprite" parent="Background/Mushroom12"]
+scale = Vector2( 1, 1.39571 )
+texture = ExtResource( 43 )
+
+[node name="Cap-1-blue2" type="Sprite" parent="Background/Mushroom12"]
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 44 )
+
+[node name="Mushroom5" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+
+[node name="Mushroom8" type="Sprite" parent="Background"]
+texture = ExtResource( 46 )
+
+[node name="Mushroom11" type="Sprite" parent="Background"]
+rotation = -1.97397
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="Cap-light-green-4" type="Sprite" parent="Background/Mushroom11"]
+rotation = -3.89034
+texture = ExtResource( 22 )
+
+[node name="Glow" type="Sprite" parent="Background/Mushroom11"]
+texture = ExtResource( 20 )
+
+[node name="Mushroom9" type="Sprite" parent="Background"]
+scale = Vector2( 0.773438, 0.690647 )
+texture = ExtResource( 47 )
+
+[node name="Mushroom17" type="Sprite" parent="Background"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 56 )
+
+[node name="Mushroom18" type="Sprite" parent="Background"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 57 )
+
+[node name="Mushroom3" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 128 )
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -131067, 2, 0, -131064, 0, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -65534, 5, 0, -65533, 5, 0, -65532, 5, 0, -65531, 7, 0, -65528, 3, 0, -65527, 5, 0, -65526, 5, 0, -65525, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 7, 0, 8, 3, 0, 9, 5, 0, 10, 5, 0, 11, 5, 0, 13, 1, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 7, 0, 65544, 3, 0, 65545, 5, 0, 65546, 5, 0, 65547, 5, 0, 131074, 5, 0, 131075, 5, 0, 131076, 5, 0, 131077, 7, 0, 131080, 3, 0, 131081, 5, 0, 131082, 5, 0, 131083, 5, 0, 196609, 5, 0, 196610, 5, 0, 196611, 5, 0, 196612, 5, 0, 196613, 7, 0, 196616, 3, 0, 196617, 5, 0, 196618, 5, 0, 196619, 5, 0, 262144, 5, 0, 262145, 5, 0, 262146, 5, 0, 262147, 5, 0, 262148, 5, 0, 262149, 7, 0, 262152, 3, 0, 262153, 5, 0, 262154, 5, 0, 262155, 5, 0, 262158, 1, 0, 327680, 9, 0, 327681, 9, 0, 327682, 9, 0, 327683, 9, 0, 327684, 9, 0, 327685, 10, 0, 327688, 8, 0, 327689, 9, 0, 327690, 9, 0, 327691, 9, 0, 589832, 0, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 2, 0, 655368, 3, 0, 655369, 5, 0, 655370, 9, 0, 655371, 9, 0, 655372, 9, 0, 655373, 9, 0, 655374, 9, 0, 655375, 13, 0, 655376, 5, 0, 655377, 5, 0, 655378, 5, 0, 655379, 9, 0, 655380, 9, 0, 655381, 10, 0, 786431, 1, 0, 720896, 1, 0, 720897, 1, 0, 720898, 2, 0, 720904, 3, 0, 720905, 7, 0, 720911, 12, 0, 720912, 13, 0, 720913, 5, 0, 720914, 7, 0, 786434, 7, 0, 786440, 3, 0, 786441, 7, 0, 786448, 12, 0, 786449, 13, 0, 786450, 7, 0, 851970, 7, 0, 851976, 3, 0, 851977, 7, 0, 851985, 12, 0, 851986, 13, 0, 917506, 7, 0, 917512, 8, 0, 917513, 10, 0, 917517, 16, 0, 917518, 18, 0, 917522, 11, 0, 917523, 17, 0, 917524, 17, 0, 917525, 17, 0, 917526, 17, 0, 917527, 17, 0, 917528, 17, 0, 917529, 17, 0, 917530, 18, 0, 983042, 7, 0, 983070, 9, 0, 1048578, 7, 0, 1048605, 9, 0, 1048606, 9, 0, 1114114, 7, 0, 1114140, 9, 0, 1114141, 9, 0, 1179650, 7, 0, 1179657, 16, 0, 1179658, 18, 0, 1179675, 9, 0, 1179676, 9, 0, 1245186, 7, 0, 1245199, 9, 0, 1245200, 9, 0, 1245201, 9, 0, 1245202, 9, 0, 1245203, 9, 0, 1245204, 9, 0, 1245205, 9, 0, 1245206, 9, 0, 1245207, 9, 0, 1245208, 9, 0, 1245209, 9, 0, 1245210, 9, 0, 1245211, 9, 0, 1245212, 9, 0, 1310722, 7, 0, 1376258, 5, 0, 1376259, 33, 0, 1376260, 33, 0, 1376261, 33, 0, 1376262, 33, 0, 1376263, 33, 0, 1376264, 33, 0, 1441794, 5, 0, 1441795, 5, 0, 1441796, 5, 0, 1441797, 5, 0, 1441798, 5, 0, 1441799, 5, 0, 1441800, 5, 0, 1441801, 33, 0, 1441802, 33, 0, 1441803, 33, 0, 1441804, 33, 0, 1441805, 33, 0, 1441806, 33, 0, 1441807, 33, 0, 1507336, 5, 0, 1507337, 5, 0, 1507338, 5, 0, 1507339, 5, 0, 1507340, 5, 0, 1507341, 5, 0, 1507342, 5, 0, 1507343, 5, 0 )
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="Vines1" parent="Triggers" instance=ExtResource( 1 )]
+scale = Vector2( 1, 3 )
+
+[node name="Vines3" parent="Triggers" instance=ExtResource( 1 )]
+scale = Vector2( 1, 2.5 )
+
+[node name="Vines4" parent="Triggers" instance=ExtResource( 1 )]
+scale = Vector2( 1, 23.5 )
+
+[node name="Vines2" parent="Triggers" instance=ExtResource( 1 )]
+scale = Vector2( 1, 5 )
+
+[node name="Spikes1" parent="Triggers" instance=ExtResource( 3 )]
+scale = Vector2( 1.5, 1 )
+
+[node name="Spikes2" parent="Triggers" instance=ExtResource( 3 )]
+
+[node name="Spikes3" parent="Triggers" instance=ExtResource( 3 )]
+scale = Vector2( 0.5, 1 )
+
+[node name="Water1" parent="Triggers" instance=ExtResource( 11 )]
+position = Vector2( -588, 17 )
+scale = Vector2( 7.5, 2 )
+flow_speed = 125
+
+[node name="Water3" parent="Triggers" instance=ExtResource( 11 )]
+position = Vector2( -2240, -6 )
+scale = Vector2( 21, 2 )
+flow_speed = 125
+
+[node name="Water2" parent="Triggers" instance=ExtResource( 11 )]
+position = Vector2( -730, 11 )
+scale = Vector2( 9, 2 )
+flow_speed = 125
+
+[node name="Treasure" type="Node2D" parent="."]
+visible = false
+
+[node name="Coin1" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin11" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin12" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin10" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin2" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin14" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin3" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin7" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin4" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin8" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin9" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin13" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin5" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Coin6" parent="Treasure" instance=ExtResource( 35 )]
+
+[node name="Chest1" parent="Treasure" instance=ExtResource( 36 )]
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Gem_Square" parent="Treasure" instance=ExtResource( 55 )]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Portal" parent="Items" instance=ExtResource( 31 )]
+position = Vector2( 2616, 1595 )
+
+[node name="Portal2" parent="Items" instance=ExtResource( 33 )]
+position = Vector2( 1795, 1596 )
+
+[node name="Jumpshroom1" parent="Items" instance=ExtResource( 7 )]
+position = Vector2( -45, -244 )
+scale = Vector2( 2, 2 )
+
+[node name="Crate1" parent="Items" instance=ExtResource( 12 )]
+
+[node name="Crate2" parent="Items" instance=ExtResource( 12 )]
+
+[node name="Crate3" parent="Items" instance=ExtResource( 12 )]
+position = Vector2( 1350, -695 )
+
+[node name="Adventurer" parent="." instance=ExtResource( 29 )]
+position = Vector2( 2613, 1590 )
+
+[node name="Enemies" type="Node2D" parent="."]
+visible = false
+
+[node name="Slug1" parent="Enemies" instance=ExtResource( 8 )]
+scale = Vector2( 0.5, 0.5 )
+enemy_dict = {
+"Attempts": 0,
+"IsLoop": true,
+"MoveIdx": 0,
+"Speed": 40,
+"Type": "Slug",
+"x_Prev": 0
+}
+moves_list = [ {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": -1,
+"Distance": 600
+}, {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": 1,
+"Distance": 600
+} ]
+
+[node name="Slug3" parent="Enemies" instance=ExtResource( 8 )]
+scale = Vector2( 0.5, 0.5 )
+enemy_dict = {
+"Attempts": 0,
+"IsLoop": true,
+"MoveIdx": 1,
+"Speed": 40,
+"Type": "Slug",
+"x_Prev": 0
+}
+moves_list = [ {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": 1,
+"Distance": 450
+}, {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": -1,
+"Distance": 450
+} ]
+
+[node name="Slug2" parent="Enemies" instance=ExtResource( 8 )]
+scale = Vector2( 0.5, 0.5 )
+enemy_dict = {
+"Attempts": 0,
+"IsLoop": true,
+"MoveIdx": 0,
+"Speed": 40,
+"Type": "Slug",
+"x_Prev": 0
+}
+moves_list = [ {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": 1,
+"Distance": 1000
+}, {
+"Anim_Suffix": "Crawl",
+"Axis": "x",
+"Dir": -1,
+"Distance": 1000
+} ]
+
+[node name="Spider1" parent="Enemies" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+
+[node name="Spider2" parent="Enemies" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+
+[node name="Spider3" parent="Enemies" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+
+[node name="Spider4" parent="Enemies" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+
+[node name="Spider5" parent="Enemies" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+move_speed = 300
+
+[node name="Paths" type="Node2D" parent="Enemies"]
+
+[node name="Foreground" type="Node2D" parent="."]
+visible = false
+
+[node name="Vine1" type="Sprite" parent="Foreground"]
+scale = Vector2( 3, 2 )
+texture = ExtResource( 37 )
+
+[node name="Vine3" type="Sprite" parent="Foreground"]
+scale = Vector2( 2.81336, 1.91406 )
+texture = ExtResource( 37 )
+
+[node name="Vine5" type="Sprite" parent="Foreground"]
+scale = Vector2( 5.92627, 2 )
+texture = ExtResource( 37 )
+
+[node name="Vine4" type="Sprite" parent="Foreground"]
+scale = Vector2( 4.07353, 2 )
+texture = ExtResource( 41 )
+
+[node name="Vine2" type="Sprite" parent="Foreground"]
+scale = Vector2( 4.17647, 4.09677 )
+texture = ExtResource( 41 )
+
+[node name="GameplayInterface" parent="." instance=ExtResource( 32 )]

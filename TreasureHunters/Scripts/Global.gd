@@ -74,7 +74,8 @@ func reset_level_variables():
 	coins_collected_total = Global.Player["Coins_Collected"]
 	coins_collected_level = Global.Level["Coins_Collected"]
 	gem_square_count = Global.Player["Gem_Square_Count"]
-	gem_square = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
+	if Global.Level["Gem_Square"] != "":
+		gem_square = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
 	coins = []
 	chests = []
 	diamonds = []
@@ -113,7 +114,8 @@ func save_level_variables():
 	Global.Player["Coins_Collected"] = coins_collected_total 
 	Global.Level["Coins_Collected"] = coins_collected_level 
 	Global.Level["Gem_Square_Count"] = gem_square_count 
-	Global.Player["Gem_Square"][Global.Level["Gem_Square"]] = gem_square 
+	if Global.Level["Gem_Square"] != "":
+		Global.Player["Gem_Square"][Global.Level["Gem_Square"]] = gem_square 
 	Global.Level["Coins"] = []
 	Global.Level["Chests"] = []
 	Global.Level["Diamonds"] = []

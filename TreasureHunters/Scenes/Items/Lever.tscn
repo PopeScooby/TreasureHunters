@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Textures/Items/Levers/lever_05_03.png" type="Texture" id=1]
 [ext_resource path="res://Textures/Items/Levers/lever_05_02.png" type="Texture" id=2]
@@ -42,6 +42,42 @@ tracks/0/keys = {
 "values": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "Is_Active"
+length = 0.1
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Not_Active"
+length = 0.1
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+
 [sub_resource type="Animation" id=4]
 length = 0.001
 tracks/0/type = "value"
@@ -74,6 +110,8 @@ texture = ExtResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Activate = SubResource( 2 )
 anims/Deactivate = SubResource( 3 )
+anims/Is_Active = SubResource( 5 )
+anims/Not_Active = SubResource( 6 )
 anims/RESET = SubResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

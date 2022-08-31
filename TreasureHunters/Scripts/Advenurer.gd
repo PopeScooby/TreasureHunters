@@ -26,12 +26,6 @@ func check_state():
 		Global.STATE_PLAYER = "Dying"
 	elif Global.STATE_LEVEL == "Spawn_Player":
 		Global.STATE_PLAYER = "Spawn_Player"
-	elif Global.STATE_PLAYER == "OnCrate":
-		Global.Player["Player_Flags"]["Can_Push"] = true
-		Global.STATE_PLAYER = "Move_Normal"
-	elif Global.STATE_PLAYER == "OffCrate":
-		Global.Player["Player_Flags"]["Can_Push"] = false
-		Global.STATE_PLAYER = "Move_Normal"
 
 
 func exec_state():
@@ -64,8 +58,11 @@ func exec_state_move():
 		GlobalDictionaries.player_info["Dir_Prev"] = GlobalDictionaries.player_info["Dir_Curr"]
 
 	GlobalDictionaries.player_info["Friction"] = false
-
-	motion.y += GlobalDictionaries.player_info["Gravity"]
+	
+	if Global.Player["Player_Flags"]["On_Crate"] == true:
+		motion.y = 1
+	else:
+		motion.y += GlobalDictionaries.player_info["Gravity"]
 
 	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_OpenChest"] == true:
 		exec_state_open_chest()
@@ -86,6 +83,7 @@ func exec_state_move():
 
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
+			Global.Player["Player_Flags"]["On_Crate"] = false
 			exec_state_move_jump()
 
 		if GlobalDictionaries.player_info["Friction"] == true:
@@ -197,12 +195,9 @@ func exec_state_push_left():
 		Global.Player["Animation"] = "Pull"
 
 func exec_state_push_idle():
-	GlobalDictionaries.player_info["Dir_Curr"] = -1
-	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
-	if Global.Player["Player_Flags"]["Crate_R"]:
-		Global.Player["Animation"] = "Idle"
-	else:
-		Global.Player["Animation"] = "Idle"
+	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+	GlobalDictionaries.player_info["Friction"] = true
+	Global.Player["Animation"] = "Idle"
 
 func exec_state_bounce():
 	motion.y = Global.Player["Interactions"]["Jumpshroom"]["BounceHeight"]

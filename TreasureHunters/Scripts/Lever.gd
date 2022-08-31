@@ -6,7 +6,10 @@ export var deactivate_anim_name = ""
 export var is_active = false
 
 func _ready():
-	pass 
+	if is_active == false:
+		$AnimationPlayer.play("Not_Active")
+	else:
+		$AnimationPlayer.play("Is_Active")
 
 
 func _process(delta):
@@ -35,9 +38,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	if anim_name == "Activate":
 		is_active = true
+		$AnimationPlayer.play("Is_Active")
 		anim_player.play(activate_anim_name)
-	else:
+	elif anim_name == "Deactivate":
 		is_active = false
+		$AnimationPlayer.play("Not_Active")
 		anim_player.play(deactivate_anim_name)
 		
 

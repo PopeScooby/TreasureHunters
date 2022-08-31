@@ -8,13 +8,19 @@ func _ready():
 
 
 func _on_Water_body_entered(body):
-	if body.name == "Adventurer":
+	
+	var body_name = body.name
+	
+	if body_name == "Adventurer":
 		Global.STATE_PLAYER = "InWater"
-	elif body.name.left(5) == "Crate":
+	elif body_name.left(5) == "Crate":
 		body.in_water = true
 		body.flow_dir = flow_dir
 		body.flow_speed = flow_speed
 
 func _on_Water_body_exited(body):
-	if body.name.left(5) == "Crate":
+	
+	var body_name = body.name
+	
+	if body_name.left(5) == "Crate":
 		body.in_water = false

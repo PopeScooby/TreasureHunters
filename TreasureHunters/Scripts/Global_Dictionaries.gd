@@ -108,7 +108,8 @@ func get_new_player_dict(PlayerName):
 									   "On_Enemy": false,
 									   "On_Spikes": false,
 									   "On_Hospital": false,
-									   "Can_PullLever": false},
+									   "Can_PullLever": false,
+									   "On_Crate": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"Homebase_Intro_01": {"Seen": false, "Next": "Homebase_Intro_02", "Parent":"Homebase"},
@@ -145,4 +146,5 @@ func reset_flags(LevelNum):
 									   "On_Enemy": false,
 									   "On_Spikes": false,
 									   "On_Hospital": false,
-									   "Can_PullLever": false}
+									   "Can_PullLever": false,
+									   "On_Crate": false}

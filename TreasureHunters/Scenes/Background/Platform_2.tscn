@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Jungle/Jungle_Green_15.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Mover.gd" type="Script" id=2]
@@ -15,7 +15,57 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -50 ) ]
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Static"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Up_Down_1000"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -500 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Up_Down_1200"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -600 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -35,11 +85,28 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -100 ), Vector2( 0, 0 ) ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Up_Down_600"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -300 ), Vector2( 0, 0 ) ]
+}
+
 [node name="Platform_2" type="Node2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Platform_2" type="KinematicBody2D" parent="."]
-position = Vector2( 0, -50 )
 collision_layer = 2
 collision_mask = 5
 
@@ -64,4 +131,8 @@ flip_h = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Platform_2")
 anims/RESET = SubResource( 2 )
+anims/Static = SubResource( 5 )
+anims/Up_Down_1000 = SubResource( 6 )
+anims/Up_Down_1200 = SubResource( 4 )
 anims/Up_Down_50 = SubResource( 3 )
+anims/Up_Down_600 = SubResource( 7 )

@@ -39,10 +39,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Activate":
 		is_active = true
 		$AnimationPlayer.play("Is_Active")
-		anim_player.play(activate_anim_name)
+		if activate_anim_name == "STOP":
+			anim_player.playback_speed = 0
+		else:
+			anim_player.playback_speed = 1
+			anim_player.play(activate_anim_name)
 	elif anim_name == "Deactivate":
 		is_active = false
 		$AnimationPlayer.play("Not_Active")
-		anim_player.play(deactivate_anim_name)
+		if deactivate_anim_name == "STOP":
+			anim_player.playback_speed = 0
+		else:
+			anim_player.playback_speed = 1
+			anim_player.play(deactivate_anim_name)
 		
 

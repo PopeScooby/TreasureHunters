@@ -35,7 +35,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	var mover = get_node(mover_path)
 	var anim_player = mover.get_node("AnimationPlayer")
-	
+	var anim_player_anim = anim_player.current_animation
+	var anim_pos = anim_player.current_animation_position
+	var anim_len = anim_player.current_animation_length
+	var new_anim_pos = anim_len - anim_pos
+			
 	if anim_name == "Activate":
 		is_active = true
 		$AnimationPlayer.play("Is_Active")
@@ -44,6 +48,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		else:
 			anim_player.playback_speed = 1
 			anim_player.play(activate_anim_name)
+			if new_anim_pos != 0:
+				anim_player.seek(new_anim_pos, true)
 	elif anim_name == "Deactivate":
 		is_active = false
 		$AnimationPlayer.play("Not_Active")
@@ -52,5 +58,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		else:
 			anim_player.playback_speed = 1
 			anim_player.play(deactivate_anim_name)
+			if new_anim_pos != 0:
+				anim_player.seek(new_anim_pos, true)
 		
 

@@ -5,7 +5,12 @@ export var activate_anim_name = ""
 export var deactivate_anim_name = ""
 export var is_active = false
 
+var lever_name
+
 func _ready():
+	
+	lever_name = self.name
+	
 	if is_active == false:
 		$AnimationPlayer.play("Not_Active")
 	else:
@@ -13,7 +18,7 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_PullLever"] == true:
+	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_PullLever"] == true and Global.Player["Player_Info"]["Object_Interact"] == self.name:
 		if is_active == false:
 			$AnimationPlayer.play("Activate")
 		else:
@@ -21,6 +26,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
+		Global.Player["Player_Info"]["Object_Interact"] = self.name
 		Global.Player["Player_Flags"]["Can_PullLever"] = true
 
 func _on_Area2D_body_exited(body):

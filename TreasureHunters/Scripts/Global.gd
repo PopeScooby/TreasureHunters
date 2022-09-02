@@ -108,6 +108,8 @@ func reset_level_variables():
 func save_level_variables():
 	
 	
+	
+	
 	Global.Player["Hearts_Total"] = hearts_total
 	Global.Player["Hearts"] = hearts
 	Global.Player["Coins"] = coins_total 

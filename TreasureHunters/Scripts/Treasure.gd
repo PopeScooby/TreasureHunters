@@ -14,7 +14,7 @@ func _ready():
 
 
 func _process(delta):
-	if Global.STATE_PLAYER == "Chest_Opening" and STATE == "Closed":
+	if Global.STATE_PLAYER == "Chest_Opening" and STATE == "Closed" and Global.Player["Player_Info"]["Object_Interact"] == chest_name:
 		STATE = "Opening"
 		$AnimationPlayer.play("Chest_Open")
 	elif STATE == "Opened":

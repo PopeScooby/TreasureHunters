@@ -24,7 +24,7 @@ func get_new_player_dict(PlayerName):
 					 "Animation": "",
 					 "Animation2": "",
 					 "Gem_Square_Count": 0,
-					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true},
+					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true, "Red": true},
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,
 									   "Coins": [false],
@@ -93,7 +93,7 @@ func get_new_player_dict(PlayerName):
 									   "Diamonds": [],
 									   "Ruby": [],
 									   "Complete": false,
-									   "Gem_Square": "Purple",
+									   "Gem_Square": "Red",
 									   "GotPerfect": false, 
 									   "Heart_Container": false
 									}

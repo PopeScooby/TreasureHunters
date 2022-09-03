@@ -120,5 +120,9 @@ func level_setup_chests():
 
 func level_setup_gems():
 	
-	if Global.Level["Gem_Square"] != "":
-		get_node("Treasure/Gem_Square").visible = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
+	if Global.Level.has("Gem_Square"):
+		if Global.Level["Gem_Square"] != "":
+			get_node("Treasure/Gem_Square").visible = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
+			if get_node("Treasure/Gem_Square").visible:
+				get_node("Treasure/Gem_Square/Sprite").animation = Global.Level["Gem_Square"]
+

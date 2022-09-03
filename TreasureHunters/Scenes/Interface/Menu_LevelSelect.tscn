@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/Antique Quest St.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Menu_LevelSelect.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Interface/Menu_LevelSelect_Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Menu_LevelSelect_Button.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -12,6 +13,12 @@ outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="Menu_LevelSelect" type="Control"]
 anchor_right = 1.0
@@ -58,13 +65,20 @@ __meta__ = {
 
 [node name="Levels" type="VBoxContainer" parent="LevelScroll/CenterContainer"]
 
-[node name="PlayerSelectBtn" parent="." instance=ExtResource( 3 )]
+[node name="PlayerSelectBtn" type="Button" parent="."]
 margin_left = 59.0
 margin_top = 608.0
 margin_right = 1224.0
 margin_bottom = 664.0
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.952941, 0.933333, 0.839216, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Go Back To Player Select"
-align = 1
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Selector" parent="." instance=ExtResource( 4 )]
 margin_left = 52.0

@@ -107,7 +107,8 @@ func reset_level_variables():
 
 func save_level_variables():
 	
-	
+	if Global.Level["Coins_Collected"] == 0 and coins_collected_level == (coins.size() + (chests.size() * 10)) :
+		Global.Level["GotPerfect"] = true
 	
 	
 	Global.Player["Hearts_Total"] = hearts_total

@@ -33,6 +33,7 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false,
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Gem_Square": ""
 									},
 								"1" : {"Timer": 120,
@@ -43,6 +44,7 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false,
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Gem_Square": "Pink"
 									},
 								"2" : {"Timer": 120,
@@ -53,6 +55,7 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false,
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Gem_Square": "Orange"
 									},
 								"3" : {"Timer": 120,
@@ -63,6 +66,7 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false,
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Gem_Square": "Green"
 									},
 								"4" : {"Timer": 180,
@@ -73,6 +77,7 @@ func get_new_player_dict(PlayerName):
 									   "Ruby": [],
 									   "Complete": false,
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Gem_Square": "Blue"
 									},
 								"5" : {"Timer": 240,
@@ -84,6 +89,7 @@ func get_new_player_dict(PlayerName):
 									   "Complete": false,
 									   "Gem_Square": "Purple",
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Heart_Container": false
 									},
 								"6" : {"Timer": 240,
@@ -95,6 +101,7 @@ func get_new_player_dict(PlayerName):
 									   "Complete": false,
 									   "Gem_Square": "Red",
 									   "GotPerfect": false, 
+									   "Perfect_Time": null,
 									   "Heart_Container": false
 									}
 								},

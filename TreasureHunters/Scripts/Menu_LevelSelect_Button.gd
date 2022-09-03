@@ -22,7 +22,8 @@ func fill_label(LevelNum):
 				$GemCollected.animation = Level["Gem_Square"]
 	if Level["GotPerfect"]:
 		$PerfectCoin.animation = "Shine"
+		$PerfectTime.text = Level["Perfect_Time"]
 	else:
 		$PerfectCoin.animation = "BW"
-
+		$PerfectTime.text = ""
 

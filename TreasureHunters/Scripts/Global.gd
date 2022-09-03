@@ -109,7 +109,8 @@ func save_level_variables():
 	
 	if Global.Level["Coins_Collected"] == 0 and coins_collected_level == (coins.size() + (chests.size() * 10)) :
 		Global.Level["GotPerfect"] = true
-	
+		var seconds_used = Global.Level["Timer"] - Global.Player["Level_Timer"] 
+		Global.Level["Perfect_Time"] = str(floor(seconds_used / 60)) + ":" + str(seconds_used - (floor(seconds_used / 60) * 60))
 	
 	Global.Player["Hearts_Total"] = hearts_total
 	Global.Player["Hearts"] = hearts

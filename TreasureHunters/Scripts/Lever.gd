@@ -1,9 +1,14 @@
 extends Node2D
 
+export var is_active = false
+
 export (NodePath) var mover_path
 export var activate_anim_name = ""
 export var deactivate_anim_name = ""
-export var is_active = false
+
+export (NodePath) var mover_path2
+export var activate_anim_name_2 = ""
+export var deactivate_anim_name_2 = ""
 
 var lever_name
 
@@ -66,5 +71,32 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			anim_player.play(deactivate_anim_name)
 			if new_anim_pos != 0:
 				anim_player.seek(new_anim_pos, true)
-		
+			
+	if activate_anim_name_2 != "":
+		mover = get_node(mover_path2)
+		anim_player = mover.get_node("AnimationPlayer")
+		anim_player_anim = anim_player.current_animation
+		anim_pos = anim_player.current_animation_position
+		anim_len = anim_player.current_animation_length
+		new_anim_pos = anim_len - anim_pos
 
+		if anim_name == "Activate":
+			is_active = true
+			$AnimationPlayer.play("Is_Active")
+			if activate_anim_name_2 == "STOP":
+				anim_player.playback_speed = 0
+			else:
+				anim_player.playback_speed = 1
+				anim_player.play(activate_anim_name_2)
+				if new_anim_pos != 0:
+					anim_player.seek(new_anim_pos, true)
+		elif anim_name == "Deactivate":
+			is_active = false
+			$AnimationPlayer.play("Not_Active")
+			if deactivate_anim_name_2 == "STOP":
+				anim_player.playback_speed = 0
+			else:
+				anim_player.playback_speed = 1
+				anim_player.play(deactivate_anim_name_2)
+				if new_anim_pos != 0:
+					anim_player.seek(new_anim_pos, true)

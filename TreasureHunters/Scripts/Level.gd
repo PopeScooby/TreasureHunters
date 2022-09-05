@@ -117,7 +117,7 @@ func level_setup_chests():
 		else:
 			get_node("Treasure/Chest" + str(Chest_Curr)).STATE = "Opened"
 		Chest_Curr += 1
-
+		
 func level_setup_gems():
 	
 	if Global.Level.has("Gem_Square"):

@@ -24,6 +24,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_PullLever"] == true and Global.Player["Player_Info"]["Object_Interact"] == self.name:
+		
 		if is_active == false:
 			$AnimationPlayer.play("Activate")
 		else:
@@ -71,7 +72,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			anim_player.play(deactivate_anim_name)
 			if new_anim_pos != 0:
 				anim_player.seek(new_anim_pos, true)
-			
+		
 	if activate_anim_name_2 != "":
 		mover = get_node(mover_path2)
 		anim_player = mover.get_node("AnimationPlayer")

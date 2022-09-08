@@ -10,6 +10,10 @@ export (NodePath) var mover_path2
 export var activate_anim_name_2 = ""
 export var deactivate_anim_name_2 = ""
 
+export (NodePath) var sprite_path
+export (Texture) var activate_texture
+export (Texture) var deactivate_texture
+
 var lever_name
 
 func _ready():
@@ -101,3 +105,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 				anim_player.play(deactivate_anim_name_2)
 				if new_anim_pos != 0:
 					anim_player.seek(new_anim_pos, true)
+
+	if sprite_path != null:
+		var sprite = get_node(sprite_path)
+		if anim_name == "Activate":
+			sprite.texture = activate_texture
+		elif anim_name == "Deactivate":
+			sprite.texture = deactivate_texture

@@ -104,7 +104,7 @@ func get_new_player_dict(PlayerName):
 									   "Perfect_Time": null,
 									   "Heart_Container": false
 									},
-								"7" : {"Timer": 240,
+								"7" : {"Timer": 300,
 									   "Coins_Collected": 0,
 									   "Coins": [true],
 									   "Chests": [true],

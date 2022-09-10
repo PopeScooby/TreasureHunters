@@ -26,6 +26,10 @@ func _process(delta):
 		exec_state_go_to_hospital()
 	elif Global.STATE_LEVEL == "ExitHospital":
 		exec_state_exit_hospital()
+	elif Global.STATE_LEVEL == "GoToMushRoom":
+		exec_state_go_to_mush_room()
+	elif Global.STATE_LEVEL == "ExitMushRoom":
+		exec_state_exit_mush_room()
 	elif Global.STATE_PLAYER == "Start_Scene":
 		exec_state_start_scene()
 	elif Global.STATE_PLAYER == "Complete_Scene":
@@ -125,6 +129,20 @@ func exec_state_exit_hospital():
 	$Hospital.visible = false
 	Global.STATE_LEVEL = "Gameplay"
 	Global.STATE_PLAYER = "ExitHospital"
+	get_tree().paused = false
+	$Timer/LevelTimeTimer.start()
+
+func exec_state_go_to_mush_room():
+	get_tree().paused = true
+	$Timer/LevelTimeTimer.stop()
+	$MushRoom.visible = true
+	$MushRoom.curr_scene = "Scene_MushRoom_01"
+	Global.STATE_LEVEL = "InMushRoom"
+
+func exec_state_exit_mush_room():
+	$MushRoom.visible = false
+	Global.STATE_LEVEL = "Gameplay"
+	Global.STATE_PLAYER = "ExitMushRoom"
 	get_tree().paused = false
 	$Timer/LevelTimeTimer.start()
 

@@ -105,9 +105,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 				anim_player.play(deactivate_anim_name_2)
 				if new_anim_pos != 0:
 					anim_player.seek(new_anim_pos, true)
-
-	if sprite_path != null:
-		var sprite = get_node(sprite_path)
+					
+	var sprite = get_node(sprite_path)
+	if sprite != null:
 		if anim_name == "Activate":
 			sprite.texture = activate_texture
 		elif anim_name == "Deactivate":

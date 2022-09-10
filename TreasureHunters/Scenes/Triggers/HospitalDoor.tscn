@@ -6,7 +6,7 @@
 extents = Vector2( 132.5, 114.5 )
 
 [node name="HospitalDoor" type="Area2D"]
-collision_layer = 2
+collision_layer = 16
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

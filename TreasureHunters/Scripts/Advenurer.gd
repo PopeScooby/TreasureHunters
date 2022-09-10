@@ -41,6 +41,8 @@ func exec_state():
 		exec_state_bounce()
 	elif Global.STATE_PLAYER == "ExitHospital":
 		exec_state_exit_hospital()
+	elif Global.STATE_PLAYER == "ExitMushRoom":
+		exec_state_exit_mush_room()
 	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Enemy"] == true:
 		Global.Player["Player_Flags"]["On_Enemy"] = false
 		exec_state_damage()
@@ -70,6 +72,8 @@ func exec_state_move():
 		exec_state_despawn_player()
 	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Hospital"] == true:
 		exec_state_go_to_hospital()
+	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_MushRoom"] == true:
+		exec_state_go_to_mush_room()
 	elif Global.Player["Player_Flags"]["Can_Push"] == true:
 		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
@@ -329,6 +333,15 @@ func exec_state_exit_hospital():
 
 	set_animation()
 
+func exec_state_go_to_mush_room():
+	Global.STATE_PLAYER = "GoToMushRoom"
+	Global.Player["Animation"] = "GoToMushRoom"
+
+func exec_state_exit_mush_room():
+	Global.STATE_PLAYER = "ExitingMushRoom"
+	Global.Player["Animation"] = "LeaveMushRoom"
+
+	set_animation()
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
@@ -379,7 +392,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.STATE_GLOBAL = "Continue_Scene"
 	elif anim_name.find("_GoToHospital") != -1:
 		Global.STATE_LEVEL = "GoToHospital"
+	elif anim_name.find("_GoToMushRoom") != -1:
+		Global.STATE_LEVEL = "GoToMushRoom"
 	elif anim_name.find("_LeaveHospital") != -1:
+		Global.STATE_PLAYER = "Move_Normal"
+	elif anim_name.find("_LeaveMushRoom") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
 
 

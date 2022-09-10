@@ -17,6 +17,7 @@ var ruby = []
 var heart_container = false
 var gem_square_count = 0
 var gem_square
+var items = {"Jumpshroom1": false, "Jumpshroom2": false}
 
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
@@ -80,6 +81,8 @@ func reset_level_variables():
 	chests = []
 	diamonds = []
 	ruby = []
+	items["Jumpshroom1"] = Global.Player["Items"]["Jumpshroom1"]
+	items["Jumpshroom2"] = Global.Player["Items"]["Jumpshroom2"]
 	if Global.Level.has("Heart_Container"):
 		heart_container = Global.Level["Heart_Container"]
 	else:
@@ -124,6 +127,8 @@ func save_level_variables():
 	Global.Level["Chests"] = []
 	Global.Level["Diamonds"] = []
 	Global.Level["Ruby"] = []
+	Global.Player["Items"]["Jumpshroom1"] = items["Jumpshroom1"]
+	Global.Player["Items"]["Jumpshroom2"] = items["Jumpshroom2"] 
 	if Global.Level.has("Heart_Container"):
 		Global.Level["Heart_Container"] = heart_container 
 	

@@ -25,6 +25,7 @@ func get_new_player_dict(PlayerName):
 					 "Animation2": "",
 					 "Gem_Square_Count": 0,
 					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true, "Red": true, "White": true, "Yellow": true},
+					 "Items": {"Jumpshroom1": false, "Jumpshroom2": false},
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,
 									   "Coins": [false],
@@ -135,7 +136,8 @@ func get_new_player_dict(PlayerName):
 									   "On_Spikes": false,
 									   "On_Hospital": false,
 									   "Can_PullLever": false,
-									   "On_Crate": false},
+									   "On_Crate": false,
+									   "On_MushRoom": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"Homebase_Intro_01": {"Seen": false, "Next": "Homebase_Intro_02", "Parent":"Homebase"},
@@ -156,7 +158,8 @@ func get_new_player_dict(PlayerName):
 								"Level_02_Enter_02": {"Seen": false, "Next": "Level_02_Enter_03", "Parent":"Adventurer"},
 								"Level_02_Enter_03": {"Seen": false, "Next": "Level_02_Enter_04", "Parent":"GameplayInterface"},
 								"Level_02_Enter_04": {"Seen": false, "Next": "", "Parent":"GameplayInterface"},
-								"Level_05_HospitalFound": {"Seen": false, "Next": "", "Parent":"Adventurer"}}
+								"Level_05_HospitalFound": {"Seen": false, "Next": "", "Parent":"Adventurer"},
+								"Level_07_MushRoomFound": {"Seen": false, "Next": "", "Parent":"Adventurer"}}
 				}
 	
 	return NewPlayer
@@ -173,4 +176,5 @@ func reset_flags(LevelNum):
 									   "On_Spikes": false,
 									   "On_Hospital": false,
 									   "Can_PullLever": false,
-									   "On_Crate": false}
+									   "On_Crate": false,
+									   "On_MushRoom": false}

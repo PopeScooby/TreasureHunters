@@ -17,7 +17,8 @@ var ruby = []
 var heart_container = false
 var gem_square_count = 0
 var gem_square
-var items = {"Jumpshroom1": false, "Jumpshroom2": false}
+var items = {"Jumpshroom1": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}, 
+			 "Jumpshroom2": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}}
 
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""

@@ -61,16 +61,16 @@ func move_selector():
 	$SidePanel/Selector.rect_size = selector_locations[selector_curr]["Size"]
 
 func buy_jumshroom_1():
-	if Global.coins_total >= 75 and Global.items["Jumpshroom1"] == false:
+	if Global.coins_total >= 75 and Global.items["Jumpshroom1"]["InInventory"] == false:
 		Global.coins_total -= 75
-		Global.items["Jumpshroom1"] = true
+		Global.items["Jumpshroom1"]["InInventory"] = true
 	
 	
 
 func buy_jumshroom_2():
-	if Global.coins_total >= 75 and Global.items["Jumpshroom2"] == false:
+	if Global.coins_total >= 75 and Global.items["Jumpshroom2"]["InInventory"] == false:
 		Global.coins_total -= 75
-		Global.items["Jumpshroom2"] = true
+		Global.items["Jumpshroom2"]["InInventory"] = true
 
 
 func exit_mush_room():

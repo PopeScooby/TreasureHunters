@@ -145,7 +145,7 @@ func exec_state_exit_mush_room():
 	Global.STATE_PLAYER = "ExitMushRoom"
 	get_tree().paused = false
 	$Timer/LevelTimeTimer.start()
-
+	
 func exec_state_start_scene():
 	if Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Parent"] == "GameplayInterface":
 		var anim_name = "Scene_" + Global.Player["Scenes"]["Scene_Curr"]["SceneName"]

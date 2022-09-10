@@ -74,6 +74,8 @@ func exec_state_move():
 		exec_state_go_to_hospital()
 	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_MushRoom"] == true:
 		exec_state_go_to_mush_room()
+	elif Input.is_action_just_pressed("action_use_item") and Global.Player["Current_Item"] != "":
+		exec_state_use_item()
 	elif Global.Player["Player_Flags"]["Can_Push"] == true:
 		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
@@ -342,6 +344,17 @@ func exec_state_exit_mush_room():
 	Global.Player["Animation"] = "LeaveMushRoom"
 
 	set_animation()
+
+func exec_state_use_item():
+	if Global.Player["Current_Item"] == "Jumpshroom1":
+		Global.items["Jumpshroom1"]["Pos"] = self.position
+		Global.items["Jumpshroom1"]["Level"] = Global.Player["Level_Current"]
+		
+		var jumpshroom1 = load("res://Scenes/Items/Jumpshroom.tscn").instance()
+		jumpshroom1.position = Global.items["Jumpshroom1"]["Pos"]
+		jumpshroom1.scale = Vector2(2,2)
+		jumpshroom1.BounceHeight = -3000
+		get_parent().get_node("Items").add_child(jumpshroom1)
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

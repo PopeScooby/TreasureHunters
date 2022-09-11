@@ -70,6 +70,7 @@ func level_setup():
 	level_setup_coins()
 	level_setup_chests()
 	level_setup_gems()
+	level_setup_items()
 	
 	Global.reset_level_variables()
 
@@ -126,3 +127,7 @@ func level_setup_gems():
 			if get_node("Treasure/Gem_Square").visible:
 				get_node("Treasure/Gem_Square/Sprite").animation = Global.Level["Gem_Square"]
 
+func level_setup_items():
+
+	if Global.Player["Items"]["Jumpshroom1"]["Level"] == Global.Player["Level_Current"]:
+		Global.place_jumpshroom(get_node("Items"), "Jumpshroom1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -60,6 +60,7 @@
 [ext_resource path="res://Textures/Background/Items/Plant (2).png" type="Texture" id=58]
 [ext_resource path="res://Textures/Background/Items/Plant (1).png" type="Texture" id=59]
 [ext_resource path="res://Textures/Background/Items/Bush (1).png" type="Texture" id=60]
+[ext_resource path="res://Textures/Background/Items/Sign (2).png" type="Texture" id=61]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile (72).png 0"
@@ -297,6 +298,12 @@ texture = ExtResource( 6 )
 
 [node name="Sign2" type="Sprite" parent="Background"]
 position = Vector2( 3888, -1245 )
+rotation = -0.139626
+scale = Vector2( 2, 2 )
+texture = ExtResource( 61 )
+
+[node name="Sign3" type="Sprite" parent="Background"]
+position = Vector2( 2240, -597 )
 rotation = -0.139626
 scale = Vector2( 2, 2 )
 texture = ExtResource( 17 )
@@ -546,7 +553,7 @@ position = Vector2( 313, 2096 )
 position = Vector2( 1898, 1709 )
 
 [node name="Coin13" parent="Treasure" instance=ExtResource( 35 )]
-position = Vector2( 3636, -338 )
+position = Vector2( 6505, -356 )
 
 [node name="Coin5" parent="Treasure" instance=ExtResource( 35 )]
 position = Vector2( 3735, 1049 )
@@ -559,7 +566,7 @@ position = Vector2( 4221, 4387 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Gem_Square" parent="Treasure" instance=ExtResource( 55 )]
-position = Vector2( 6422, -331 )
+position = Vector2( 3667, -337 )
 
 [node name="Items" type="Node2D" parent="."]
 

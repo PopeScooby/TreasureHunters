@@ -346,16 +346,13 @@ func exec_state_exit_mush_room():
 	set_animation()
 
 func exec_state_use_item():
-	if Global.Player["Current_Item"] == "Jumpshroom1":
+	if Global.Player["Current_Item"] == "Jumpshroom1" and Global.items["Jumpshroom1"]["InInventory"] == true and is_on_floor():
 		Global.items["Jumpshroom1"]["Pos"] = self.position
 		Global.items["Jumpshroom1"]["Level"] = Global.Player["Level_Current"]
-		
-		var jumpshroom1 = load("res://Scenes/Items/Jumpshroom.tscn").instance()
-		jumpshroom1.position = Global.items["Jumpshroom1"]["Pos"]
-		jumpshroom1.scale = Vector2(2,2)
-		jumpshroom1.BounceHeight = -3000
-		get_parent().get_node("Items").add_child(jumpshroom1)
+		Global.place_jumpshroom(get_parent().get_node("Items"), "Jumpshroom1")
+		Global.items["Jumpshroom1"]["InInventory"] = false
 
+		
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
 		Global.Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]

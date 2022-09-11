@@ -162,29 +162,9 @@ func save_game():
 	save_game.store_line(to_json(GlobalDictionaries.players))
 	save_game.close()
 
-#"2" : {"Coins_Collected": 0,
-#	   "Coins": [true, true, true, true, true, true],
-#	   "Treasure": true,
-#	   "Complete": false
-#	},
-#"3" : {"Coins_Collected": 0,
-#	   "Coins": [true, true, true, true, true, true, true, true, true, true],
-#	   "Treasure": true,
-#	   "Complete": false
-#	},
-#"4" : {"Coins_Collected": 0,
-#	   "Coins": [true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-#	   "Treasure": true,
-#	   "Complete": false
-#	},
-#"5" : {"Coins_Collected": 0,
-#	   "Coins": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true],
-#	   "Treasure": true,
-#	   "Complete": false
-#	},
-#"6" : {"Coins_Collected": 0,
-#	   "Coins": [true],
-#	   "Treasure": true,
-#	   "Complete": false
-#	}
-
+func place_jumpshroom(ItemsNode, JumpshroomName):
+	var jumpshroom = load("res://Scenes/Items/Jumpshroom.tscn").instance()
+	jumpshroom.position = Global.items[JumpshroomName]["Pos"]
+	jumpshroom.scale = Vector2(2,2)
+	jumpshroom.BounceHeight = -3000
+	ItemsNode.add_child(jumpshroom)

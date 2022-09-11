@@ -16,12 +16,12 @@ func _ready():
 func _process(delta):
 	
 
-	if Global.items["Jumpshroom1"] and $SidePanel.visible == true:
+	if Global.items["Jumpshroom1"]["InInventory"] and $SidePanel.visible == true:
 		$SidePanel/Jumpshroom1.visible = false
 	else:
 		$SidePanel/Jumpshroom1.visible = true
 		
-	if Global.items["Jumpshroom2"] and $SidePanel.visible == true:
+	if Global.items["Jumpshroom2"]["InInventory"] and $SidePanel.visible == true:
 		$SidePanel/Jumpshroom2.visible = false
 	else:
 		$SidePanel/Jumpshroom2.visible = true

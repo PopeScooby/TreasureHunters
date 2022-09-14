@@ -19,6 +19,8 @@ var gem_square_count = 0
 var gem_square
 var items = {"Jumpshroom1": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}, 
 			 "Jumpshroom2": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}}
+var inv_jumpshroom = 0
+var inv_crate = 0
 
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
@@ -82,8 +84,6 @@ func reset_level_variables():
 	chests = []
 	diamonds = []
 	ruby = []
-	items["Jumpshroom1"] = Global.Player["Items"]["Jumpshroom1"]
-	items["Jumpshroom2"] = Global.Player["Items"]["Jumpshroom2"]
 	if Global.Level.has("Heart_Container"):
 		heart_container = Global.Level["Heart_Container"]
 	else:
@@ -109,6 +109,17 @@ func reset_level_variables():
 		ruby.append(Global.Level["Ruby"][curr_idx])
 		curr_idx += 1
 
+
+	items["Jumpshroom1"]["InInventory"] = Global.Player["Items"]["Jumpshroom1"]["InInventory"]
+	items["Jumpshroom1"]["Level"] = Global.Player["Items"]["Jumpshroom1"]["Level"]	
+	items["Jumpshroom1"]["Pos"] = Global.Player["Items"]["Jumpshroom1"]["Pos"]
+	items["Jumpshroom2"]["InInventory"] = Global.Player["Items"]["Jumpshroom2"]["InInventory"]
+	items["Jumpshroom2"]["Level"] = Global.Player["Items"]["Jumpshroom2"]["Level"]
+	items["Jumpshroom2"]["Pos"] = Global.Player["Items"]["Jumpshroom2"]["Pos"]
+
+	inv_jumpshroom = Global.Player["Inventory"]["Jumpshroom"]
+	inv_crate = Global.Player["Inventory"]["Crate"] 
+	
 func save_level_variables():
 	
 	if Global.Level["Coins_Collected"] == 0 and coins_collected_level == (coins.size() + (chests.size() * 10)) :
@@ -128,8 +139,6 @@ func save_level_variables():
 	Global.Level["Chests"] = []
 	Global.Level["Diamonds"] = []
 	Global.Level["Ruby"] = []
-	Global.Player["Items"]["Jumpshroom1"] = items["Jumpshroom1"]
-	Global.Player["Items"]["Jumpshroom2"] = items["Jumpshroom2"] 
 	if Global.Level.has("Heart_Container"):
 		Global.Level["Heart_Container"] = heart_container 
 	
@@ -152,6 +161,16 @@ func save_level_variables():
 	while curr_idx < ruby.size():
 		Global.Level["Ruby"].append(ruby[curr_idx])
 		curr_idx += 1
+
+	Global.Player["Items"]["Jumpshroom1"]["InInventory"] = items["Jumpshroom1"]["InInventory"] 
+	Global.Player["Items"]["Jumpshroom1"]["Level"] = items["Jumpshroom1"]["Level"]
+	Global.Player["Items"]["Jumpshroom1"]["Pos"] = items["Jumpshroom1"]["Pos"]
+	Global.Player["Items"]["Jumpshroom2"]["InInventory"] = items["Jumpshroom2"]["InInventory"] 
+	Global.Player["Items"]["Jumpshroom2"]["Level"] = items["Jumpshroom2"]["Level"] 
+	Global.Player["Items"]["Jumpshroom2"]["Pos"] = items["Jumpshroom2"]["Pos"] 
+
+	Global.Player["Inventory"]["Jumpshroom"] = inv_jumpshroom 
+	Global.Player["Inventory"]["Crate"] = inv_crate
 
 func save_game():
 	

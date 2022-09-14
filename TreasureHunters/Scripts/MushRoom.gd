@@ -64,6 +64,7 @@ func buy_jumshroom_1():
 	if Global.coins_total >= 75 and Global.items["Jumpshroom1"]["InInventory"] == false:
 		Global.coins_total -= 75
 		Global.items["Jumpshroom1"]["InInventory"] = true
+		
 	
 	
 

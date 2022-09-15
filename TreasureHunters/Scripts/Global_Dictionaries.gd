@@ -4,7 +4,7 @@ var game = {"PlayerKey": "0"}
 var players = {}
 var player_info = {}
 
-var item_list = ["Jumpshroom1","Jumpshroom2"]
+var item_placing = ""
 
 func _ready():
 	pass # Replace with function body.

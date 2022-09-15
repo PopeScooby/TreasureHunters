@@ -65,7 +65,8 @@ func exec_state_move():
 		motion.y = 1
 	else:
 		motion.y += GlobalDictionaries.player_info["Gravity"]
-
+	
+	
 	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_OpenChest"] == true:
 		exec_state_open_chest()
 	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
@@ -348,12 +349,20 @@ func exec_state_exit_mush_room():
 func exec_state_use_item():
 	if Global.Player["Current_Item"] == "Jumpshroom" and is_on_floor() and Global.Player["Player_Flags"]["On_Crate"] == false:
 		for item in Global.items:
-			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:				
+			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:
+				if GlobalDictionaries.player_info["Dir_Curr"] == 0:
+					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+					
+				GlobalDictionaries.player_info["Friction"] = true
+				Global.Player["Animation"] = "PlaceItem"
+				Global.item_placing = item
+				
 				Global.items[item]["Pos"] = self.position
 				Global.items[item]["Level"] = Global.Player["Level_Current"]
 				Global.place_jumpshroom(get_parent().get_node("Items"), item)
 				Global.items[item]["InInventory"] = false
 				Global.inv_jumpshroom -= 1
+
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
@@ -409,6 +418,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name.find("_LeaveHospital") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
 	elif anim_name.find("_LeaveMushRoom") != -1:
+		Global.STATE_PLAYER = "Move_Normal"
+	elif anim_name.find("_PlaceItem") != -1:
+		Global.items[item]["Pos"] = self.position
+		Global.items[item]["Level"] = Global.Player["Level_Current"]
+		Global.place_jumpshroom(get_parent().get_node("Items"), item)
+		Global.items[item]["InInventory"] = false
+		Global.inv_jumpshroom -= 1
 		Global.STATE_PLAYER = "Move_Normal"
 
 

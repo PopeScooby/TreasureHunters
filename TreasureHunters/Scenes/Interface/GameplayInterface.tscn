@@ -1083,6 +1083,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Items" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ItemWindow" type="TextureRect" parent="Items"]
+margin_top = 540.0
+margin_right = 187.0
+margin_bottom = 718.0
+texture = ExtResource( 11 )
+expand = true
+
+[node name="ItemImg" type="TextureRect" parent="Items/ItemWindow"]
+margin_left = 38.0
+margin_top = 36.0
+margin_right = 152.0
+margin_bottom = 144.0
+texture = ExtResource( 12 )
+expand = true
+
 [node name="Radio" type="Control" parent="."]
 visible = false
 margin_right = 40.0
@@ -1126,25 +1145,6 @@ anims/Scene_Level_01_Radio_01 = SubResource( 8 )
 anims/Scene_Level_01_Radio_02 = SubResource( 11 )
 anims/Scene_Level_02_Enter_03 = SubResource( 12 )
 anims/Scene_Level_02_Enter_04 = SubResource( 13 )
-
-[node name="Items" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="ItemWindow" type="TextureRect" parent="Items"]
-margin_top = 540.0
-margin_right = 187.0
-margin_bottom = 718.0
-texture = ExtResource( 11 )
-expand = true
-
-[node name="ItemImg" type="TextureRect" parent="Items/ItemWindow"]
-margin_left = 38.0
-margin_top = 36.0
-margin_right = 152.0
-margin_bottom = 144.0
-texture = ExtResource( 12 )
-expand = true
 
 [connection signal="timeout" from="Timer/LevelTimeTimer" to="." method="_on_LevelTimeTimer_timeout"]
 [connection signal="animation_finished" from="Radio/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

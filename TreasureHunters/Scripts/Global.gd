@@ -22,6 +22,9 @@ var items = {"Jumpshroom1": {"InInventory": false, "Level": "", "Pos": Vector2(0
 var inv_jumpshroom = 0
 var inv_crate = 0
 
+var item = ""
+var item_placing = ""
+
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
 var STATE_LEVEL = ""

@@ -354,14 +354,10 @@ func exec_state_use_item():
 					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
 					
 				GlobalDictionaries.player_info["Friction"] = true
+				Global.STATE_PLAYER = "PlacingItem"
 				Global.Player["Animation"] = "PlaceItem"
 				Global.item_placing = item
 				
-				Global.items[item]["Pos"] = self.position
-				Global.items[item]["Level"] = Global.Player["Level_Current"]
-				Global.place_jumpshroom(get_parent().get_node("Items"), item)
-				Global.items[item]["InInventory"] = false
-				Global.inv_jumpshroom -= 1
 
 
 func set_player():
@@ -420,10 +416,10 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name.find("_LeaveMushRoom") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
 	elif anim_name.find("_PlaceItem") != -1:
-		Global.items[item]["Pos"] = self.position
-		Global.items[item]["Level"] = Global.Player["Level_Current"]
-		Global.place_jumpshroom(get_parent().get_node("Items"), item)
-		Global.items[item]["InInventory"] = false
+		Global.items[Global.item_placing]["Pos"] = self.position
+		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]
+		Global.place_jumpshroom(get_parent().get_node("Items"), Global.item_placing)
+		Global.items[Global.item_placing]["InInventory"] = false
 		Global.inv_jumpshroom -= 1
 		Global.STATE_PLAYER = "Move_Normal"
 

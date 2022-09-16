@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Textures/Items/Crate.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Crate.gd" type="Script" id=2]
@@ -14,6 +14,9 @@ extents = Vector2( 58.875, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 53, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 52.973, 4.05406 )
 
 [node name="Crate" type="KinematicBody2D"]
 scale = Vector2( 1.85, 1.85 )
@@ -50,7 +53,17 @@ collision_mask = 5
 position = Vector2( 0, -47.5 )
 shape = SubResource( 4 )
 
+[node name="OnAdventurer2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnAdventurer2D"]
+position = Vector2( -6.92703e-07, 50 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 5 )
+
 [connection signal="body_entered" from="InteractArea2D" to="." method="_on_InteractArea2D_body_entered"]
 [connection signal="body_exited" from="InteractArea2D" to="." method="_on_InteractArea2D_body_exited"]
 [connection signal="body_entered" from="OnCrateArea2D" to="." method="_on_OnCrateArea2D_body_entered"]
 [connection signal="body_exited" from="OnCrateArea2D" to="." method="_on_OnCrateArea2D_body_exited"]
+[connection signal="body_entered" from="OnAdventurer2D" to="." method="_on_OnAdventurer2D_body_entered"]
+[connection signal="body_exited" from="OnAdventurer2D" to="." method="_on_OnAdventurer2D_body_exited"]

@@ -10,44 +10,49 @@ var motion = Vector2()
 var in_water = false
 var flow_dir = 1
 var flow_speed = 150
+var on_adventurer = false
 
 func _ready():
 	pass 
 
+
 func _process(delta):
+	
+	if self.on_adventurer:
+		motion.y = -5
+		motion.x = 0
+	else:
+		motion.y += gravity
 
+		var friction = false
+	#
+		if in_water == false:
+			if Global.Player["Player_Flags"]["Can_Push"] == true and Input.is_action_pressed("action_interact"):
 
-	motion.y += gravity
+				if Input.is_action_pressed("move_right") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
+					motion.x = min(motion.x+acceleration, GlobalDictionaries.player_info["SpeedMax"])
+				elif Input.is_action_pressed("move_left") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
+					motion.x = max(motion.x-acceleration, -GlobalDictionaries.player_info["SpeedMax"])
+				else:
+					friction = true
 
-	var friction = false
-#
-	if in_water == false:
-		if Global.Player["Player_Flags"]["Can_Push"] == true and Input.is_action_pressed("action_interact"):
+				if is_on_floor():
+					if friction == true:
+						motion.x = lerp(motion.x, 0, 0.2)
 
-			if Input.is_action_pressed("move_right") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
-				motion.x = min(motion.x+acceleration, GlobalDictionaries.player_info["SpeedMax"])
-			elif Input.is_action_pressed("move_left") and GlobalDictionaries.player_info["Object_Interact"] == self.name:
-				motion.x = max(motion.x-acceleration, -GlobalDictionaries.player_info["SpeedMax"])
 			else:
-				friction = true
-
-			if is_on_floor():
-				if friction == true:
-					motion.x = lerp(motion.x, 0, 0.2)
+				motion.x = 0
 
 		else:
-			motion.x = 0
+			if flow_dir == 1:
+				motion.x = flow_speed
+	#			motion.y = 80
+			elif flow_dir == -1:
+				motion.x = -flow_speed
+	#			motion.y = 80
 
-	else:
-		if flow_dir == 1:
-			motion.x = flow_speed
-#			motion.y = 80
-		elif flow_dir == -1:
-			motion.x = -flow_speed
-#			motion.y = 80
-
-#	if on_elevator == true:
-#		motion.y = -800
+	#	if on_elevator == true:
+	#		motion.y = -800
 ##
 	motion = move_and_slide(motion, UP)
 #
@@ -75,3 +80,13 @@ func _on_OnCrateArea2D_body_entered(body):
 func _on_OnCrateArea2D_body_exited(body):
 	if body.name == "Adventurer":
 		Global.Player["Player_Flags"]["On_Crate"] = false
+
+
+func _on_OnAdventurer2D_body_entered(body):
+	var body_name = body.name
+	if body.name == "Adventurer":
+		self.on_adventurer = true
+
+func _on_OnAdventurer2D_body_exited(body):
+	if body.name == "Adventurer":
+		self.on_adventurer = false

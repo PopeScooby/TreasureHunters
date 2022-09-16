@@ -10,9 +10,9 @@ func _ready():
 	$PauseScreen.visible = false
 
 func _on_LevelTimeTimer_timeout():
-	
-	$Timer/LevelTimeTimer.start()
-	Global.Player["Level_Timer"] -= 1
+	if Global.Player["Level_Timer"] > 0:
+		$Timer/LevelTimeTimer.start()
+		Global.Player["Level_Timer"] -= 1
 
 func _process(delta):
 	

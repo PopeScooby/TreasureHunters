@@ -64,7 +64,8 @@ func buy_jumshroom_1():
 	if Global.coins_total >= 75 and Global.items["Jumpshroom1"]["InInventory"] == false:
 		Global.coins_total -= 75
 		Global.items["Jumpshroom1"]["InInventory"] = true
-		
+		if not GlobalDictionaries.items.has("Jumpshroom"):
+			GlobalDictionaries.items.append("Jumpshroom")
 	
 	
 
@@ -72,7 +73,8 @@ func buy_jumshroom_2():
 	if Global.coins_total >= 75 and Global.items["Jumpshroom2"]["InInventory"] == false:
 		Global.coins_total -= 75
 		Global.items["Jumpshroom2"]["InInventory"] = true
-
+		if not GlobalDictionaries.items.has("Jumpshroom"):
+			GlobalDictionaries.items.append("Jumpshroom")
 
 func exit_mush_room():
 	Global.STATE_LEVEL = "ExitMushRoom"

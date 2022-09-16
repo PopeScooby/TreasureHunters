@@ -81,6 +81,11 @@ func _process(delta):
 				HeartNode.texture = heart_container
 			else:
 				HeartNode.texture = heart
+				
+	var item_texture = "res://Textures/Interface/Item_" + Global.Player["Current_Item"] + ".png"
+	var item_image = load(item_texture)
+	$Items/ItemWindow/ItemImg.texture = item_image
+
 
 func exec_state_pause():
 	get_tree().paused = true

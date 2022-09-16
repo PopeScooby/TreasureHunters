@@ -77,6 +77,8 @@ func exec_state_move():
 		exec_state_go_to_mush_room()
 	elif Input.is_action_just_pressed("action_use_item") and Global.Player["Current_Item"] != "":
 		exec_state_use_item()
+	elif Input.is_action_just_pressed("action_switch_item") and Global.Player["Current_Item"] != "":
+		exec_state_switch_item()
 	elif Global.Player["Player_Flags"]["Can_Push"] == true:
 		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
@@ -359,6 +361,19 @@ func exec_state_use_item():
 				Global.item_placing = item
 				
 
+func exec_state_switch_item():
+	var curr_item_idx = GlobalDictionaries.items.find(Global.Player["Current_Item"], 0)
+	var max_item_idx = GlobalDictionaries.items.size() - 1
+	
+	if max_item_idx == 0:
+		pass
+	else:
+		if curr_item_idx == max_item_idx:
+			curr_item_idx = 0
+		else:
+			curr_item_idx += 1
+			
+	Global.Player["Current_Item"] = GlobalDictionaries.items[curr_item_idx]
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

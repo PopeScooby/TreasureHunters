@@ -199,7 +199,7 @@ func place_jumpshroom(ItemsNode, JumpshroomName):
 
 func load_audio():
 	for file_name in ["CoinCollection", "RubyCollection", "TreasureCollection"]:
-		var stream = load("res://Audio/%s.wav" % file_name)	
+		var stream = load("res://Audio/%s.mp3" % file_name)	
 		Global.audio_players[file_name] = AudioStreamPlayer.new()
 		Global.audio_players[file_name].set_stream(stream)
 		add_child(Global.audio_players[file_name])

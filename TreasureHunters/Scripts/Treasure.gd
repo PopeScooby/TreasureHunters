@@ -25,6 +25,7 @@ func _process(delta):
 func _on_chest_opened():
 	
 	register_chest()
+	Global.audio_players["TreasureCollection"].play(.2)
 
 func register_chest():
 	

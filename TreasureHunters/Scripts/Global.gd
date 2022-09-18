@@ -5,6 +5,9 @@ extends Node
 var Player
 var Level
 
+var audio_players = {}
+
+
 var hearts_total = 0
 var hearts = 0
 var coins_total = 0
@@ -30,7 +33,8 @@ var STATE_PLAYER = ""
 var STATE_LEVEL = ""
 
 func _ready():
-	
+	print("hahaha")
+	load_audio()
 	load_saves()
 
 func _process(delta):
@@ -49,6 +53,8 @@ func new_game(PlayerName):
 	save_game()
 	Player = GlobalDictionaries.players[NewPlayerKey]
 	get_tree().change_scene("res://Scenes/Interface/HomeBase.tscn")
+	
+	
 
 func load_level():
 
@@ -190,3 +196,11 @@ func place_jumpshroom(ItemsNode, JumpshroomName):
 	jumpshroom.scale = Vector2(2,2)
 	jumpshroom.BounceHeight = -3000
 	ItemsNode.add_child(jumpshroom)
+
+func load_audio():
+	for file_name in ["CoinCollection", "RubyCollection", "TreasureCollection"]:
+		var stream = load("res://Audio/%s.wav" % file_name)	
+		Global.audio_players[file_name] = AudioStreamPlayer.new()
+		Global.audio_players[file_name].set_stream(stream)
+		add_child(Global.audio_players[file_name])
+		

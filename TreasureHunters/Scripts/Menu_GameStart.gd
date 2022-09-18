@@ -24,8 +24,8 @@ func _physics_process(delta):
 			_continue()
 		elif selector_curr == 3:
 			get_tree().quit()
-		elif selector_curr == 0 and $Menu_NewGame/NewNameTxt.text != "":
-			_new_player()
+#		elif selector_curr == 0 and $Menu_NewGame/NewNameTxt.text != "":
+#			_new_player()
 	
 	elif Input.is_action_just_pressed("menu_back"):
 		if selector_curr == 0:
@@ -41,11 +41,11 @@ func _new_game():
 	get_node("Selector").visible = false
 	get_node("Menu_NewGame").visible = true
 	$Menu_NewGame/NewNameTxt.grab_focus()
-
-func _new_player():
-
-	Global.new_game($Menu_NewGame/NewNameTxt.text)
-	Global.STATE_GLOBAL = "HomeBase"
+#
+#func _new_player():
+#
+#	Global.new_game($Menu_NewGame/NewNameTxt.text)
+#	Global.STATE_GLOBAL = "HomeBase"
 
 
 func _continue():

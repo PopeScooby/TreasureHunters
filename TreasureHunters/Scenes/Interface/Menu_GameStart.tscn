@@ -93,6 +93,6 @@ __meta__ = {
 [node name="Menu_NewGame" parent="." instance=ExtResource( 4 )]
 visible = false
 margin_left = 393.108
-margin_top = 218.606
+margin_top = 180.606
 margin_right = -381.892
-margin_bottom = -266.394
+margin_bottom = -304.394

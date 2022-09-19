@@ -14,6 +14,7 @@ func _ready():
 func _on_Gem_Square_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
 		register_gem()
+		Global.audio_players["RubyCollection"].play()
 		queue_free()
 
 

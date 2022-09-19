@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RubyCollection.mp3-040ede69b54a7a854d413e39c8282e24.mp3str"
+
+[deps]
+
+source_file="res://Audio/RubyCollection.mp3"
+dest_files=[ "res://.import/RubyCollection.mp3-040ede69b54a7a854d413e39c8282e24.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

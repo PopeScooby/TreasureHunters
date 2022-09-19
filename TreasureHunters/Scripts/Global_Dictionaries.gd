@@ -16,7 +16,7 @@ func get_new_player_dict(PlayerName):
 					 "Name_Explorer": "",
 					 "Hearts": 3, 
 					 "Hearts_Total": 3,
-					 "Coins": 200, 
+					 "Coins": 0, 
 					 "Coins_Collected": 0,
 					 "Treasure": [],
 					 "Weapons": [],

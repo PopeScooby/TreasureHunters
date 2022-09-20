@@ -40,12 +40,6 @@ func _new_game():
 	selector_curr = 0
 	get_node("Selector").visible = false
 	get_node("Menu_NewGame").visible = true
-#	$Menu_NewGame/NewNameTxt.grab_focus()
-#
-#func _new_player():
-#
-#	Global.new_game($Menu_NewGame/NewNameTxt.text)
-#	Global.STATE_GLOBAL = "HomeBase"
 
 
 func _continue():

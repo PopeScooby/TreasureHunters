@@ -526,6 +526,7 @@ deactivate_anim_name = "Un_Slide_Left_256"
 mover_path2 = NodePath("../../Movers/Platform_3")
 activate_anim_name_2 = "Slide_Right_256"
 deactivate_anim_name_2 = "Un_Slide_Right_256"
+change_sprite = true
 sprite_path = NodePath("../../Background/Sign1")
 activate_texture = ExtResource( 6 )
 deactivate_texture = ExtResource( 17 )

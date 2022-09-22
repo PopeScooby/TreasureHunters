@@ -945,9 +945,6 @@ margin_left = -9.34388
 margin_top = -4.67194
 margin_right = 30.6561
 margin_bottom = 35.3281
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CoinImage" type="TextureRect" parent="Coin"]
 margin_left = 15.7145
@@ -956,9 +953,6 @@ margin_right = 55.7145
 margin_bottom = 52.3471
 texture = ExtResource( 4 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Coin_x_Label" type="Label" parent="Coin"]
 margin_left = 58.209

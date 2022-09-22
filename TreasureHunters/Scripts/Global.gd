@@ -33,7 +33,6 @@ var STATE_PLAYER = ""
 var STATE_LEVEL = ""
 
 func _ready():
-	print("hahaha")
 	load_audio()
 	load_saves()
 

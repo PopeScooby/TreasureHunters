@@ -495,8 +495,8 @@ position = Vector2( 6141, 148 )
 scale = Vector2( 0.5, 1 )
 
 [node name="Water1" parent="Triggers" instance=ExtResource( 11 )]
-position = Vector2( 2524, 1219 )
-scale = Vector2( 7.5, 2 )
+position = Vector2( 2602, 1207 )
+scale = Vector2( 8, 2 )
 flow_speed = 125
 
 [node name="Water3" parent="Triggers" instance=ExtResource( 11 )]

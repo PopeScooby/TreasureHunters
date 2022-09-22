@@ -9,10 +9,12 @@ func _ready():
 
 func _on_Coin_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
-		# Global.audio_players["CoinCollection"].play()
+		Global.audio_players["CoinCollection"].play()
 		
 		var collected_coin: Control = load("res://Scenes/Items/CollectedCoin.tscn").instance()
-		collected_coin.rect_global_position = self.global_position
+		collected_coin.rect_global_position = self.get_global_transform_with_canvas().get_origin()
+		collected_coin.rect_scale = $Sprite.transform.get_scale()
+
 		self.gameplay_interface.add_child(collected_coin)
 		
 		collected_coin.animate()

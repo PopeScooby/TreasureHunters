@@ -23,7 +23,6 @@ script = ExtResource( 5 )
 position = Vector2( 49.315, 48.4498 )
 scale = Vector2( 0.374, 0.374 )
 frames = SubResource( 1 )
-frame = 2
 playing = true
 
 [node name="Tween" type="Tween" parent="."]

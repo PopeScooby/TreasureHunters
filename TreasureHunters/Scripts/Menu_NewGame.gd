@@ -20,7 +20,7 @@ func _ready():
 		else:
 			curr_x += 56.25
 			
-	move_selector()
+	move_selector(false)
 
 func _process(delta):
 	
@@ -40,6 +40,7 @@ func _process(delta):
 		else:
 			curr_letter = get_node("Keyboard/Key" + str(selector_curr)).text
 			$NewNameTxt.text = curr_text + curr_letter
+			
 
 	elif Input.is_action_just_pressed("menu_select") and self.visible == true and selector_curr == 0:
 		if $NewNameTxt.text != "":
@@ -78,9 +79,11 @@ func _process(delta):
 		$Selector.texture = sel_sqr
 	
 
-func move_selector():
+func move_selector(play_sound: bool = true):
 	$Selector.rect_position = selector_locations[selector_curr]["Position"]
 	$Selector.rect_size = selector_locations[selector_curr]["Size"]
+	if play_sound:
+		Global.audio_players["Click"].play()
 
 func _new_player():
 

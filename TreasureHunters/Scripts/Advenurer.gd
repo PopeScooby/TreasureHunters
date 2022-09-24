@@ -360,6 +360,16 @@ func exec_state_use_item():
 				Global.Player["Animation"] = "PlaceItem"
 				Global.item_placing = item
 				
+	elif Global.Player["Current_Item"] == "Handle" and is_on_floor() and Global.Player["Player_Flags"]["On_Crate"] == false:
+		for item in Global.items:
+			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:
+				if GlobalDictionaries.player_info["Dir_Curr"] == 0:
+					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+					
+				GlobalDictionaries.player_info["Friction"] = true
+				Global.STATE_PLAYER = "PlacingItem"
+				Global.Player["Animation"] = "PlaceItem"
+				Global.item_placing = item
 
 func exec_state_switch_item():
 	var curr_item_idx = GlobalDictionaries.items.find(Global.Player["Current_Item"], 0)

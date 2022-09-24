@@ -20,6 +20,7 @@ func _on_Jumpshroom_body_entered(body):
 		Global.Player["Interactions"]["Jumpshroom"]["BounceHeight"] = self.BounceHeight
 		STATE = "Bounce"
 		Global.STATE_PLAYER = "Bounce"
+		Global.audio_players["Bounce"].play()
 #
 #func _on_Jumpshroom_body_exited(body):
 #	if body.name == "Adventurer":

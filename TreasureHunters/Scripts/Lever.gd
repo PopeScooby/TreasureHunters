@@ -28,7 +28,7 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_PullLever"] == true and Global.Player["Player_Info"]["Object_Interact"] == self.name:
+	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_PullLever"] == true and Global.Player["Player_Info"]["Object_Interact"] == self.name and self.visible:
 		
 		if is_active == false:
 			$AnimationPlayer.play("Activate")

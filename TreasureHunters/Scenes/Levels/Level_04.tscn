@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/Triggers/Vine_Trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=2]
@@ -58,10 +58,11 @@
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (71).png" type="Texture" id=56]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (73).png" type="Texture" id=57]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (78).png" type="Texture" id=58]
-[ext_resource path="res://Textures/Items/Levers/Base_05.png" type="Texture" id=59]
+[ext_resource path="res://Scenes/Items/Lever.tscn" type="PackedScene" id=59]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (74).png" type="Texture" id=60]
 [ext_resource path="res://Textures/Tilesets/Jungle_Background/Tile (76).png" type="Texture" id=61]
 [ext_resource path="res://Scenes/Background/Platform_6.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Scenes/Items/Lever_Base.tscn" type="PackedScene" id=63]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Tile (72).png 0"
@@ -928,10 +929,18 @@ scale = Vector2( 2, 2 )
 [node name="Crate" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 659, 549 )
 
-[node name="Base05" type="Sprite" parent="Items"]
-position = Vector2( 281, 4532 )
-rotation = 1.5708
-texture = ExtResource( 59 )
+[node name="Lever_Base" parent="Items" instance=ExtResource( 63 )]
+position = Vector2( 299, 4606 )
+Lever_Path = NodePath("../Lever")
+
+[node name="Lever" parent="Items" instance=ExtResource( 59 )]
+visible = false
+position = Vector2( 299, 4605 )
+rotation = 3.14159
+is_active = true
+mover_path = NodePath("../../Movers/Platform_1")
+activate_anim_name = "Un_Slide_Up_256"
+deactivate_anim_name = "Slide_Up_256"
 
 [node name="Treasure" type="Node2D" parent="."]
 

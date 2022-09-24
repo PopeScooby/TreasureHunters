@@ -357,18 +357,18 @@ func exec_state_use_item():
 					
 				GlobalDictionaries.player_info["Friction"] = true
 				Global.STATE_PLAYER = "PlacingItem"
-				Global.Player["Animation"] = "PlaceItem"
+				Global.Player["Animation"] = "PlaceJumpshroom"
 				Global.item_placing = item
 				
-	elif Global.Player["Current_Item"] == "Handle" and is_on_floor() and Global.Player["Player_Flags"]["On_Crate"] == false:
+	elif Global.Player["Current_Item"] == "Handle" and Global.Player["Player_Flags"]["Near_LeverBase"] == false:
 		for item in Global.items:
-			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:
+			if item.find("Handle") != -1 and Global.items[item]["InInventory"] == true:
 				if GlobalDictionaries.player_info["Dir_Curr"] == 0:
 					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
 					
 				GlobalDictionaries.player_info["Friction"] = true
 				Global.STATE_PLAYER = "PlacingItem"
-				Global.Player["Animation"] = "PlaceItem"
+				Global.Player["Animation"] = "PlaceHandle"
 				Global.item_placing = item
 
 func exec_state_switch_item():

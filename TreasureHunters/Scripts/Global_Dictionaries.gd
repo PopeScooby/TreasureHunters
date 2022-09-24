@@ -29,7 +29,8 @@ func get_new_player_dict(PlayerName):
 					 "Current_Item": "Empty",
 					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true, "Red": true, "White": true, "Yellow": true},
 					 "Items": {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-							   "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}},
+							   "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
+							   "Handle1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}},
 					 "Inventory": {"Jumpshroom": 0, "Crate": 0},
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,
@@ -142,7 +143,8 @@ func get_new_player_dict(PlayerName):
 									   "On_Hospital": false,
 									   "Can_PullLever": false,
 									   "On_Crate": false,
-									   "On_MushRoom": false},
+									   "On_MushRoom": false,
+									   "Near_LeverBase": false},
 					 "Interactions": {"Jumpshroom": {"BounceHeight": 0}},
 					 "Scenes": {"Scene_Curr":{ "SceneName": ""},
 								"Homebase_Intro_01": {"Seen": false, "Next": "Homebase_Intro_02", "Parent":"Homebase"},
@@ -186,4 +188,5 @@ func reset_flags(LevelNum):
 									   "On_Hospital": false,
 									   "Can_PullLever": false,
 									   "On_Crate": false,
-									   "On_MushRoom": false}
+									   "On_MushRoom": false,
+									   "Near_LeverBase": false}

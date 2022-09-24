@@ -1,16 +1,23 @@
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var Handle_Name 
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Handle_Name = self.name
+	
+	if Global.items[Handle_Name]["InInventory"] or Global.items[Handle_Name]["Level"] != 0:
+		queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Handle_body_entered(body):
+	if body.name == "Adventurer":
+		Global.items["Handle1"]["InInventory"] = true
+		if not GlobalDictionaries.items.has("Handle"):
+			GlobalDictionaries.items.append("Handle")
+		queue_free()

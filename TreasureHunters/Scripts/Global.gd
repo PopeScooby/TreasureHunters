@@ -20,8 +20,9 @@ var ruby = []
 var heart_container = false
 var gem_square_count = 0
 var gem_square
-var items = {"Jumpshroom1": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}, 
-			 "Jumpshroom2": {"InInventory": false, "Level": "", "Pos": Vector2(0,0)}}
+var items = {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
+			 "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
+			 "Handle1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}}
 var inv_jumpshroom = 0
 var inv_crate = 0
 

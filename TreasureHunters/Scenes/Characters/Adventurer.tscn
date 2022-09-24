@@ -1063,7 +1063,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id=55]
-resource_name = "Inda_-1_PlaceItem"
+resource_name = "Inda_-1_PlaceJumpshroom"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -2558,7 +2558,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id=56]
-resource_name = "Inda_1_PlaceItem"
+resource_name = "Inda_1_PlaceJumpshroom"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1

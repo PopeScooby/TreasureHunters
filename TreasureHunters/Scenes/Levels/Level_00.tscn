@@ -65,7 +65,6 @@ deactivate_anim_name = "Un_Slide_Left"
 
 [node name="Platform_2" parent="Movers" instance=ExtResource( 41 )]
 position = Vector2( 279, 2822 )
-scale = Vector2( 2, 2 )
 
 [node name="Platform_4" parent="Movers" instance=ExtResource( 2 )]
 position = Vector2( 3328, 2049 )

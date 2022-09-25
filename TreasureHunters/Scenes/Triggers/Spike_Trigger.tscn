@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Timer_Damage" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 1.334
 
 [connection signal="body_entered" from="." to="." method="_on_Spikes_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Spikes_body_exited"]

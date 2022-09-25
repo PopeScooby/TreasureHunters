@@ -21,6 +21,7 @@ func exec_state():
 		$AnimationPlayer.play("Portal_Close")
 		Global.STATE_LEVEL = "Gameplay"
 	elif Global.STATE_LEVEL == "Timeout" and Global.STATE_GLOBAL != "GameOver":
+		$Camera2D.current = true
 		$AnimationPlayer.play("Portal_Close")
 		Global.STATE_GLOBAL = "GameOver"
 

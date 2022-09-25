@@ -113,6 +113,7 @@ func exec_state_menu():
 			exec_state_unpause()
 			Global.reset_level_variables()
 			Global.load_level()
+			Global.STATE_GLOBAL = ""
 			Global.STATE_PLAYER = ""
 		elif selector_curr == 2:
 			exec_state_unpause()

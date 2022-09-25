@@ -1078,8 +1078,11 @@ __meta__ = {
 }
 
 [node name="Items" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -6.0
+margin_top = 186.0
+margin_right = 34.0
+margin_bottom = 226.0
+rect_scale = Vector2( 0.75, 0.75 )
 
 [node name="ItemWindow" type="TextureRect" parent="Items"]
 margin_top = 540.0

@@ -30,7 +30,7 @@ func get_new_player_dict(PlayerName):
 					 "Gem_Square": {"Pink": true, "Orange": true, "Green": true, "Blue": true, "Purple": true, "Red": true, "White": true, "Yellow": true},
 					 "Items": {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
 							   "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-							   "Handle1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}},
+							   "Handle1": {"InInventory": false, "Level": 0, "Lever_Base": ""}},
 					 "Inventory": {"Jumpshroom": 0, "Crate": 0},
 					 "Levels": {"0" : {"Timer": 120,
 									   "Coins_Collected": 0,

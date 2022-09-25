@@ -154,6 +154,9 @@ anims/Portal_Close = SubResource( 2 )
 anims/Portal_Idle = SubResource( 3 )
 anims/Portal_Spawn = SubResource( 4 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 2, 2 )
+
 [connection signal="body_entered" from="." to="." method="_on_Portal_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Portal_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

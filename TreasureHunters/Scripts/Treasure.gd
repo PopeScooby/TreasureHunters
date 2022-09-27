@@ -4,6 +4,9 @@ var STATE = "Closed"
 
 var chest_name
 var chest_idx
+var coins_in_chest = 10
+
+onready var gameplay_interface = get_parent().get_parent().get_node("GameplayInterface")
 
 func _ready():
 	
@@ -23,15 +26,32 @@ func _process(delta):
 		$AnimationPlayer.play("Chest_Closed")
 
 func _on_chest_opened():
-	
-	register_chest()
 	Global.audio_players["TreasureCollection"].play(0)
+	register_chest()
+	
+	for i in range(self.coins_in_chest):
+		
+		var collected_coin: Control = load("res://Scenes/Items/CollectedCoin.tscn").instance()
+		
+		var coin_sprite: AnimatedSprite = collected_coin.get_node("CoinSprite")
+		var coin_origin = coin_sprite.get_transform().get_origin() * .5
+		var origin: Vector2 = $Sprite.get_global_transform_with_canvas().get_origin() - coin_origin
+		
+		# Hack - This is just copied from the Coin sprite 
+		collected_coin.rect_scale = Vector2(0.374, 0.374)
+		collected_coin.rect_global_position = origin
+
+		self.gameplay_interface.add_child(collected_coin)
+		collected_coin.animate()
+		
+		yield(get_tree().create_timer(.05), "timeout")
+	
 
 func register_chest():
 	
-	Global.coins_total += 10
-	Global.coins_collected_total += 10
-	Global.coins_collected_level += 10
+	Global.coins_total += self.coins_in_chest
+	Global.coins_collected_total += self.coins_in_chest
+	Global.coins_collected_level += self.coins_in_chest
 	Global.chests[chest_idx] = false
 	
 func _on_Area2D_body_entered(body):

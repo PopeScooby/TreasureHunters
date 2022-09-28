@@ -27,10 +27,9 @@ func _process(delta):
 
 func _on_chest_opened():
 	Global.audio_players["TreasureCollection"].play(0)
-	register_chest()
+	Global.chests[chest_idx] = false
 	
 	for i in range(self.coins_in_chest):
-		
 		var collected_coin: Control = load("res://Scenes/Items/CollectedCoin.tscn").instance()
 		
 		var coin_sprite: AnimatedSprite = collected_coin.get_node("CoinSprite")
@@ -44,15 +43,19 @@ func _on_chest_opened():
 		self.gameplay_interface.add_child(collected_coin)
 		collected_coin.animate()
 		
+		# Increment coin count when the coin exits the tree (i.e. when it reaches the coin count HUD)
+		collected_coin.connect("tree_exiting", self, "_increment_coin_counts")
+		
+		# Stagger coin animations to create a "stream" of coins
 		yield(get_tree().create_timer(.05), "timeout")
 	
 
-func register_chest():
+func _increment_coin_counts():
+	Global.coins_total += 1
+	Global.coins_collected_total += 1
+	Global.coins_collected_level += 1
 	
-	Global.coins_total += self.coins_in_chest
-	Global.coins_collected_total += self.coins_in_chest
-	Global.coins_collected_level += self.coins_in_chest
-	Global.chests[chest_idx] = false
+	
 	
 func _on_Area2D_body_entered(body):
 	

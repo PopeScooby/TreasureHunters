@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Textures/Tilesets/Level_Platform.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Background/Platform_4.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Items/Lever.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Items/Handle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Items/Crate.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Characters/Adventurer.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=30]
@@ -103,6 +104,9 @@ scale = Vector2( 1, 3 )
 
 [node name="Crate" parent="Items" instance=ExtResource( 28 )]
 position = Vector2( 1296, 674 )
+
+[node name="Handle" parent="Items" instance=ExtResource( 4 )]
+position = Vector2( 1544, 2893 )
 
 [node name="Treasure" type="Node2D" parent="."]
 

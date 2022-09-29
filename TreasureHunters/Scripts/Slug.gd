@@ -76,7 +76,7 @@ func exec_state_move():
 	
 	var new_pos = self.position
 	var SlugName = self.name
-	if is_on_floor() and ceil(enemy_dict["x_Prev"]) == ceil(self.position.x) and enemy_dict["Attempts"] >= 500:
+	if is_on_floor() and ceil(enemy_dict["x_Prev"]) == ceil(self.position.x) and enemy_dict["Attempts"] >= 100:
 		advance_movement(Destination)
 		position_start = self.position
 		enemy_dict["Attempts"] = 0

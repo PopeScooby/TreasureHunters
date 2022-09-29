@@ -25,6 +25,7 @@ var items = {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,
 							 "Handle1": {"InInventory": false, "Level": 0, "Lever_Base": ""}}
 var inv_jumpshroom = 0
 var inv_crate = 0
+var inv_handle = 0
 
 var item = ""
 var item_placing = ""

@@ -447,13 +447,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.items[Global.item_placing]["InInventory"] = false
 		Global.inv_jumpshroom -= 1
 		Global.STATE_PLAYER = "Move_Normal"
-#	elif anim_name.find("_PlaceJumpshroom") != -1:
-#		Global.items[Global.item_placing]["Pos"] = self.position
-#		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]
-#		Global.place_jumpshroom(get_parent().get_node("Items"), Global.item_placing)
-#		Global.items[Global.item_placing]["InInventory"] = false
-#		Global.inv_jumpshroom -= 1
-#		Global.STATE_PLAYER = "Move_Normal"
+	elif anim_name.find("_PlaceJumpshroom") != -1:
+		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]
+		Global.items[Global.item_placing]["InInventory"] = false
+		Global.inv_handle -= 1
+		Global.STATE_PLAYER = "Move_Normal"
+#		Global.STATE_LEVEl = "Move_Normal"
 
 
 

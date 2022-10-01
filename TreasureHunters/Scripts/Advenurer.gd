@@ -447,7 +447,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.items[Global.item_placing]["InInventory"] = false
 		Global.inv_jumpshroom -= 1
 		Global.STATE_PLAYER = "Move_Normal"
-	elif anim_name.find("_PlaceJumpshroom") != -1:
+	elif anim_name.find("_PlaceHandle") != -1:
 		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]
 		Global.items[Global.item_placing]["InInventory"] = false
 		Global.inv_handle -= 1

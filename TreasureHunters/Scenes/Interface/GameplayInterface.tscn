@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Interface/Selector.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/IMMORTAL.ttf" type="DynamicFontData" id=2]
@@ -41,6 +41,19 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 38
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 25
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 35
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
@@ -1098,6 +1111,26 @@ margin_right = 152.0
 margin_bottom = 144.0
 texture = ExtResource( 12 )
 expand = true
+
+[node name="Item_x_Label" type="Label" parent="Items/ItemWindow/ItemImg"]
+margin_left = 70.0
+margin_top = 76.0
+margin_right = 95.0
+margin_bottom = 107.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "x"
+align = 1
+valign = 1
+
+[node name="Item_Count_Label" type="Label" parent="Items/ItemWindow/ItemImg"]
+margin_left = 91.0
+margin_top = 71.0
+margin_right = 114.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "0"
 
 [node name="Radio" type="Control" parent="."]
 visible = false

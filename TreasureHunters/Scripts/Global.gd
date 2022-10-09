@@ -81,7 +81,7 @@ func load_new_game(PlayerName):
 
 func load_level():
 
-	var Level_Suffix = "0" + str(Global.Player["Level_Current"])
+	var Level_Suffix = "0" + str(GlobalDictionaries.game["Level_Current"])
 	get_tree().change_scene("res://Scenes/Levels/Level_" + Level_Suffix + ".tscn")
 	
 #	GlobalDictionaries.player_info = Global.Player["Player_Info"]

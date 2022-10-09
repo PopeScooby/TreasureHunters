@@ -27,7 +27,7 @@ func _process(delta):
 
 func _on_chest_opened():
 	Global.audio_players["TreasureCollection"].play(0)
-	Global.chests[chest_idx] = false
+	GlobalDictionaries.current_data["Chests"][chest_idx] = false
 	
 	for i in range(self.coins_in_chest):
 		var collected_coin: Control = load("res://Scenes/Items/CollectedCoin.tscn").instance()
@@ -51,12 +51,11 @@ func _on_chest_opened():
 	
 
 func _increment_coin_counts():
-	Global.coins_total += 1
-	Global.coins_collected_total += 1
-	Global.coins_collected_level += 1
+	GlobalDictionaries.current_data["Coins_Current"] += 1
+	GlobalDictionaries.current_data["Coins_Total"] += 1
+	GlobalDictionaries.current_data["Coins_Level"] += 1
 	
-	
-	
+
 func _on_Area2D_body_entered(body):
 	
 	if body.name == "Adventurer" and Global.Level["Chests"][chest_idx] == true:

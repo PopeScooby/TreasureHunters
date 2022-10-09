@@ -27,9 +27,9 @@ func _on_Coin_body_entered(body):
 		
 
 func _register_coin_and_exit():
-	Global.coins_total += 1
-	Global.coins_collected_total += 1
-	Global.coins_collected_level += 1
+	GlobalDictionaries.current_data["Coins_Current"] += 1
+	GlobalDictionaries.current_data["Coins_Total"] += 1
+	GlobalDictionaries.current_data["Coins_Level"] += 1
 	
 	queue_free()
 	

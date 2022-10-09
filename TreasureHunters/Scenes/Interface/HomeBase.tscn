@@ -6202,6 +6202,7 @@ anims/NewGame_9 = SubResource( 11 )
 anims/RESET = SubResource( 23 )
 
 [node name="Speech" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -6239,9 +6240,8 @@ margin_right = 344.648
 margin_bottom = 185.999
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
-text = "OK, The Portal is opening. Here, take this radio with you so we can talk while you're gone, and hurry through the portal. ...just make sure to get back before the timer runs out."
+text = "Ureka, My invention works. Inda, Lary come over here and see."
 autowrap = true
-percent_visible = 1.0069
 
 [node name="SpeechBubble2" type="TextureRect" parent="Speech"]
 visible = false

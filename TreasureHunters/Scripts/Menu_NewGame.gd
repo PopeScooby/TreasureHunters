@@ -24,7 +24,6 @@ func _ready():
 
 func _process(delta):
 	
-	
 	if Input.is_action_just_pressed("menu_select") and self.visible == true and selector_curr != 0:
 		var curr_letter
 		var curr_text = $NewNameTxt.text
@@ -87,5 +86,5 @@ func move_selector(play_sound: bool = true):
 
 func _new_player():
 
-	Global.new_game($NewNameTxt.text)
+	Global.load_new_game($NewNameTxt.text)
 	Global.STATE_GLOBAL = "HomeBase"

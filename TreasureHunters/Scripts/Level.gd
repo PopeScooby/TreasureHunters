@@ -7,6 +7,7 @@ export var cam_left = 0
 export var cam_right = 0
 export var cam_top = 0
 export var cam_bottom = 0
+export var level_time = 120
 
 var level_num
 

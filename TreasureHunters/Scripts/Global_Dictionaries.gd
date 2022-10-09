@@ -135,9 +135,11 @@ func load_current_data():
 		"Coins_Current": Global.Player["Coins_Current"],
 		"Coins_Total": Global.Player["Coins_Total"],
 		"Coins_Level": Global.Level["Coins_Collected"],
+		"Level_Timer": Global.Level["Timer"],
 		"Coins": [],
 		"Chests": [],
 		"Gems": [],
+		"Current_Item": "Empty",
 		"Item_Data": get_item_data_dict(),
 		"Inventory": get_inventory_data(),
 		"Game_Info": get_game_info_dict(),
@@ -146,20 +148,20 @@ func load_current_data():
 
 	var curr_idx = 0
 	while curr_idx < Global.Level["Coins"].size():
-		self.current_data["coins"].append(Global.Level["Coins"][curr_idx])
+		self.current_data["Coins"].append(Global.Level["Coins"][curr_idx])
 		curr_idx += 1
 
 	curr_idx = 0
 	while curr_idx < Global.Level["Chests"].size():
-		self.current_data["chests"].append(Global.Level["Chests"][curr_idx])
+		self.current_data["Chests"].append(Global.Level["Chests"][curr_idx])
 		curr_idx += 1
 	
-	self.current_data["Jumpshroom1"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"]
-	self.current_data["Jumpshroom1"]["Level"] = Global.Player["Item_Data"]["Jumpshroom1"]["Level"]
-	self.current_data["Jumpshroom1"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom1"]["Pos"]
-	self.current_data["Jumpshroom2"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"]
-	self.current_data["Jumpshroom2"]["Level"] = Global.Player["Item_Data"]["Jumpshroom2"]["Level"]
-	self.current_data["Jumpshroom2"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom2"]["Pos"]
+	self.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"]
+	self.current_data["Item_Data"]["Jumpshroom1"]["Level"] = Global.Player["Item_Data"]["Jumpshroom1"]["Level"]
+	self.current_data["Item_Data"]["Jumpshroom1"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom1"]["Pos"]
+	self.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"]
+	self.current_data["Item_Data"]["Jumpshroom2"]["Level"] = Global.Player["Item_Data"]["Jumpshroom2"]["Level"]
+	self.current_data["Item_Data"]["Jumpshroom2"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom2"]["Pos"]
 	
 	self.current_data["Inventory"]["Jumpshroom"] = Global.Player["Inventory"]["Jumpshroom"]
 	self.current_data["Inventory"]["Handle"] = Global.Player["Inventory"]["Handle"]
@@ -193,12 +195,12 @@ func save_current_data():
 		"Inventory": get_inventory_data()
 	}
 
-	Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"] = self.current_data["Jumpshroom1"]["InInventory"]
-	Global.Player["Item_Data"]["Jumpshroom1"]["Level"] = self.current_data["Jumpshroom1"]["Level"]
-	Global.Player["Item_Data"]["Jumpshroom1"]["Pos"] = self.current_data["Jumpshroom1"]["Pos"]
-	Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"] = self.current_data["Jumpshroom2"]["InInventory"]
-	Global.Player["Item_Data"]["Jumpshroom2"]["Level"] = self.current_data["Jumpshroom2"]["Level"]
-	Global.Player["Item_Data"]["Jumpshroom2"]["Pos"] = self.current_data["Jumpshroom2"]["Pos"]
+	Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"] = self.current_data["Item_Data"]["Jumpshroom1"]["InInventory"]
+	Global.Player["Item_Data"]["Jumpshroom1"]["Level"] = self.current_data["Item_Data"]["Jumpshroom1"]["Level"]
+	Global.Player["Item_Data"]["Jumpshroom1"]["Pos"] = self.current_data["Item_Data"]["Jumpshroom1"]["Pos"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"] = self.current_data["Item_Data"]["Jumpshroom2"]["InInventory"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["Level"] = self.current_data["Item_Data"]["Jumpshroom2"]["Level"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["Pos"] = self.current_data["Item_Data"]["Jumpshroom2"]["Pos"]
 	
 	Global.Player["Inventory"]["Jumpshroom"] = self.current_data["Inventory"]["Jumpshroom"]
 	Global.Player["Inventory"]["Handle"] = self.current_data["Inventory"]["Handle"]

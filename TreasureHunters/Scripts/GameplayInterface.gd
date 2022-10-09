@@ -10,9 +10,9 @@ func _ready():
 	$PauseScreen.visible = false
 
 func _on_LevelTimeTimer_timeout():
-	if Global.Player["Level_Timer"] > 0:
+	if GlobalDictionaries.current_data["Level_Timer"] > 0:
 		$Timer/LevelTimeTimer.start()
-		Global.Player["Level_Timer"] -= 1
+		GlobalDictionaries.current_data["Level_Timer"] -= 1
 
 func _process(delta):
 	
@@ -37,7 +37,7 @@ func _process(delta):
 	else:
 		$PauseScreen/PauseLbl.text = "~Pause~"
 	
-	$Timer/LevelTimeLbl.text = str(Global.Player["Level_Timer"])
+	$Timer/LevelTimeLbl.text = str(GlobalDictionaries.current_data["Level_Timer"])
 
 	if Input.is_action_just_pressed("pause") and get_tree().paused == true and Global.STATE_PLAYER != "Dead":
 		exec_state_unpause()
@@ -47,25 +47,25 @@ func _process(delta):
 		exec_state_menu()
 		
 		
-	$Coin/Coin_Count_Label.text = str(Global.coins_total)
+	$Coin/Coin_Count_Label.text = str(GlobalDictionaries.current_data["Coins_Total"])
 	
-	if Global.hearts_total < 5:
+	if GlobalDictionaries.current_data["Hearts_Total"] < 5:
 		$Hearts/Heart5.visible = false
 	else:
 		$Hearts/Heart5.visible = true
-	if Global.hearts_total < 4:
+	if GlobalDictionaries.current_data["Hearts_Total"] < 4:
 		$Hearts/Heart4.visible = false
 	else:
 		$Hearts/Heart4.visible = true
-	if Global.hearts_total < 3:
+	if GlobalDictionaries.current_data["Hearts_Total"] < 3:
 		$Hearts/Heart3.visible = false
 	else:
 		$Hearts/Heart3.visible = true
-	if Global.hearts_total < 2:
+	if GlobalDictionaries.current_data["Hearts_Total"] < 2:
 		$Hearts/Heart2.visible = false
 	else:
 		$Hearts/Heart2.visible = true
-	if Global.hearts_total < 1:
+	if GlobalDictionaries.current_data["Hearts_Total"] < 1:
 		$Hearts/Heart1.visible = false
 	else:
 		$Hearts/Heart1.visible = true
@@ -74,10 +74,10 @@ func _process(delta):
 		if x != 0:
 			var HeartNode = get_node("Hearts/Heart" + str(x))
 
-			if Global.hearts_total < x:
+			if GlobalDictionaries.current_data["Hearts_Total"] < x:
 				HeartNode.visible = false
 
-			if Global.hearts < x:
+			if GlobalDictionaries.current_data["Hearts_Current"] < x:
 				HeartNode.texture = heart_container
 			else:
 				HeartNode.texture = heart
@@ -111,7 +111,7 @@ func exec_state_menu():
 	elif Input.is_action_just_pressed("menu_select"):
 		if selector_curr == 1:			
 			exec_state_unpause()
-			Global.reset_level_variables()
+			GlobalDictionaries.load_current_data()
 			Global.load_level()
 			Global.STATE_GLOBAL = ""
 			Global.STATE_PLAYER = ""

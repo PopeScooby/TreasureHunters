@@ -16,12 +16,12 @@ func _ready():
 func _process(delta):
 	
 
-	if Global.items["Jumpshroom1"]["InInventory"] and $SidePanel.visible == true:
+	if GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] and $SidePanel.visible == true:
 		$SidePanel/Jumpshroom1.visible = false
 	else:
 		$SidePanel/Jumpshroom1.visible = true
 		
-	if Global.items["Jumpshroom2"]["InInventory"] and $SidePanel.visible == true:
+	if GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] and $SidePanel.visible == true:
 		$SidePanel/Jumpshroom2.visible = false
 	else:
 		$SidePanel/Jumpshroom2.visible = true
@@ -61,18 +61,18 @@ func move_selector():
 	$SidePanel/Selector.rect_size = selector_locations[selector_curr]["Size"]
 
 func buy_jumshroom_1():
-	if Global.coins_total >= 75 and Global.items["Jumpshroom1"]["InInventory"] == false:
+	if Global.coins_total >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] == false:
 		Global.coins_total -= 75
-		Global.items["Jumpshroom1"]["InInventory"] = true
+		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] = true
 		if not GlobalDictionaries.items.has("Jumpshroom"):
 			GlobalDictionaries.items.append("Jumpshroom")
 	
 	
 
 func buy_jumshroom_2():
-	if Global.coins_total >= 75 and Global.items["Jumpshroom2"]["InInventory"] == false:
+	if Global.coins_total >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] == false:
 		Global.coins_total -= 75
-		Global.items["Jumpshroom2"]["InInventory"] = true
+		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] = true
 		if not GlobalDictionaries.items.has("Jumpshroom"):
 			GlobalDictionaries.items.append("Jumpshroom")
 

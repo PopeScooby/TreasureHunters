@@ -17,7 +17,7 @@ func _ready():
 
 
 func _process(delta):
-	if Global.STATE_PLAYER == "Chest_Opening" and STATE == "Closed" and Global.Player["Player_Info"]["Object_Interact"] == chest_name:
+	if Global.STATE_PLAYER == "Chest_Opening" and STATE == "Closed" and GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] == chest_name:
 		STATE = "Opening"
 		$AnimationPlayer.play("Chest_Open")
 	elif STATE == "Opened":
@@ -60,16 +60,16 @@ func _on_Area2D_body_entered(body):
 	
 	if body.name == "Adventurer" and Global.Level["Chests"][chest_idx] == true:
 		if body.position.x > self.position.x:
-			Global.Player["Player_Flags"]["Crate_R"] = true
+			GlobalDictionaries.current_data["Flags"]["Crate_R"] = true
 		else:
-			Global.Player["Player_Flags"]["Crate_R"] = false
-		Global.Player["Player_Info"]["Object_Interact"] = chest_name
-		Global.Player["Player_Flags"]["Can_OpenChest"] = true
+			GlobalDictionaries.current_data["Flags"]["Crate_R"] = false
+		GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] = chest_name
+		GlobalDictionaries.current_data["Flags"]["Can_OpenChest"] = true
 
 func _on_Area2D_body_exited(body):
 
 	if body.name == "Adventurer":
-		Global.Player["Player_Flags"]["Can_OpenChest"] = false
+		GlobalDictionaries.current_data["Flags"]["Can_OpenChest"] = false
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Chest_Open":

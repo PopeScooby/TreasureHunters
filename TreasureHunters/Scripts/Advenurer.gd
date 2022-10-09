@@ -20,7 +20,7 @@ func _process(delta):
 	exec_state()
 
 func check_state():
-	if Global.hearts <= 0 and Global.STATE_PLAYER != "Dead":
+	if GlobalDictionaries.current_data["Hearts_Current"] <= 0 and Global.STATE_PLAYER != "Dead":
 		Global.STATE_PLAYER = "Dying"
 	elif Global.STATE_PLAYER == "InWater":
 		Global.STATE_PLAYER = "Dying"
@@ -43,43 +43,43 @@ func exec_state():
 		exec_state_exit_hospital()
 	elif Global.STATE_PLAYER == "ExitMushRoom":
 		exec_state_exit_mush_room()
-	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Enemy"] == true:
-		Global.Player["Player_Flags"]["On_Enemy"] = false
+	elif Global.STATE_PLAYER == "Move_Normal" and GlobalDictionaries.current_data["Flags"]["On_Enemy"] == true:
+		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = false
 		exec_state_damage()
-	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Spikes"] == true:
-		Global.Player["Player_Flags"]["On_Spikes"] = false
+	elif Global.STATE_PLAYER == "Move_Normal" and GlobalDictionaries.current_data["Flags"]["On_Spikes"] == true:
+		GlobalDictionaries.current_data["Flags"]["On_Spikes"] = false
 		exec_state_damage()
-	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == false:
+	elif Global.STATE_PLAYER == "Move_Normal" and GlobalDictionaries.current_data["Flags"]["On_Vines"] == false:
 		exec_state_move()
-	elif Global.STATE_PLAYER == "Move_Normal" and Global.Player["Player_Flags"]["On_Vines"] == true:
+	elif Global.STATE_PLAYER == "Move_Normal" and GlobalDictionaries.current_data["Flags"]["On_Vines"] == true:
 		exec_state_move_vines()
 
 func exec_state_move():
 	
-	if GlobalDictionaries.player_info["Dir_Curr"] != 0:
-		GlobalDictionaries.player_info["Dir_Prev"] = GlobalDictionaries.player_info["Dir_Curr"]
+	if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] != 0:
+		GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"]
 
-	GlobalDictionaries.player_info["Friction"] = false
+	GlobalDictionaries.current_data["Game_Info"]["Friction"] = false
 	
-	if Global.Player["Player_Flags"]["On_Crate"] == true and is_on_floor():
+	if GlobalDictionaries.current_data["Flags"]["On_Crate"] == true and is_on_floor():
 		motion.y = 1
 	else:
-		motion.y += GlobalDictionaries.player_info["Gravity"]
+		motion.y += GlobalDictionaries.current_data["Game_Info"]["Gravity"]
 	
 	
-	if Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["Can_OpenChest"] == true:
+	if Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["Can_OpenChest"] == true:
 		exec_state_open_chest()
-	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Exit"] == true:
+	elif Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["On_Exit"] == true:
 		exec_state_despawn_player()
-	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_Hospital"] == true:
+	elif Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["On_Hospital"] == true:
 		exec_state_go_to_hospital()
-	elif Input.is_action_just_pressed("action_interact") and Global.Player["Player_Flags"]["On_MushRoom"] == true:
+	elif Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["On_MushRoom"] == true:
 		exec_state_go_to_mush_room()
-	elif Input.is_action_just_pressed("action_use_item") and Global.Player["Current_Item"] != "":
+	elif Input.is_action_just_pressed("action_use_item") and GlobalDictionaries.current_data["Current_Item"] != "":
 		exec_state_use_item()
-	elif Input.is_action_just_pressed("action_switch_item") and Global.Player["Current_Item"] != "":
+	elif Input.is_action_just_pressed("action_switch_item") and GlobalDictionaries.current_data["Current_Item"] != "":
 		exec_state_switch_item()
-	elif Global.Player["Player_Flags"]["Can_Push"] == true:
+	elif GlobalDictionaries.current_data["Flags"]["Can_Push"] == true:
 		exec_state_push()
 	elif Input.is_action_pressed("move_right"):
 		exec_state_move_right()
@@ -92,13 +92,13 @@ func exec_state_move():
 
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_jump"):
-			Global.Player["Player_Flags"]["On_Crate"] = false
+			GlobalDictionaries.current_data["Flags"]["On_Crate"] = false
 			exec_state_move_jump()
 
-		if GlobalDictionaries.player_info["Friction"] == true:
+		if GlobalDictionaries.current_data["Game_Info"]["Friction"] == true:
 			motion.x = lerp(motion.x, 0, 0.8)
 	else:
-		if GlobalDictionaries.player_info["Friction"] == true:
+		if GlobalDictionaries.current_data["Game_Info"]["Friction"] == true:
 			motion.x = lerp(motion.x, 0, 0.4)
 
 	set_animation()
@@ -106,22 +106,22 @@ func exec_state_move():
 	motion = move_and_slide(motion, UP)
 
 func exec_state_idle():
-	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	GlobalDictionaries.player_info["Friction"] = true
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
+	GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 	if is_on_floor():
 		Global.Player["Animation"] = "Idle"
 	else:
-		if motion.y < 0 and Global.Player["Player_Flags"]["Can_Climb"] == false:
+		if motion.y < 0 and GlobalDictionaries.current_data["Flags"]["Can_Climb"] == false:
 			Global.Player["Animation"] = "Jump"
 		else:
-			if  Global.Player["Player_Flags"]["On_Elevator"] == false:
+			if  GlobalDictionaries.current_data["Flags"]["On_Elevator"] == false:
 				Global.Player["Animation"] = "Fall"
 			else:
 				Global.Player["Animation"] = "Idle"
 
 func exec_state_move_right():
-	GlobalDictionaries.player_info["Dir_Curr"] = 1
-	motion.x = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = 1
+	motion.x = min(motion.x + GlobalDictionaries.current_data["Game_Info"]["Acceleration"], GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -131,8 +131,8 @@ func exec_state_move_right():
 			Global.Player["Animation"] = "Fall"
 
 func exec_state_move_left():
-	GlobalDictionaries.player_info["Dir_Curr"] = -1
-	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = -1
+	motion.x = max(motion.x - GlobalDictionaries.current_data["Game_Info"]["Acceleration"], -GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -143,16 +143,16 @@ func exec_state_move_left():
 
 func exec_state_move_crouch():
 
-	if GlobalDictionaries.player_info["Dir_Curr"] == 0:
-		GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+	if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 0:
+		GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
 
-	GlobalDictionaries.player_info["Friction"] = true
+	GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 	Global.Player["Animation"] = "Crouch"
 #	Global.Player["Animation2"] = "Camera_Crouch"
 
 func exec_state_move_jump():
 	if is_on_floor():
-		motion.y = GlobalDictionaries.player_info["JumpHeight"]
+		motion.y = GlobalDictionaries.current_data["Game_Info"]["JumpHeight"]
 
 func exec_state_spawn_player():
 	Global.STATE_LEVEL = "Player_Spawning"
@@ -167,15 +167,15 @@ func exec_state_despawn_player():
 
 func exec_state_open_chest():
 	
-	Global.Player["Player_Flags"]["Can_OpenChest"] = false
+	GlobalDictionaries.current_data["Flags"]["Can_OpenChest"] = false
 	
 	Global.STATE_PLAYER = "Chest_Opening"
-	if GlobalDictionaries.player_info["Dir_Curr"] == 0:
-		GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+	if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 0:
+		GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
 
-	if GlobalDictionaries.player_info["Dir_Curr"] == 1:
+	if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 1:
 		Global.Player["Animation"] = "Interact"
-	elif  GlobalDictionaries.player_info["Dir_Curr"] == -1:
+	elif  GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == -1:
 		Global.Player["Animation"] = "Interact"
 
 func exec_state_push():
@@ -188,24 +188,24 @@ func exec_state_push():
 		exec_state_push_idle()
 
 func exec_state_push_right():
-	GlobalDictionaries.player_info["Dir_Curr"] = 1
-	motion.x = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
-	if Global.Player["Player_Flags"]["Crate_R"]:
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = 1
+	motion.x = min(motion.x + GlobalDictionaries.current_data["Game_Info"]["Acceleration"], GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
+	if GlobalDictionaries.current_data["Flags"]["Crate_R"]:
 		Global.Player["Animation"] = "Pull"
 	else:
 		Global.Player["Animation"] = "Push"
 
 func exec_state_push_left():
-	GlobalDictionaries.player_info["Dir_Curr"] = -1
-	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
-	if Global.Player["Player_Flags"]["Crate_R"]:
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = -1
+	motion.x = max(motion.x - GlobalDictionaries.current_data["Game_Info"]["Acceleration"], -GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
+	if GlobalDictionaries.current_data["Flags"]["Crate_R"]:
 		Global.Player["Animation"] = "Push"
 	else:
 		Global.Player["Animation"] = "Pull"
 
 func exec_state_push_idle():
-	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	GlobalDictionaries.player_info["Friction"] = true
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
+	GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 	Global.Player["Animation"] = "Idle"
 
 func exec_state_bounce():
@@ -219,10 +219,10 @@ func exec_state_dying():
 
 func exec_state_move_vines():
 
-	if GlobalDictionaries.player_info["Dir_Curr"] != 0:
-		GlobalDictionaries.player_info["Dir_Prev"] = GlobalDictionaries.player_info["Dir_Curr"]
+	if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] != 0:
+		GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"]
 
-	GlobalDictionaries.player_info["Friction"] = false
+	GlobalDictionaries.current_data["Game_Info"]["Friction"] = false
 
 	if Input.is_action_pressed("move_right"):
 		exec_state_move_right_vines()
@@ -243,8 +243,8 @@ func exec_state_move_vines():
 	motion = move_and_slide(motion, UP)
 
 func exec_state_move_right_vines():
-	GlobalDictionaries.player_info["Dir_Curr"] = 1
-	motion.x = min(motion.x + GlobalDictionaries.player_info["Acceleration"], GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = 1
+	motion.x = min(motion.x + GlobalDictionaries.current_data["Game_Info"]["Acceleration"], GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -254,8 +254,8 @@ func exec_state_move_right_vines():
 			Global.Player["Animation"] = "Vines"
 
 func exec_state_move_left_vines():
-	GlobalDictionaries.player_info["Dir_Curr"] = -1
-	motion.x = max(motion.x - GlobalDictionaries.player_info["Acceleration"], -GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = -1
+	motion.x = max(motion.x - GlobalDictionaries.current_data["Game_Info"]["Acceleration"], -GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -265,8 +265,8 @@ func exec_state_move_left_vines():
 			Global.Player["Animation"] = "Vines"
 
 func exec_state_move_up_vines():
-	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	motion.y = max(motion.x - GlobalDictionaries.player_info["Acceleration"] * 1.5, -GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
+	motion.y = max(motion.x - GlobalDictionaries.current_data["Game_Info"]["Acceleration"] * 1.5, -GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Run"
 	else:
@@ -276,8 +276,8 @@ func exec_state_move_up_vines():
 			Global.Player["Animation"] = "Vines"
 
 func exec_state_move_down_vines():
-	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
-	motion.y = min(motion.x + GlobalDictionaries.player_info["Acceleration"] * 3, GlobalDictionaries.player_info["SpeedMax"])
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
+	motion.y = min(motion.x + GlobalDictionaries.current_data["Game_Info"]["Acceleration"] * 3, GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 	if is_on_floor():
 		Global.Player["Animation"] = "Idle"
 	else:
@@ -287,10 +287,10 @@ func exec_state_move_down_vines():
 			Global.Player["Animation"] = "Vines"
 
 func exec_state_move_jump_vines():
-	motion.y = GlobalDictionaries.player_info["JumpHeight"] * 15
+	motion.y = GlobalDictionaries.current_data["Game_Info"]["JumpHeight"] * 15
 
 func exec_state_idle_vines():
-	GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+	GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
 	motion.y = 0
 	motion.x = 0
 	if is_on_floor():
@@ -349,30 +349,30 @@ func exec_state_exit_mush_room():
 	set_animation()
 
 func exec_state_use_item():
-	if Global.Player["Current_Item"] == "Jumpshroom" and is_on_floor() and Global.Player["Player_Flags"]["On_Crate"] == false:
+	if GlobalDictionaries.current_data["Current_Item"] == "Jumpshroom" and is_on_floor() and GlobalDictionaries.current_data["Flags"]["On_Crate"] == false:
 		for item in Global.items:
 			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:
-				if GlobalDictionaries.player_info["Dir_Curr"] == 0:
-					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+				if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 0:
+					GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
 					
-				GlobalDictionaries.player_info["Friction"] = true
+				GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 				Global.STATE_PLAYER = "PlacingItem"
 				Global.Player["Animation"] = "PlaceJumpshroom"
 				Global.item_placing = item
 				
-	elif Global.Player["Current_Item"] == "Handle" and Global.Player["Player_Flags"]["Near_LeverBase"] == false:
+	elif GlobalDictionaries.current_data["Current_Item"] == "Handle" and GlobalDictionaries.current_data["Flags"]["Near_LeverBase"] == false:
 		for item in Global.items:
 			if item.find("Handle") != -1 and Global.items[item]["InInventory"] == true:
-				if GlobalDictionaries.player_info["Dir_Curr"] == 0:
-					GlobalDictionaries.player_info["Dir_Curr"] = GlobalDictionaries.player_info["Dir_Prev"]
+				if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 0:
+					GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
 
-				GlobalDictionaries.player_info["Friction"] = true
+				GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 				Global.STATE_PLAYER = "PlacingItem"
 				Global.Player["Animation"] = "PlaceHandle"
 				Global.item_placing = item
 
 func exec_state_switch_item():
-	var curr_item_idx = GlobalDictionaries.items.find(Global.Player["Current_Item"], 0)
+	var curr_item_idx = GlobalDictionaries.items.find(GlobalDictionaries.current_data["Current_Item"], 0)
 	var max_item_idx = GlobalDictionaries.items.size() - 1
 	
 	if max_item_idx == 0:
@@ -383,19 +383,17 @@ func exec_state_switch_item():
 		else:
 			curr_item_idx += 1
 			
-	Global.Player["Current_Item"] = GlobalDictionaries.items[curr_item_idx]
+	GlobalDictionaries.current_data["Current_Item"] = GlobalDictionaries.items[curr_item_idx]
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:
 		Global.Player = GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])]
-		GlobalDictionaries.player_info = Global.Player["Player_Info"]
 	else:
 		GlobalDictionaries.players["1"] = GlobalDictionaries.get_new_player_dict("Debug")
 		Global.Player = GlobalDictionaries.players["1"]
 		Global.Player["Name_Explorer"] = "Inda"
-		Global.Player["Level_Current"] = int(get_parent().name.replace("Level_",""))
-		GlobalDictionaries.player_info = Global.Player["Player_Info"]
 		GlobalDictionaries.game["PlayerKey"] = "1"
+		GlobalDictionaries.game["Level_Current"] = int(get_parent().name.replace("Level_",""))
 
 
 func set_animation():
@@ -404,7 +402,7 @@ func set_animation():
 		$AnimationPlayer.playback_speed = 0
 	else:
 		$AnimationPlayer.playback_speed = 1
-		var anim_name = Global.Player["Name_Explorer"] + "_" + str(GlobalDictionaries.player_info["Dir_Curr"]) + "_" + Global.Player["Animation"]
+		var anim_name = Global.Player["Name_Explorer"] + "_" + str(GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"]) + "_" + Global.Player["Animation"]
 		var curr_anim = $AnimationPlayer.current_animation
 
 		if curr_anim != anim_name:

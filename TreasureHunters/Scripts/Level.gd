@@ -71,13 +71,12 @@ func level_setup():
 	level_setup_coins()
 	level_setup_chests()
 	level_setup_gems()
+	GlobalDictionaries.load_current_data()
 	level_setup_items()
 	
-	GlobalDictionaries.load_current_data()
 
 func level_setup_timer():
-	Global.Level["Timer"] = self.level_time
-	GlobalDictionaries.current_data["Level_Timer"] = Global.Level["Timer"]
+	Global.Level["Timer"] = self.level_time	
 	$GameplayInterface/Timer/LevelTimeTimer.start()
 
 func level_setup_coins():
@@ -131,5 +130,5 @@ func level_setup_gems():
 
 func level_setup_items():
 
-	if Global.Player["Items"]["Jumpshroom1"]["Level"] == Global.Player["Level_Current"]:
+	if GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["Level"] == GlobalDictionaries.game["Level_Current"]:
 		Global.place_jumpshroom(get_node("Items"), "Jumpshroom1")

@@ -9,7 +9,7 @@ func _process(delta):
 	exec_state()
 	
 func check_state():
-	if Global.Player["Level_Timer"] <= 0:
+	if self.visible and  GlobalDictionaries.current_data["Level_Timer"] <= 0:
 		Global.STATE_LEVEL = "Timeout"
 		
 func exec_state():

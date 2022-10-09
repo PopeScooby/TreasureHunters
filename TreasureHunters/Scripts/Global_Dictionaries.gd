@@ -13,106 +13,6 @@ var items = ["Empty"]
 func _ready():
 	pass # Replace with function body.
 
-#
-#var hearts_total = 0
-#var hearts = 0
-#var coins_total = 0
-#var coins_collected_total = 0
-#var coins_collected_level = 0
-#var coins = []
-#var chests = []
-#var diamonds = []
-#var ruby = []
-#var heart_container = false
-#var gem_square_count = 0
-#var gem_square
-#var items = {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-#							 "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-#							 "Handle1": {"InInventory": false, "Level": 0, "Lever_Base": ""}}
-#var inv_jumpshroom = 0
-#var inv_crate = 0
-#var inv_handle = 0
-#
-#var item = ""
-#var item_placing = ""
-#	hearts_total = Global.Player["Hearts_Total"]
-#	hearts = Global.Player["Hearts"]
-#	coins_total = Global.Player["Coins"]
-#	coins_collected_total = Global.Player["Coins_Collected"]
-#	coins_collected_level = Global.Level["Coins_Collected"]
-#	gem_square_count = Global.Player["Gem_Square_Count"]
-#	if Global.Level["Gem_Square"] != "":
-#		gem_square = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
-#	coins = []
-#	chests = []
-#	diamonds = []
-#	ruby = []
-#	if Global.Level.has("Heart_Container"):
-#		heart_container = Global.Level["Heart_Container"]
-#	else:
-#		heart_container = false
-#
-#	var curr_idx = 0
-#	while curr_idx < Global.Level["Coins"].size():
-#		coins.append(Global.Level["Coins"][curr_idx])
-#		curr_idx += 1
-#
-#	curr_idx = 0
-#	while curr_idx < Global.Level["Chests"].size():
-#		chests.append(Global.Level["Chests"][curr_idx])
-#		curr_idx += 1
-#
-#	curr_idx = 0
-#	while curr_idx < Global.Level["Diamonds"].size():
-#		diamonds.append(Global.Level["Diamonds"][curr_idx])
-#		curr_idx += 1
-#
-#	curr_idx = 0
-#	while curr_idx < Global.Level["Ruby"].size():
-#		ruby.append(Global.Level["Ruby"][curr_idx])
-#		curr_idx += 1
-#
-#
-#	items["Jumpshroom1"]["InInventory"] = Global.Player["Items"]["Jumpshroom1"]["InInventory"]
-#	items["Jumpshroom1"]["Level"] = Global.Player["Items"]["Jumpshroom1"]["Level"]	
-#	items["Jumpshroom1"]["Pos"] = Global.Player["Items"]["Jumpshroom1"]["Pos"]
-#	items["Jumpshroom2"]["InInventory"] = Global.Player["Items"]["Jumpshroom2"]["InInventory"]
-#	items["Jumpshroom2"]["Level"] = Global.Player["Items"]["Jumpshroom2"]["Level"]
-#	items["Jumpshroom2"]["Pos"] = Global.Player["Items"]["Jumpshroom2"]["Pos"]
-#
-#	inv_jumpshroom = Global.Player["Inventory"]["Jumpshroom"]
-#	inv_crate = Global.Player["Inventory"]["Crate"] 
-	
-func load_current_data():
-	self.current_data = {
-		"Hearts_Current": Global.Player["Hearts_Current"],
-		"Hearts_Total": Global.Player["Hearts_Total"],
-		"Coins_Current": Global.Player["Coins_Current"],
-		"Coins_Total": Global.Player["Coins_Total"],
-		"Coins_Level": Global.Level["Coins_Collected"],
-		"Coins": [],
-		"Chests": [],
-		"Gems": [],
-		"Item_Data": get_item_data_dict()
-	}
-
-	var curr_idx = 0
-	while curr_idx < Global.Level["Coins"].size():
-		self.current_data["coins"].append(Global.Level["Coins"][curr_idx])
-		curr_idx += 1
-
-	curr_idx = 0
-	while curr_idx < Global.Level["Chests"].size():
-		self.current_data["chests"].append(Global.Level["Chests"][curr_idx])
-		curr_idx += 1
-	
-	self.current_data["Jumpshroom1"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"]
-	self.current_data["Jumpshroom1"]["Level"] = Global.Player["Item_Data"]["Jumpshroom1"]["Level"]
-	self.current_data["Jumpshroom1"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom1"]["Pos"]
-	self.current_data["Jumpshroom2"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"]
-	self.current_data["Jumpshroom2"]["Level"] = Global.Player["Item_Data"]["Jumpshroom2"]["Level"]
-	self.current_data["Jumpshroom2"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom2"]["Pos"]
-	
 func get_new_player_dict(PlayerName):
 	
 	var player_data = {
@@ -127,7 +27,7 @@ func get_new_player_dict(PlayerName):
 		"Animation2": "",
 		"Current_Item": "Empty",
 		"Item_Data": get_item_data_dict(),
-		"Inventory": {"Empty": null, "Jumpshroom": 0, "Handle": 0},
+		"Inventory": get_inventory_data(),
 		"Levels" : get_levels_dict(),
 		"Scenes": get_scenes_dict()
 	}
@@ -140,6 +40,13 @@ func get_item_data_dict():
 		"Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
 		"HeartContainer1": {"Purchased": false},
 		"Handle1": {"InInventory": false, "Level": 0, "Lever_Base": ""}
+	}
+
+func get_inventory_data():
+	return{
+		"Empty": null, 
+		"Jumpshroom": 0, 
+		"Handle": 0
 	}
 
 func get_levels_dict():
@@ -192,22 +99,109 @@ func get_scenes_dict():
 		"Level_07_MushRoomFound": {"Seen": false, "Next": "", "Parent":"Adventurer"}
 	}
 
-func reset_flags(LevelNum):
-	Global.Player["Player_Flags"] =  {"Can_Climb": false,
-									   "On_Exit": false,
-									   "Can_OpenChest": false,
-									   "Can_Push": false,
-									   "Crate_R": false,
-									   "On_Elevator": false,
-									   "On_Vines": false,
-									   "On_Enemy": false,
-									   "On_Spikes": false,
-									   "On_Hospital": false,
-									   "Can_PullLever": false,
-									   "On_Crate": false,
-									   "On_MushRoom": false,
-									   "Near_LeverBase": false}
+func get_game_info_dict():
+	return{
+		"Friction": false,
+		"Gravity": 45,
+		"Acceleration": 200,
+		"SpeedMax": 800,
+		"JumpHeight": -1800,
+		"Dir_Curr": 1,
+		"Dir_Prev": 1
+		}
 
+func get_player_flags():
+	return{
+		"Can_Climb": false,
+		"On_Exit": false,
+		"Can_OpenChest": false,
+		"Can_Push": false,
+		"Crate_R": false,
+		"On_Elevator": false,
+		"On_Vines": false,
+		"On_Enemy": false,
+		"On_Spikes": false,
+		"On_Hospital": false,
+		"Can_PullLever": false,
+		"On_Crate": false,
+		"On_MushRoom": false,
+		"Near_LeverBase": false
+		}
+
+func load_current_data():
+	self.current_data = {
+		"Hearts_Current": Global.Player["Hearts_Current"],
+		"Hearts_Total": Global.Player["Hearts_Total"],
+		"Coins_Current": Global.Player["Coins_Current"],
+		"Coins_Total": Global.Player["Coins_Total"],
+		"Coins_Level": Global.Level["Coins_Collected"],
+		"Coins": [],
+		"Chests": [],
+		"Gems": [],
+		"Item_Data": get_item_data_dict(),
+		"Inventory": get_inventory_data(),
+		"Game_Info": get_game_info_dict(),
+		"Flags": get_player_flags()
+	}
+
+	var curr_idx = 0
+	while curr_idx < Global.Level["Coins"].size():
+		self.current_data["coins"].append(Global.Level["Coins"][curr_idx])
+		curr_idx += 1
+
+	curr_idx = 0
+	while curr_idx < Global.Level["Chests"].size():
+		self.current_data["chests"].append(Global.Level["Chests"][curr_idx])
+		curr_idx += 1
+	
+	self.current_data["Jumpshroom1"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"]
+	self.current_data["Jumpshroom1"]["Level"] = Global.Player["Item_Data"]["Jumpshroom1"]["Level"]
+	self.current_data["Jumpshroom1"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom1"]["Pos"]
+	self.current_data["Jumpshroom2"]["InInventory"] = Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"]
+	self.current_data["Jumpshroom2"]["Level"] = Global.Player["Item_Data"]["Jumpshroom2"]["Level"]
+	self.current_data["Jumpshroom2"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom2"]["Pos"]
+	
+	self.current_data["Inventory"]["Jumpshroom"] = Global.Player["Inventory"]["Jumpshroom"]
+	self.current_data["Inventory"]["Handle"] = Global.Player["Inventory"]["Handle"]
+
+func save_current_data():
+	
+	if Global.Level["Coins_Collected"] == 0 and self.current_data["Coins_Level"] == (self.current_data["coins"].size() + (self.current_data["chests"].size() * 10)) :
+		Global.Level["GotPerfect"] = true
+		var seconds_used = Global.Level["Timer"] - self.current_data["Level_Timer"] 
+		Global.Level["Perfect_Time"] = str(floor(seconds_used / 60)) + ":" + str(seconds_used - (floor(seconds_used / 60) * 60))
+
+	Global.Player["Hearts_Current"] = self.current_data["Hearts_Current"]
+	Global.Player["Hearts_Total"] = self.current_data["Hearts_Total"]
+	Global.Player["Coins_Current"] = self.current_data["Coins_Current"]
+	Global.Player["Coins_Total"] = self.current_data["Coins_Total"]
+	Global.Level["Coins_Collected"] = self.current_data["Coins_Level"]
+	
+	var curr_idx = 0
+	while curr_idx < self.current_data["Coins"].size():
+		Global.Level["Coins"].append(self.current_data["Coins"][curr_idx])
+		curr_idx += 1
+
+	curr_idx = 0
+	while curr_idx < self.current_data["Chests"].size():
+		Global.Level["Chests"].append(self.current_data["Chests"][curr_idx])
+		curr_idx += 1
+
+	
+	self.current_data = {
+		"Item_Data": get_item_data_dict(),
+		"Inventory": get_inventory_data()
+	}
+
+	Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"] = self.current_data["Jumpshroom1"]["InInventory"]
+	Global.Player["Item_Data"]["Jumpshroom1"]["Level"] = self.current_data["Jumpshroom1"]["Level"]
+	Global.Player["Item_Data"]["Jumpshroom1"]["Pos"] = self.current_data["Jumpshroom1"]["Pos"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"] = self.current_data["Jumpshroom2"]["InInventory"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["Level"] = self.current_data["Jumpshroom2"]["Level"]
+	Global.Player["Item_Data"]["Jumpshroom2"]["Pos"] = self.current_data["Jumpshroom2"]["Pos"]
+	
+	Global.Player["Inventory"]["Jumpshroom"] = self.current_data["Inventory"]["Jumpshroom"]
+	Global.Player["Inventory"]["Handle"] = self.current_data["Inventory"]["Handle"]
 
 
 #

@@ -12,10 +12,8 @@ func _on_Coin_body_entered(body):
 		Global.audio_players["CoinCollection"].play()
 		
 		var coin_idx = int(self.name.right(4)) - 1
-		Global.coins[coin_idx] = false
+		GlobalDictionaries.current_data["Coins"][coin_idx] = false
 		
-		# We can't queue_free because the collected_coin needs to finish animating first
-		# Instead, make this coin invisible
 		self.visible = false
 		
 		var collected_coin: Control = load("res://Scenes/Items/CollectedCoin.tscn").instance()

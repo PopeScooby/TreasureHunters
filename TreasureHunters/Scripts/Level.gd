@@ -13,10 +13,10 @@ var level_num
 
 
 func _ready():
-
-	if GlobalDictionaries.game["PlayerKey"] == "0":
-		GlobalDictionaries.game["PlayerKey"] = "1"
-
+#
+#	if GlobalDictionaries.game["PlayerKey"] == "0":
+#		GlobalDictionaries.game["PlayerKey"] = "1"
+#
 	$Adventurer/Camera2D.limit_left = cam_left
 	$Adventurer/Camera2D.limit_right = cam_right
 	$Adventurer/Camera2D.limit_top = cam_top
@@ -73,10 +73,11 @@ func level_setup():
 	level_setup_gems()
 	level_setup_items()
 	
-	Global.reset_level_variables()
+	GlobalDictionaries.load_current_data()
 
 func level_setup_timer():
-	Global.Player["Level_Timer"] = Global.Level["Timer"]
+	Global.Level["Timer"] = self.level_time
+	GlobalDictionaries.current_data["Level_Timer"] = Global.Level["Timer"]
 	$GameplayInterface/Timer/LevelTimeTimer.start()
 
 func level_setup_coins():
@@ -121,12 +122,12 @@ func level_setup_chests():
 		Chest_Curr += 1
 		
 func level_setup_gems():
-	
-	if Global.Level.has("Gem_Square"):
-		if Global.Level["Gem_Square"] != "":
-			get_node("Treasure/Gem_Square").visible = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
-			if get_node("Treasure/Gem_Square").visible:
-				get_node("Treasure/Gem_Square/Sprite").animation = Global.Level["Gem_Square"]
+	pass
+#	if Global.Level.has("Gem_Square"):
+#		if Global.Level["Gem_Square"] != "":
+#			get_node("Treasure/Gem_Square").visible = Global.Player["Gem_Square"][Global.Level["Gem_Square"]]
+#			if get_node("Treasure/Gem_Square").visible:
+#				get_node("Treasure/Gem_Square/Sprite").animation = Global.Level["Gem_Square"]
 
 func level_setup_items():
 

@@ -31,6 +31,7 @@ func _process(delta):
 				Global.STATE_GLOBAL = ""
 				Global.STATE_PLAYER = ""
 				Global.save_game()
+				GlobalDictionaries.game["Level_Current"] = 1
 				Global.load_level()
 
 

@@ -76,7 +76,7 @@ func level_setup():
 	
 
 func level_setup_timer():
-	Global.Level["Timer"] = self.level_time	
+	Global.Level["Timer"] = self.level_time
 	$GameplayInterface/Timer/LevelTimeTimer.start()
 
 func level_setup_coins():

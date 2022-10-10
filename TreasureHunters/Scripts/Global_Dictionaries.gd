@@ -168,7 +168,7 @@ func load_current_data():
 
 func save_current_data():
 	
-	if Global.Level["Coins_Collected"] == 0 and self.current_data["Coins_Level"] == (self.current_data["coins"].size() + (self.current_data["chests"].size() * 10)) :
+	if Global.Level["Coins_Collected"] == 0 and self.current_data["Coins_Level"] == (self.current_data["Coins"].size() + (self.current_data["Chests"].size() * 10)) :
 		Global.Level["GotPerfect"] = true
 		var seconds_used = Global.Level["Timer"] - self.current_data["Level_Timer"] 
 		Global.Level["Perfect_Time"] = str(floor(seconds_used / 60)) + ":" + str(seconds_used - (floor(seconds_used / 60) * 60))

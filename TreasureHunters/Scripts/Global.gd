@@ -7,29 +7,6 @@ var Level
 
 var audio_players = {}
 
-#
-#var hearts_total = 0
-#var hearts = 0
-#var coins_total = 0
-#var coins_collected_total = 0
-#var coins_collected_level = 0
-#var coins = []
-#var chests = []
-#var diamonds = []
-#var ruby = []
-#var heart_container = false
-#var gem_square_count = 0
-#var gem_square
-#var items = {"Jumpshroom1": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-#							 "Jumpshroom2": {"InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
-#							 "Handle1": {"InInventory": false, "Level": 0, "Lever_Base": ""}}
-#var inv_jumpshroom = 0
-#var inv_crate = 0
-#var inv_handle = 0
-#
-#var item = ""
-#var item_placing = ""
-
 var STATE_GLOBAL = "GameStart"
 var STATE_PLAYER = ""
 var STATE_LEVEL = ""
@@ -86,9 +63,9 @@ func load_level():
 	
 #	GlobalDictionaries.player_info = Global.Player["Player_Info"]
 #	GlobalDictionaries.reset_flags(Global.Player["Level_Current"])
-
-func reset_level_variables():
-	pass
+#
+#func reset_level_variables():
+#	pass
 #	hearts_total = Global.Player["Hearts_Total"]
 #	hearts = Global.Player["Hearts"]
 #	coins_total = Global.Player["Coins"]
@@ -136,9 +113,9 @@ func reset_level_variables():
 #
 #	inv_jumpshroom = Global.Player["Inventory"]["Jumpshroom"]
 #	inv_crate = Global.Player["Inventory"]["Crate"] 
-	
-func save_level_variables():
-	pass
+#
+#func save_level_variables():
+#	pass
 #	if Global.Level["Coins_Collected"] == 0 and coins_collected_level == (coins.size() + (chests.size() * 10)) :
 #		Global.Level["GotPerfect"] = true
 #		var seconds_used = Global.Level["Timer"] - Global.Player["Level_Timer"] 

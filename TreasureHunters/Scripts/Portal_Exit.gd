@@ -36,23 +36,23 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			Global.STATE_PLAYER = "Timeout"
 			Global.STATE_LEVEL = "GameOver"
 		else:
-			if Global.Player["Level_Current"] == 0:
+			if GlobalDictionaries.game["Level_Current"] == 0:
 				get_tree().change_scene("res://Scenes/Interface/Menu_GameStart.tscn")
-			elif Global.Player["Level_Current"] == Global.Player["Level_Max"] and Global.Player["Level_Current"] != (Global.Player["Levels"].size() - 1):
+			elif GlobalDictionaries.game["Level_Current"] == Global.Player["Level_Max"] and GlobalDictionaries.game["Level_Current"] != (Global.Player["Levels"].size() - 1):
 				Global.Player["Level_Max"] += 1
 			Global.Level["Complete"] = true
 	#		Global.Player["Levels"][str(Global.Player["Level_Current"])] = Global.Level
 	#		GlobalDictionaries.players[str(GlobalDictionaries.game["PlayerKey"])] = Global.Player
-			Global.save_level_variables()
+			GlobalDictionaries.save_current_data()
 			Global.save_game()
 			get_tree().change_scene("res://Scenes/Interface/Menu_LevelSelect.tscn")
 
 func _on_Portal_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
-		Global.Player["Player_Flags"]["On_Exit"] = true
+		GlobalDictionaries.current_data["Flags"]["On_Exit"] = true
 
 
 func _on_Portal_body_exited(body):
 	if body.name == "Adventurer" and self.visible == true:
-		Global.Player["Player_Flags"]["On_Exit"] = false
+		GlobalDictionaries.current_data["Flags"]["On_Exit"] = false
 #

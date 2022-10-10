@@ -9,7 +9,7 @@ func fill_label(LevelNum):
 	var Level = Global.Player["Levels"][str(LevelNum)]
 	var LevelTxt = "Level #" + str(LevelNum)
 	var InfoTxt
-	if Level["Coins"].size() == 1:
+	if Level["Coins"].size() == 0:
 		InfoTxt = ": [Unexplored]"
 	else:
 		InfoTxt = ": " + str(Level["Coins_Collected"]) + " of " + str(Level["Coins"].size() + (Level["Chests"].size() * 10)) + " Coins" 

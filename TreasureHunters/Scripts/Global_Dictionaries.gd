@@ -180,20 +180,16 @@ func save_current_data():
 	Global.Level["Coins_Collected"] = self.current_data["Coins_Level"]
 	
 	var curr_idx = 0
+	Global.Level["Coins"] = []
 	while curr_idx < self.current_data["Coins"].size():
 		Global.Level["Coins"].append(self.current_data["Coins"][curr_idx])
 		curr_idx += 1
 
 	curr_idx = 0
+	Global.Level["Chests"] = []
 	while curr_idx < self.current_data["Chests"].size():
 		Global.Level["Chests"].append(self.current_data["Chests"][curr_idx])
 		curr_idx += 1
-
-	
-	self.current_data = {
-		"Item_Data": get_item_data_dict(),
-		"Inventory": get_inventory_data()
-	}
 
 	Global.Player["Item_Data"]["Jumpshroom1"]["InInventory"] = self.current_data["Item_Data"]["Jumpshroom1"]["InInventory"]
 	Global.Player["Item_Data"]["Jumpshroom1"]["Level"] = self.current_data["Item_Data"]["Jumpshroom1"]["Level"]

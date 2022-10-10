@@ -9,10 +9,10 @@ func _ready():
 func _on_Vines_body_entered(body):
 
 	if body.name == "Adventurer":
-		Global.Player["Player_Flags"]["On_Vines"] = true
+		GlobalDictionaries.current_data["Flags"]["On_Vines"] = true
 
 func _on_Vines_body_exited(body):
 
 	if body.name == "Adventurer":
-		Global.Player["Player_Flags"]["On_Vines"] = false
+		GlobalDictionaries.current_data["Flags"]["On_Vines"] = false
 

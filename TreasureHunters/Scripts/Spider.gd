@@ -51,7 +51,7 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 
 	if body.name == "Adventurer" and Global.Player["Hearts"] > 0:
-		Global.Player["Player_Flags"]["On_Enemy"] = true
+		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = true
 		$Timer_Damage.start()
 	elif body.name == "Adventurer" and Global.Player["Hearts"] <= 0:
 		$Timer_Damage.stop()
@@ -59,13 +59,13 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_body_exited(body):
 	if body.name == "Adventurer":
 		$Timer_Damage.stop()
-		Global.Player["Player_Flags"]["On_Enemy"] = false
+		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = false
 
 
 func _on_Timer_Damage_timeout():
 
 	if Global.Player["Hearts"] > 0:
-		Global.Player["Player_Flags"]["On_Enemy"] = true
+		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = true
 		$Timer_Damage.start()
 	else:
 		$Timer_Damage.stop()

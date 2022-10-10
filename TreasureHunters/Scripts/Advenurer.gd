@@ -303,8 +303,8 @@ func exec_state_idle_vines():
 
 func exec_state_damage():
 	
-	if Global.hearts > 0:
-		Global.hearts -= 1
+	if GlobalDictionaries.current_data["Hearts_Current"] > 0:
+		GlobalDictionaries.current_data["Hearts_Current"] -= 1
 		$AnimationPlayer2.play("Damage")
 	else:
 		Global.STATE_PLAYER = "Dying"
@@ -429,6 +429,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name.find("_Die") != -1:
 		Global.STATE_PLAYER = "Dead"
 	elif anim_name.find("Scene") != -1:
+		Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
 		Global.STATE_GLOBAL = "Continue_Scene"
 	elif anim_name.find("_GoToHospital") != -1:
 		Global.STATE_LEVEL = "GoToHospital"

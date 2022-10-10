@@ -47,7 +47,7 @@ func _physics_process(delta):
 		if selector_curr == 0:
 			get_tree().change_scene("res://Scenes/Interface/Menu_PlayerSelect.tscn")
 		else:
-			Global.Player["Level_Current"] = selector_curr
+			GlobalDictionaries.game["Level_Current"] = selector_curr
 			Global.load_level()
 
 func _move_selector():

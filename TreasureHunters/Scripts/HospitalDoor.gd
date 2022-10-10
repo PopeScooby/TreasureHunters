@@ -7,9 +7,9 @@ func _ready():
 
 func _on_HospitalDoor_body_entered(body):
 	if body.name == "Adventurer":
-		Global.Player["Player_Flags"]["On_Hospital"] = true
+		GlobalDictionaries.current_data["Flags"]["On_Hospital"] = true
 
 
 func _on_HospitalDoor_body_exited(body):
 	if body.name == "Adventurer":
-		Global.Player["Player_Flags"]["On_Hospital"] = false
+		GlobalDictionaries.current_data["Flags"]["On_Hospital"] = false

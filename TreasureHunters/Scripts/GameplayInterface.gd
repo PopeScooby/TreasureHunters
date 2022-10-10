@@ -180,4 +180,5 @@ func _move_selector():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.find("Scene") != -1:
+		Global.Player["Scenes"][Global.Player["Scenes"]["Scene_Curr"]["SceneName"]]["Seen"] = true
 		Global.STATE_GLOBAL = "Continue_Scene"

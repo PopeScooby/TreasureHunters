@@ -209,7 +209,7 @@ func exec_state_push_idle():
 	Global.Player["Animation"] = "Idle"
 
 func exec_state_bounce():
-	motion.y = Global.Player["Interactions"]["Jumpshroom"]["BounceHeight"]
+	motion.y = GlobalDictionaries.current_data["Interactions"]["Jumpshroom"]["BounceHeight"]
 	Global.STATE_PLAYER = "Move_Normal"
 
 func exec_state_dying():
@@ -394,6 +394,7 @@ func set_player():
 		Global.Player["Name_Explorer"] = "Inda"
 		GlobalDictionaries.game["PlayerKey"] = "1"
 		GlobalDictionaries.game["Level_Current"] = int(get_parent().name.replace("Level_",""))
+		Global.Player["Level_Max"] = int(get_parent().name.replace("Level_",""))
 
 
 func set_animation():

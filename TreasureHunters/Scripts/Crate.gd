@@ -29,10 +29,10 @@ func _process(delta):
 		if in_water == false:
 			if GlobalDictionaries.current_data["Flags"]["Can_Push"] == true and Input.is_action_pressed("action_interact"):
 
-				if Input.is_action_pressed("move_right") and GlobalDictionaries.current_data["Game_Info"] == self.name:
-					motion.x = min(motion.x+acceleration, GlobalDictionaries.player_info["SpeedMax"])
-				elif Input.is_action_pressed("move_left") and GlobalDictionaries.current_data["Game_Info"] == self.name:
-					motion.x = max(motion.x-acceleration, -GlobalDictionaries.player_info["SpeedMax"])
+				if Input.is_action_pressed("move_right") and GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] == self.name:
+					motion.x = min(motion.x+acceleration, GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
+				elif Input.is_action_pressed("move_left") and GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] == self.name:
+					motion.x = max(motion.x-acceleration, -GlobalDictionaries.current_data["Game_Info"]["SpeedMax"])
 				else:
 					friction = true
 

@@ -17,7 +17,6 @@ func _ready():
 
 func _on_Handle_body_entered(body):
 	if body.name == "Adventurer":
-		Global.items["Handle1"]["InInventory"] = true
-		if not GlobalDictionaries.items.has("Handle"):
-			GlobalDictionaries.items.append("Handle")
+		GlobalDictionaries.current_data["Item_Data"]["Handle1"]["InInventory"] = true
+		GlobalDictionaries.current_data["Inventory"]["Handle"] += 1
 		queue_free()

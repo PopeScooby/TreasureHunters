@@ -105,10 +105,10 @@ func advance_movement(Destination):
 
 func _on_Area2D_body_entered(body):
 
-	if body.name == "Adventurer" and Global.Player["Hearts"] > 0:
+	if body.name == "Adventurer" and GlobalDictionaries.current_data["Hearts_Current"] > 0:
 		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = true
 		$Timer_Damage.start()
-	elif body.name == "Adventurer" and Global.Player["Hearts"] <= 0:
+	elif body.name == "Adventurer" and GlobalDictionaries.current_data["Hearts_Current"] <= 0:
 		$Timer_Damage.stop()
 
 func _on_Area2D_body_exited(body):
@@ -118,7 +118,7 @@ func _on_Area2D_body_exited(body):
 
 func _on_Timer_Damage_timeout():
 
-	if Global.Player["Hearts"] > 0:
+	if GlobalDictionaries.current_data["Hearts_Current"] > 0:
 		GlobalDictionaries.current_data["Flags"]["On_Enemy"] = true
 		$Timer_Damage.start()
 	else:

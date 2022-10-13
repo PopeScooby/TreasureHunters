@@ -61,20 +61,18 @@ func move_selector():
 	$SidePanel/Selector.rect_size = selector_locations[selector_curr]["Size"]
 
 func buy_jumshroom_1():
-	if Global.coins_total >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] == false:
-		Global.coins_total -= 75
+	if GlobalDictionaries.current_data["Coins_Current"] >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] == false:
+		GlobalDictionaries.current_data["Coins_Current"] -= 75
 		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] = true
-		if not GlobalDictionaries.items.has("Jumpshroom"):
-			GlobalDictionaries.items.append("Jumpshroom")
+		GlobalDictionaries.current_data["Inventory"]["Jumpshroom"] += 1
 	
 	
 
 func buy_jumshroom_2():
-	if Global.coins_total >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] == false:
-		Global.coins_total -= 75
+	if GlobalDictionaries.current_data["Coins_Current"] >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] == false:
+		GlobalDictionaries.current_data["Coins_Current"] -= 75
 		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] = true
-		if not GlobalDictionaries.items.has("Jumpshroom"):
-			GlobalDictionaries.items.append("Jumpshroom")
+		GlobalDictionaries.current_data["Inventory"]["Jumpshroom"] += 1
 
 func exit_mush_room():
 	Global.STATE_LEVEL = "ExitMushRoom"

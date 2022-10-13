@@ -57,18 +57,18 @@ func move_selector():
 	$SidePanel/Selector.rect_size = selector_locations[selector_curr]["Size"]
 
 func buy_heart_container():
-	if Global.coins_total >= 50 and Global.Level["Heart_Container"] == false:
-		Global.hearts_total += 1
-		Global.hearts += 1
-		Global.coins_total -= 50
-		Global.heart_container = true
+	if GlobalDictionaries.current_data["Coins_Current"] >= 50 and GlobalDictionaries.current_data["Item_Data"]["HeartContainer1"]["Purchased"] == false:
+		GlobalDictionaries.current_data["Hearts_Total"] += 1
+		GlobalDictionaries.current_data["Hearts_Current"] += 1
+		GlobalDictionaries.current_data["Coins_Current"] -= 50
+		GlobalDictionaries.current_data["Item_Data"]["HeartContainer1"]["Purchased"] = true
 	
 	
 
 func buy_heart():
-	if 	Global.hearts < Global.hearts_total and Global.coins_total >= 10:
-		Global.hearts += 1
-		Global.coins_total -= 10
+	if GlobalDictionaries.current_data["Hearts_Current"] < GlobalDictionaries.current_data["Hearts_Total"] and GlobalDictionaries.current_data["Coins_Current"] >= 10:
+		GlobalDictionaries.current_data["Hearts_Current"] += 1
+		GlobalDictionaries.current_data["Coins_Current"] -= 10
 
 
 func exit_hospital():

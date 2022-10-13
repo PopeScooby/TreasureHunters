@@ -28,7 +28,7 @@ func _ready():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["Can_PullLever"] == true and Global.Player["Player_Info"]["Object_Interact"] == self.name and self.visible:
+	if Input.is_action_just_pressed("action_interact") and GlobalDictionaries.current_data["Flags"]["Can_PullLever"] == true and GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] == self.name and self.visible:
 		
 		if is_active == false:
 			$AnimationPlayer.play("Activate")
@@ -37,7 +37,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Adventurer" and self.visible == true:
-		Global.Player["Player_Info"]["Object_Interact"] = self.name
+		GlobalDictionaries.current_data["Game_Info"]["Object_Interact"] = self.name
 		GlobalDictionaries.current_data["Flags"]["Can_PullLever"] = true
 
 func _on_Area2D_body_exited(body):

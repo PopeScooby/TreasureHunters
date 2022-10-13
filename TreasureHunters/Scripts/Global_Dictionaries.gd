@@ -164,6 +164,8 @@ func load_current_data():
 	self.current_data["Item_Data"]["Jumpshroom2"]["Level"] = Global.Player["Item_Data"]["Jumpshroom2"]["Level"]
 	self.current_data["Item_Data"]["Jumpshroom2"]["Pos"] = Global.Player["Item_Data"]["Jumpshroom2"]["Pos"]
 	
+	self.current_data["Item_Data"]["HeartContainer1"]["Purchased"] = Global.Player["Item_Data"]["HeartContainer1"]["Purchased"]
+	
 	self.current_data["Inventory"]["Jumpshroom"] = Global.Player["Inventory"]["Jumpshroom"]
 	self.current_data["Inventory"]["Handle"] = Global.Player["Inventory"]["Handle"]
 
@@ -198,6 +200,8 @@ func save_current_data():
 	Global.Player["Item_Data"]["Jumpshroom2"]["InInventory"] = self.current_data["Item_Data"]["Jumpshroom2"]["InInventory"]
 	Global.Player["Item_Data"]["Jumpshroom2"]["Level"] = self.current_data["Item_Data"]["Jumpshroom2"]["Level"]
 	Global.Player["Item_Data"]["Jumpshroom2"]["Pos"] = self.current_data["Item_Data"]["Jumpshroom2"]["Pos"]
+	
+	Global.Player["Item_Data"]["HeartContainer1"]["Purchased"] = self.current_data["Item_Data"]["HeartContainer1"]["Purchased"]
 	
 	Global.Player["Inventory"]["Jumpshroom"] = self.current_data["Inventory"]["Jumpshroom"]
 	Global.Player["Inventory"]["Handle"] = self.current_data["Inventory"]["Handle"]

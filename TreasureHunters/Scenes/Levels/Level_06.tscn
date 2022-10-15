@@ -726,6 +726,7 @@ cam_left = -1550
 cam_right = 9100
 cam_top = -1500
 cam_bottom = 4600
+level_time = 240
 
 [node name="Backdrop" type="Node2D" parent="."]
 

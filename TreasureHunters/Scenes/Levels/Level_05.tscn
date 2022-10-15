@@ -124,6 +124,7 @@ script = ExtResource( 30 )
 cam_right = 8800
 cam_top = -1650
 cam_bottom = 4950
+level_time = 240
 
 [node name="Backdrop" type="Node2D" parent="."]
 

@@ -10,8 +10,11 @@ func _ready():
 func _process(delta):
 	if Global.STATE_GLOBAL == "Play_Scene":
 		
-		exec_state_start_scene()
-		Global.STATE_GLOBAL = "Playing_Scene"
+		if $Character_Select.visible == true:
+			Global.STATE_GLOBAL = "To_CharacterSelect"
+		else:
+			exec_state_start_scene()
+			Global.STATE_GLOBAL = "Playing_Scene"
 	
 	elif Input.is_action_just_pressed("menu_select") and Global.STATE_GLOBAL == "Scene_Waiting" and $Speech/Selector.visible == true and $Character_Select.visible == false:
 	

@@ -15,13 +15,11 @@ func _ready():
 
 func _process(delta):
 	
-	if Global.Level.has("Heart_Container"):
-		
-		if Global.heart_container and $SidePanel.visible == true:
-			$SidePanel/HeartContainer.visible = false
-		else:
-			$SidePanel/HeartContainer.visible = true
-		
+	if GlobalDictionaries.current_data["Item_Data"]["HeartContainer1"]["Purchased"] == false and $SidePanel.visible == true:
+		$SidePanel/HeartContainer.visible = false
+	else:
+		$SidePanel/HeartContainer.visible = true
+	
 	
 	if Global.STATE_LEVEL == "InHospital" and curr_scene != "" and self.visible == true and $ContinueLabel.visible == false and $SidePanel.visible == false:
 		$AnimationPlayer.play(curr_scene)

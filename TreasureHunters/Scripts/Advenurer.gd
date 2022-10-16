@@ -350,15 +350,15 @@ func exec_state_exit_mush_room():
 
 func exec_state_use_item():
 	if GlobalDictionaries.current_data["Current_Item"] == "Jumpshroom" and is_on_floor() and GlobalDictionaries.current_data["Flags"]["On_Crate"] == false:
-		for item in Global.items:
-			if item.find("Jumpshroom") != -1 and Global.items[item]["InInventory"] == true:
+		for item in GlobalDictionaries.current_data["Item_Data"]:
+			if item.find("Jumpshroom") != -1 and GlobalDictionaries.current_data["Item_Data"][item]["InInventory"] == true:
 				if GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] == 0:
 					GlobalDictionaries.current_data["Game_Info"]["Dir_Curr"] = GlobalDictionaries.current_data["Game_Info"]["Dir_Prev"]
-					
+
 				GlobalDictionaries.current_data["Game_Info"]["Friction"] = true
 				Global.STATE_PLAYER = "PlacingItem"
 				Global.Player["Animation"] = "PlaceJumpshroom"
-				Global.item_placing = item
+				GlobalDictionaries.current_data["Item_Placing"] = item
 				
 	elif GlobalDictionaries.current_data["Current_Item"] == "Handle" and GlobalDictionaries.current_data["Flags"]["Near_LeverBase"] == false:
 		for item in Global.items:
@@ -441,11 +441,11 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name.find("_LeaveMushRoom") != -1:
 		Global.STATE_PLAYER = "Move_Normal"
 	elif anim_name.find("_PlaceJumpshroom") != -1:
-		Global.items[Global.item_placing]["Pos"] = self.position
-		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]
-		Global.place_jumpshroom(get_parent().get_node("Items"), Global.item_placing)
-		Global.items[Global.item_placing]["InInventory"] = false
-		Global.inv_jumpshroom -= 1
+		GlobalDictionaries.current_data["Item_Data"][GlobalDictionaries.current_data["Item_Placing"]]["Pos"] = self.position
+		GlobalDictionaries.current_data["Item_Data"][GlobalDictionaries.current_data["Item_Placing"]]["Level"] = GlobalDictionaries.game["Level_Current"]
+		Global.place_jumpshroom(get_parent().get_node("Items"), GlobalDictionaries.current_data["Item_Placing"])
+		GlobalDictionaries.current_data["Item_Data"][GlobalDictionaries.current_data["Item_Placing"]]["InInventory"] = false
+		GlobalDictionaries.current_data["Inventory"]["Jumpshroom"] -= 1
 		Global.STATE_PLAYER = "Move_Normal"
 	elif anim_name.find("_PlaceHandle") != -1:
 		Global.items[Global.item_placing]["Level"] = Global.Player["Level_Current"]

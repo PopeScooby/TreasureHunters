@@ -64,6 +64,7 @@ func buy_jumshroom_1():
 	if GlobalDictionaries.current_data["Coins_Current"] >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] == false:
 		GlobalDictionaries.current_data["Coins_Current"] -= 75
 		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["InInventory"] = true
+		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom1"]["Purchased"] = true
 		GlobalDictionaries.current_data["Inventory"]["Jumpshroom"] += 1
 	
 	
@@ -72,6 +73,7 @@ func buy_jumshroom_2():
 	if GlobalDictionaries.current_data["Coins_Current"] >= 75 and GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] == false:
 		GlobalDictionaries.current_data["Coins_Current"] -= 75
 		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["InInventory"] = true
+		GlobalDictionaries.current_data["Item_Data"]["Jumpshroom2"]["Purchased"] = true
 		GlobalDictionaries.current_data["Inventory"]["Jumpshroom"] += 1
 
 func exit_mush_room():

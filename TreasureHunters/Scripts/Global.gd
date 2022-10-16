@@ -72,7 +72,7 @@ func save_game():
 
 func place_jumpshroom(ItemsNode, JumpshroomName):
 	var jumpshroom = load("res://Scenes/Items/Jumpshroom.tscn").instance()
-	jumpshroom.position = Global.items[JumpshroomName]["Pos"]
+	jumpshroom.position = GlobalDictionaries.current_data["Item_Data"][JumpshroomName]["Pos"]
 	jumpshroom.scale = Vector2(2,2)
 	jumpshroom.BounceHeight = -3000
 	ItemsNode.add_child(jumpshroom)

@@ -82,10 +82,17 @@ func _process(delta):
 			else:
 				HeartNode.texture = heart
 				
-	var item_texture = "res://Textures/Interface/Item_" + Global.Player["Current_Item"] + ".png"
+	var item_texture = "res://Textures/Interface/Item_" + GlobalDictionaries.current_data["Current_Item"] + ".png"
 	var item_image = load(item_texture)
 	$Items/ItemWindow/ItemImg.texture = item_image
-
+	if GlobalDictionaries.current_data["Current_Item"] == "Empty":
+		$Items/ItemWindow/ItemImg/Item_Count_Label.visible = false
+		$Items/ItemWindow/ItemImg/Item_x_Label.visible = false
+	else:
+		$Items/ItemWindow/ItemImg/Item_Count_Label.visible = true
+		$Items/ItemWindow/ItemImg/Item_Count_Label.text = str(GlobalDictionaries.current_data["Inventory"][GlobalDictionaries.current_data["Current_Item"]])
+		$Items/ItemWindow/ItemImg/Item_x_Label.visible = true
+		
 
 func exec_state_pause():
 	get_tree().paused = true

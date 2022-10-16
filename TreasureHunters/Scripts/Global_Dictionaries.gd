@@ -25,7 +25,7 @@ func get_new_player_dict(PlayerName):
 		"Level_Max": 1,
 		"Animation": "",
 		"Animation2": "",
-		"Current_Item": "Jumpshroom",
+		"Current_Item": "Empty",
 		"Item_Data": get_item_data_dict(),
 		"Inventory": get_inventory_data(),
 		"Levels" : get_levels_dict(),
@@ -36,8 +36,8 @@ func get_new_player_dict(PlayerName):
 
 func get_item_data_dict():
 	return {
-		"Jumpshroom1": {"Purchased": true, "InInventory": true, "Level": 0, "Pos": Vector2(0,0)}, 
-		"Jumpshroom2": {"Purchased": true, "InInventory": true, "Level": 0, "Pos": Vector2(0,0)}, 
+		"Jumpshroom1": {"Purchased": false, "InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
+		"Jumpshroom2": {"Purchased": false, "InInventory": false, "Level": 0, "Pos": Vector2(0,0)}, 
 		"HeartContainer1": {"Purchased": false},
 		"Handle1": {"Purchased": false, "InInventory": false, "Level": 0, "Lever_Base": ""}
 	}
@@ -45,7 +45,7 @@ func get_item_data_dict():
 func get_inventory_data():
 	return{
 		"Empty": null, 
-		"Jumpshroom": 2, 
+		"Jumpshroom": 0, 
 		"Handle": 0
 	}
 

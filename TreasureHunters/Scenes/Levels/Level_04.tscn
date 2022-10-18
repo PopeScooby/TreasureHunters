@@ -714,7 +714,7 @@
 
 [node name="Level_04" type="Node2D"]
 script = ExtResource( 30 )
-cam_right = 7000
+cam_right = 10000
 cam_bottom = 4800
 level_time = 180
 

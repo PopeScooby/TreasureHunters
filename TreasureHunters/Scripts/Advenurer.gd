@@ -372,8 +372,9 @@ func exec_state_use_item():
 				Global.item_placing = item
 
 func exec_state_switch_item():
-	var curr_item_idx = GlobalDictionaries.items.find(GlobalDictionaries.current_data["Current_Item"], 0)
-	var max_item_idx = GlobalDictionaries.items.size() - 1
+	var items = GlobalDictionaries.current_data["Inventory"].keys()
+	var curr_item_idx = items.find(GlobalDictionaries.current_data["Current_Item"], 0)
+	var max_item_idx = items.size() - 1
 	
 	if max_item_idx == 0:
 		pass
@@ -383,7 +384,7 @@ func exec_state_switch_item():
 		else:
 			curr_item_idx += 1
 			
-	GlobalDictionaries.current_data["Current_Item"] = GlobalDictionaries.items[curr_item_idx]
+	GlobalDictionaries.current_data["Current_Item"] = items[curr_item_idx]
 
 func set_player():
 	if GlobalDictionaries.players.size() != 0:

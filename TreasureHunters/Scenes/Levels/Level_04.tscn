@@ -926,11 +926,11 @@ scale = Vector2( 2, 2 )
 position = Vector2( 659, 549 )
 
 [node name="Lever_Base" parent="Items" instance=ExtResource( 63 )]
-visible = false
 position = Vector2( 299, 4606 )
 Lever_Path = NodePath("../Lever")
 
 [node name="Lever" parent="Items" instance=ExtResource( 59 )]
+visible = false
 position = Vector2( 299, 4605 )
 rotation = 3.14159
 is_active = true
